@@ -1,65 +1,62 @@
-@extends('layouts.admin')
+@extends('layouts.admin-tw')
 
 @section('content')
     <div class="row">
-        @if (\Illuminate\Support\Facades\Session::has('info'))
-            <p class="alert-success">{{ \Illuminate\Support\Facades\Session::get('info') }}</p>
-        @endif
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>{{ $restaurant_count }}</h3>
-
-                    <p>Restaurants</p>
+        <div class="col-12">
+            <div class="portlet">
+                <div class="widget10 widget10-vertical-md">
+                    <div class="widget10-item">
+                        <div class="widget10-content">
+                            <h2 class="widget10-title">{{ $restaurant_count }}</h2>
+                            <span class="widget10-subtitle">Restaurants</span>
+                        </div>
+                        <div class="widget10-addon">
+                            <!-- BEGIN Avatar -->
+                            <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                                <div class="avatar-display">
+                                    <i class="fa fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                            <!-- END Avatar -->
+                        </div>
+                    </div>
+                    @livewire('admin.components.restaurant-registration-submissions-box')
+                    <div class="widget10-item">
+                        <div class="widget10-content">
+                            <h2 class="widget10-title">{{ $user_count }}</h2>
+                            <span class="widget10-subtitle">Total users</span>
+                        </div>
+                        <div class="widget10-addon">
+                            <!-- BEGIN Avatar -->
+                            <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                                <div class="avatar-display">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                            </div>
+                            <!-- END Avatar -->
+                        </div>
+                    </div>
                 </div>
-                <div class="icon">
-                    <i class="ion ion-android-restaurant"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
+    </div>
 
-            @livewire('admin.components.restaurant-registration-submissions-box')
-        </div>
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-                <div class="inner">
-                    <h3>{{ $user_count }}</h3>
-
-                    <p>Clients</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>65</h3>
-
-                    <p>Unique Visitors</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="row">
+    <div class="row">
+        <div class="col-12">
             @livewire('admin.booking.calendar')
         </div>
-        
+    </div>
+
     </div>
     <div class="row">
-        @livewire('admin.reports.charts.all-bookings')
+        <div class="col-6">
+            @livewire('admin.reports.charts.all-bookings')
+        </div>
+        <div class="col-6">
+            <!-- BEGIN Portlet -->
+            @livewire('admin.reports.top-stats')
+            <!-- END Portlet -->
+        </div>
+        
     </div>
 @endsection

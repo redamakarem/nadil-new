@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').postCss('resources/css/main.css', 'public/css', [
+mix.js('resources/nadil-admin/src/js/app.js', 'public/js').postCss('resources/css/main.css', 'public/css', [
     require('postcss-import'),
     require('autoprefixer'),
     require('tailwindcss')

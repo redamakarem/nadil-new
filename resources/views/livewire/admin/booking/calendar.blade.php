@@ -29,7 +29,7 @@
 
             height: 610px;
 
-            border:2px solid black;
+            border:1px solid #bdbdbd;
 
         }
 

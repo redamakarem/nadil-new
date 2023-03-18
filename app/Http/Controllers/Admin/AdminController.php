@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Restaurant;
 use App\Models\User;
+use App\Models\Profile;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -17,7 +18,7 @@ class AdminController extends Controller
     public function index()
     {
         $restaurant_count = Restaurant::all()->count();
-        $user_count = User::role('user')->get()->count();
+        $user_count = Profile::all()->count();
         return view('admin.index',[
             'title' => 'Dashboard',
             'restaurant_count' => $restaurant_count,

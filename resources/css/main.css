@@ -27,5 +27,8 @@
     font-weight: bold;
 }
 @tailwind base;
+@import "./xbase.css";
 @tailwind components;
+@import "./xcomponents.css";
 @tailwind utilities;
+@import "./xpages.css"

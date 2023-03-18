@@ -37,21 +37,25 @@
                             <td>{{$restaurant->owner->name}}</td>
                             <td>{{$restaurant->is_active ? "Active" : "Inactive"}}</td>
                             <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" href="#">View</a>
-                                        <a class="dropdown-item" href="{{route('admin.restaurants.edit',['id' => $restaurant->id])}}">Edit</a>
-                                        <a class="dropdown-item" href="#"
-                                           wire:click.prevent="confirmRestaurantDeletion({{$restaurant->id}})">Delete</a>
-                                        <a class="dropdown-item" href="{{route('admin.restaurants.menus',['restaurant' => $restaurant->id])}}">Menus</a>
-                                        <a class="dropdown-item" href="{{route('admin.restaurant.schedules.index',['restaurant' => $restaurant->id])}}">Schedules</a>
-                                        <a class="dropdown-item" href="{{route('admin.restaurant.dishes.index',['restaurant' => $restaurant->id])}}">Dishes</a>
+                                <div class="dropdown">
+                                        <a class="btn btn-light dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#">View</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="{{route('admin.restaurants.edit',['id' => $restaurant->id])}}">Edit</a></li>
+                                            <li> <a class="dropdown-item" href="#"
+                                                    wire:click.prevent="confirmRestaurantDeletion({{ $restaurant->id }})">Delete</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="{{route('admin.restaurants.menus',['restaurant' => $restaurant->id])}}">Menus</a></li>
+                                            <li><a class="dropdown-item" href="{{route('admin.restaurant.schedules.index',['restaurant' => $restaurant->id])}}">Schedules</a></li>
+                                            <li><a class="dropdown-item" href="{{route('admin.restaurant.dishes.index',['restaurant' => $restaurant->id])}}">Dishes</a></li>
+                                            
+                                        </ul>
                                     </div>
-                                </div>
                             </td>
 
                         </tr>

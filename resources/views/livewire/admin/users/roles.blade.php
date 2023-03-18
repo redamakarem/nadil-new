@@ -10,8 +10,8 @@
                 <h3 class="card-title">Users</h3>
 
                 <div class="card-tools">
-                    <div class="input-group input-group-sm" >
-                        <a href="{{route('admin.users.create')}}" class="btn btn-primary">Add</a>
+                    <div class="input-group input-group-sm">
+                        <a href="{{ route('admin.users.create') }}" class="btn btn-primary">Add</a>
 
 
                     </div>
@@ -21,48 +21,56 @@
             <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Roles</th>
-                        <th>Actions</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Roles</th>
+                            <th>Actions</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    @forelse($users as $user)
-                        <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>@foreach($user->roles->pluck('name') as $role)
-                                    <span class="badge bg-dark">{{$role}}</span>
-                                @endforeach
-                            </td>
-                            <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" href="#">View</a>
-                                        <a class="dropdown-item" href="{{route('admin.users.edit',$user->id)}}">Edit</a>
-                                        <a class="dropdown-item" href="#"
-                                           wire:click.prevent="confirmRestaurantDeletion({{$user->id}})">Delete</a>
-                                        @role('super-admin')
-                                        @if($user->id != auth()->id())
-                                                <a class="dropdown-item" href="{{route('users.impersonate',$user->id)}}">Impersonate</a>
-                                            @endif
-                                        @endrole
-                                    </div>
-                                </div>
-                            </td>
+                        @forelse($users as $user)
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>
+                                    @foreach ($user->roles->pluck('name') as $role)
+                                        <span class="badge bg-dark">{{ $role }}</span>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    
+                                    <div class="dropdown">
+                                        <a class="btn btn-light dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </a>
 
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6">No results found</td>
-                        </tr>
-                    @endforelse
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#">View</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="{{ route('admin.users.edit', $user->id) }}">Edit</a></li>
+                                            <li> <a class="dropdown-item" href="#"
+                                                    wire:click.prevent="confirmRestaurantDeletion({{ $user->id }})">Delete</a>
+                                            </li>
+                                            @role('super-admin')
+                                                @if ($user->id != auth()->id())
+                                                    <li><a class="dropdown-item"
+                                                            href="{{ route('users.impersonate', $user->id) }}">Impersonate</a>
+                                                    </li>
+                                                @endif
+                                            @endrole
+                                        </ul>
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="6">No results found</td>
+                            </tr>
+                        @endforelse
 
                     </tbody>
                 </table>
@@ -75,7 +83,7 @@
 
 @push('scripts')
     <script>
-        window.addEventListener('show-swal-delete',evt => {
+        window.addEventListener('show-swal-delete', evt => {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
@@ -92,7 +100,7 @@
         })
     </script>
     <script>
-        window.addEventListener('test',evt =>{
+        window.addEventListener('test', evt => {
             console.log(evt);
             // toastr.success(evt.detail.info,'Success');
         });

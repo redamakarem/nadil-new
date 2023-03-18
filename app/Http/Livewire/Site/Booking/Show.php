@@ -103,7 +103,7 @@ class Show extends Component
 
     public function updatedSelectedTime($value)
     {
-        dd($this->selected_time);
+        // dd($this->selected_time);
     }
 
     public function getAvailableTables($date, $time)
