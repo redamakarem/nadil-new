@@ -72,7 +72,7 @@
                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                             style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                             <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
-                                class="flex flex-col justify-center w-full h-full bg-black rounded-xl bg-opacity-50">
+                                class="flex flex-col justify-center w-full h-full rounded-xl bg-opacity-50">
                                 <h4
                                     class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                     {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
