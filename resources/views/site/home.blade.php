@@ -72,7 +72,7 @@
                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                             style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                             <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
-                                class="flex flex-col justify-center w-full h-full rounded-xl bg-opacity-50">
+                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                 <h4
                                     class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                     {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
@@ -103,7 +103,7 @@
                             <div class="item flex flex-col justify-center rounded-xl border-2 h-32 shadow-md font-lato"
                                 style="background-image:url('{{ $meal_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                                 <a href="{{ route('site.restaurants.view', ['id' => $meal_restaurant->id]) }}"
-                                    class="flex flex-col justify-center w-full h-full bg-black rounded-xl bg-opacity-50">
+                                    class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                     <h4
                                         class="text-center uppercase text-white text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                         {{ $meal_restaurant->{'name_' . app()->getLocale()} }}</h4>
@@ -126,13 +126,15 @@
                     <i class="fa-solid fa-chevron-left"></i></div>
                 <div class="owl-carousel owl-theme cuisines-carousel">
                     @foreach ($cuisines as $cuisine)
-                        <a class="bg-black bg-opacity-50" href="{{ route('site.restaurants.cuisine', ['cuisine' => $cuisine->id]) }}">
-                            <div class="item rounded-xl border-2 h-28 flex justify-center items-center"
-                                style="background-image:url('{{ $cuisine->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
-                                <h4 class="text-center text-white lg:text-2xl uppercase">
-                                    {{ $cuisine->{'name_' . app()->getLocale()} }}</h4>
-                            </div>
-                        </a>
+                        <div class="bg-black/70 rounded-xl" style="background-image:url('{{ $cuisine->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
+                            <a  href="{{ route('site.restaurants.cuisine', ['cuisine' => $cuisine->id]) }}">
+                                <div class="item  border-2 h-28 flex justify-center items-center"
+                                    >
+                                    <h4 class="text-center text-white lg:text-2xl uppercase">
+                                        {{ $cuisine->{'name_' . app()->getLocale()} }}</h4>
+                                </div>
+                            </a>
+                        </div>
                     @endforeach
                 </div>
                 <div

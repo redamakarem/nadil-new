@@ -1,4 +1,4 @@
 @extends('layouts.admin-tw')
 @section('content')
-    @livewire('admin.contact-messages.index')
+@livewire('restaurant-admin.users.by-role')
 @endsection

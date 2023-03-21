@@ -1,6 +1,6 @@
 <div class="w-full">
     <div wire:loading>
-        <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500 bg-opacity-25 top-0 left-0">
+        <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500 bg-opacity-25 top-0 left-0 z-30">
             <img src="{{ asset('/images/nadil-loader.png') }}" alt="" class="w-24 h-24">
         </div>
     </div>

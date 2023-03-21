@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin-tw')
 {{--@section('breadcrumbs')--}}
 {{--                        <div class="col-sm-6">--}}
 {{--                            <ol class="breadcrumb float-sm-right">--}}

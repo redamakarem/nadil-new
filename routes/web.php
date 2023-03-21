@@ -16,8 +16,10 @@ use App\Http\Controllers\RestaurantAdmin\Table\TableController;
 use App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController;
 use App\Http\Controllers\RestaurantAdmin\ScheduleController as RAScheduleController;
 use App\Http\Controllers\RestaurantAdmin\Dish\DishesController as RADishesController;
+use App\Http\Controllers\RestaurantAdmin\ReportsController as RAReportsController;
 use App\Http\Controllers\RestaurantAdmin\CatalogueCategory\CatalogueCategoryController;
 use App\Http\Controllers\RestaurantAdmin\Booking\BookingController as RABookingController;
+use App\Http\Controllers\RestaurantAdmin\UserController as RestaurantAdminUserController;
 use App\Http\Livewire\Admin\Reports\NewUsers;
 use App\Models\Booking;
 
@@ -253,6 +255,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
 Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restaurant-super-admin|restaurant-admin|restaurant-host|restaurant-manager']],function(){
     Route::get('/',[App\Http\Controllers\RestaurantAdmin\RestaurantAdminController::class,'index'])
     ->name('restaurant-admin.index');
+
     // Restaurants
     Route::get('/restaurants',[\App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController::class,'index'])
         ->name('restaurant-admin.restaurants.index');
@@ -333,6 +336,12 @@ Route::group(['prefix' => 'user', 'middleware'=>['auth','role:user','ensure_pass
     ->name('site.restaurants.book');
     Route::get('/booking/{id}/thanks',[\App\Http\Controllers\SiteController::class,'show_booking_confirmation'])
     ->name('site.bookings.confirmation');
+
+    // Reports
+    Route::get('/reports', [RAReportsController::class,'index'])->name('restaurant-admin.reports.index');
+
+    // Users
+    Route::get('/users/{role}',[RestaurantAdminUserController::class,'byRole'])->name('restaurant-admin.users.roles');
 });
 
 Route::get('/restaurant/{id}/book',[\App\Http\Controllers\SiteController::class,'book_restaurant'])
