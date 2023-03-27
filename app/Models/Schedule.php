@@ -18,4 +18,9 @@ class Schedule extends Model
         'to_time',
         'restaurant_id',
     ];
+
+    public function restaurant()
+    {
+        return $this->belongsTo(Restaurant::class,'restaurant_id');
+    }
 }

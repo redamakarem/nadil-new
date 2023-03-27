@@ -590,6 +590,15 @@ select {
     top: 0px;
     bottom: 0px;
 }
+.-left-4 {
+    left: -1rem;
+}
+.top-\[23\%\] {
+    top: 23%;
+}
+.-right-4 {
+    right: -1rem;
+}
 .left-0 {
     left: 0px;
 }
@@ -599,14 +608,8 @@ select {
 .-top-16 {
     top: -4rem;
 }
-.-left-4 {
-    left: -1rem;
-}
 .top-\[30\%\] {
     top: 30%;
-}
-.-right-4 {
-    right: -1rem;
 }
 .top-0 {
     top: 0px;
@@ -617,11 +620,11 @@ select {
 .z-10 {
     z-index: 10;
 }
-.z-50 {
-    z-index: 50;
-}
 .z-30 {
     z-index: 30;
+}
+.z-50 {
+    z-index: 50;
 }
 .float-right {
     float: right;
@@ -644,6 +647,14 @@ select {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+.my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 .my-8 {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -652,10 +663,6 @@ select {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
-.my-4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
 .mx-3 {
     margin-left: 0.75rem;
     margin-right: 0.75rem;
@@ -663,10 +670,6 @@ select {
 .my-32 {
     margin-top: 8rem;
     margin-bottom: 8rem;
-}
-.mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
 }
 .mx-1 {
     margin-left: 0.25rem;
@@ -700,6 +703,15 @@ select {
 .mr-2 {
     margin-right: 0.5rem;
 }
+.mb-4 {
+    margin-bottom: 1rem;
+}
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+.mb-8 {
+    margin-bottom: 2rem;
+}
 .mt-1 {
     margin-top: 0.25rem;
 }
@@ -712,12 +724,6 @@ select {
 .mt-8 {
     margin-top: 2rem;
 }
-.mb-8 {
-    margin-bottom: 2rem;
-}
-.mb-4 {
-    margin-bottom: 1rem;
-}
 .mt-14 {
     margin-top: 3.5rem;
 }
@@ -729,9 +735,6 @@ select {
 }
 .mb-12 {
     margin-bottom: 3rem;
-}
-.mb-6 {
-    margin-bottom: 1.5rem;
 }
 .ml-auto {
     margin-left: auto;
@@ -829,6 +832,9 @@ select {
 .h-4 {
     height: 1rem;
 }
+.h-12 {
+    height: 3rem;
+}
 .h-6 {
     height: 1.5rem;
 }
@@ -837,9 +843,6 @@ select {
 }
 .h-80 {
     height: 20rem;
-}
-.h-12 {
-    height: 3rem;
 }
 .h-\[72px\] {
     height: 72px;
@@ -916,6 +919,9 @@ select {
 .w-4 {
     width: 1rem;
 }
+.w-1\/2 {
+    width: 50%;
+}
 .w-6 {
     width: 1.5rem;
 }
@@ -933,9 +939,6 @@ select {
 }
 .w-\[375px\] {
     width: 375px;
-}
-.w-1\/2 {
-    width: 50%;
 }
 .w-\[1px\] {
     width: 1px;
@@ -1156,11 +1159,11 @@ select {
 .rounded-full {
     border-radius: 9999px;
 }
-.rounded-\[60px\] {
-    border-radius: 60px;
-}
 .rounded-xl {
     border-radius: 0.75rem;
+}
+.rounded-\[60px\] {
+    border-radius: 60px;
 }
 .rounded-\[16px\] {
     border-radius: 16px;
@@ -1259,6 +1262,12 @@ select {
 .bg-warning {
     background-color: #ff9800;
 }
+.bg-\[\#E0E0E0\] {
+    background-color: #E0E0E0;
+}
+.bg-black\/70 {
+    background-color: rgb(0 0 0 / 0.7);
+}
 .bg-\[\#f8f8f8\] {
     background-color: #f8f8f8;
 }
@@ -1276,9 +1285,6 @@ select {
 }
 .bg-\[\#F5F5F5\] {
     background-color: #F5F5F5;
-}
-.bg-\[\#E0E0E0\] {
-    background-color: #E0E0E0;
 }
 .bg-gray-600 {
     background-color: #4b5563;
@@ -1312,15 +1318,6 @@ select {
 }
 .bg-slate-100 {
     background-color: #f1f5f9;
-}
-.bg-black\/25 {
-    background-color: rgb(0 0 0 / 0.25);
-}
-.bg-black\/50 {
-    background-color: rgb(0 0 0 / 0.5);
-}
-.bg-black\/70 {
-    background-color: rgb(0 0 0 / 0.7);
 }
 .bg-cover {
     background-size: cover;
@@ -1514,6 +1511,12 @@ select {
 .text-\[12px\] {
     font-size: 12px;
 }
+.text-\[26px\] {
+    font-size: 26px;
+}
+.text-\[18px\] {
+    font-size: 18px;
+}
 .text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1535,12 +1538,6 @@ select {
 }
 .text-\[21px\] {
     font-size: 21px;
-}
-.text-\[26px\] {
-    font-size: 26px;
-}
-.text-\[18px\] {
-    font-size: 18px;
 }
 .text-\[0\.6rem\] {
     font-size: 0.6rem;
@@ -1591,6 +1588,9 @@ select {
 .tracking-\[4px\] {
     letter-spacing: 4px;
 }
+.tracking-widest {
+    letter-spacing: 0.1em;
+}
 .tracking-\[0\.6rem\] {
     letter-spacing: 0.6rem;
 }
@@ -1605,9 +1605,6 @@ select {
 }
 .tracking-\[0\.5rem\] {
     letter-spacing: 0.5rem;
-}
-.tracking-widest {
-    letter-spacing: 0.1em;
 }
 .tracking-\[2px\] {
     letter-spacing: 2px;
@@ -1627,6 +1624,9 @@ select {
 .text-white {
     color: #fff;
 }
+.text-\[\#454545\] {
+    color: #454545;
+}
 .text-green-500 {
     color: #22c55e;
 }
@@ -1641,9 +1641,6 @@ select {
 }
 .text-red-500 {
     color: #ef4444;
-}
-.text-\[\#454545\] {
-    color: #454545;
 }
 .text-warning {
     color: #ff9800;

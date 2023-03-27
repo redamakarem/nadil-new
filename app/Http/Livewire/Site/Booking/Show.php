@@ -48,6 +48,7 @@ class Show extends Component
         $this->seats = session('booking_seats');
         $this->restaurant->load(['bookings', 'bookings.reserved_tables']);
         $this->booking_enabled = true;
+        session()->forget('target_route');
     }
 
     public function getSlotsForSchedules()

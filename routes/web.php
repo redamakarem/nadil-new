@@ -290,6 +290,8 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         [RADishesController::class,'index'])
         ->name('restaurant-admin.restaurant.menu.categories.dishes');
 
+        Route::get('/dishes-new',[RADishesController::class, 'new_index'])->name('restaurant-admin.dishes-new.index');
+
     Route::get('/restaurant/{restaurant}/menu/{menu}/categories/{category}/dishes/create',
         [RADishesController::class,'create'])
         ->name('restaurant-admin.restaurant.menu.categories.dishes.create');
@@ -300,9 +302,8 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         Route::get('dishes/new',[RADishesController::class,'new_dish'])->name('restaurant-admin.new-dish');
 
     //    Schedules
-    Route::get('/restaurant/{restaurant}/schedules',
-        [RAScheduleController::class,'index'])
-        ->name('restaurant-admin.restaurant.schedules.index');
+    Route::get('/schedules',[RAScheduleController::class,'all'])->name('restaurant-admin.schedules.index');
+    Route::get('/restaurant/{restaurant}/schedules', [RAScheduleController::class,'index'])->name('restaurant-admin.restaurant.schedules.index');
     Route::get('/restaurant/{restaurant}/schedules/create',
         [RAScheduleController::class,'create'])
         ->name('restaurant-admin.restaurant.schedules.create');
@@ -323,6 +324,11 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     Route::get('bookings',[RABookingController::class,'index'])->name('restaurant-admin.bookings');
     Route::get('bookings/{id}/edit',[RABookingController::class,'edit'])->name('restaurant-admin.bookings.edit');
     Route::get('bookings/create',[RABookingController::class,'create'])->name('restaurant-admin.bookings.create');
+
+    // Reports
+    Route::get('/reports', [RAReportsController::class,'index'])->name('restaurant-admin.reports.index');
+
+    
 });
 
 
@@ -336,10 +342,7 @@ Route::group(['prefix' => 'user', 'middleware'=>['auth','role:user','ensure_pass
     ->name('site.restaurants.book');
     Route::get('/booking/{id}/thanks',[\App\Http\Controllers\SiteController::class,'show_booking_confirmation'])
     ->name('site.bookings.confirmation');
-
-    // Reports
-    Route::get('/reports', [RAReportsController::class,'index'])->name('restaurant-admin.reports.index');
-
+    
     // Users
     Route::get('/users/{role}',[RestaurantAdminUserController::class,'byRole'])->name('restaurant-admin.users.roles');
 });

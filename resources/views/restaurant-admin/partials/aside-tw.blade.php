@@ -63,6 +63,15 @@
             <!-- END Menu Submenu -->
         </div>
         <div class="menu-item">
+            <a href="{{ route('restaurant-admin.bookings') }}" data-menu-path="/index.html" class="menu-item-link">
+                <div class="menu-item-icon">
+                    <i class="fa fa-desktop"></i>
+                </div>
+                <span class="menu-item-text">Bookings</span>
+                
+            </a>
+        </div>
+        <div class="menu-item">
             <button class="menu-item-link menu-item-toggle">
                 <div class="menu-item-icon">
                     <i class="fa fa-shop"></i>
@@ -81,9 +90,9 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a href="{{route('restaurant-admin.bookings')}}" data-menu-path="/elements/advanced/block-ui.html" class="menu-item-link">
+                    <a href="{{route('restaurant-admin.schedules.index')}}" data-menu-path="/elements/advanced/block-ui.html" class="menu-item-link">
                         <i class="menu-item-bullet"></i>
-                        <span class="menu-item-text">Bookings</span>
+                        <span class="menu-item-text">Schedules</span>
                     </a>
                 </div>
                 

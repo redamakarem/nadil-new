@@ -4,6 +4,7 @@ namespace App\Http\Controllers\RestaurantAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -17,6 +18,13 @@ class ScheduleController extends Controller
     {
         $rest = Restaurant::with('schedules')->findOrFail($restaurant);
         return view('restaurant-admin.schedule.index',['restaurant' => $rest]);
+    }
+
+    public function all()
+    {
+        
+        return view('restaurant-admin.schedule.all');
+
     }
 
     /**

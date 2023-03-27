@@ -66,6 +66,7 @@ return array (
     'reservations' => 'الحجوزات',
     'settings' => 'الاعدادات',
     'signup' => 'انشاء حساب',
+    'register' => 'انشاء حساب',
   ),
   'lang' => array(
     'en' => 'English'

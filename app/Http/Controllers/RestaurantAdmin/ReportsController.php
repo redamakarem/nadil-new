@@ -42,6 +42,6 @@ class ReportsController extends Controller
        }
         $top_booked=Restaurant::withCount('bookings')->orderBy('bookings_count','desc')->take(3)->get();
         
-        return view('admin.reports.index',compact(['top_time','top_booked','top_weekdays']));
+        return view('restaurant-admin.reports.index',compact(['top_time','top_booked','top_weekdays']));
     }
 }

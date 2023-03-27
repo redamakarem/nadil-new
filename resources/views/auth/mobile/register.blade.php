@@ -1,6 +1,6 @@
 @extends('layouts.site-mobile',['restaurant' => null])
 @section('content')
-    <div class="flex flex-col w-full h-full justify-center py-4 px-8 space-y-4">
+    {{-- <div class="flex flex-col w-full h-full justify-center py-4 px-8 space-y-4">
         <div class="w-full rounded-lg border-2 bg-[#EFEFEF] px-4">
             <div class="form-group">
                 @if($errors->any())
@@ -40,6 +40,8 @@
         </div>
         <div class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">OR</div>
         <a href="{{route('register')}}" class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">Create a new account</a href="{{route('register')}}">
-    </div>
+    </div> --}}
+
+    @livewire('site.user-registration')
 
 @endsection

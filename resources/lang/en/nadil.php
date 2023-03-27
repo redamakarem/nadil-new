@@ -10,6 +10,7 @@
             'profile' => 'Profile',
             'settings' => 'Settings',
             'logout' => 'Logout',
+            'register' => 'Register',
         ],
         'general' =>[
             'slogan' => 'CURATED TO PROVIDE YOU WITH THE BEST',
