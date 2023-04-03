@@ -1,4 +1,4 @@
-@extends('layouts.admin-tw')
+@extends('layouts.restaurant-admin')
 @section('content')
     <div class="row">
 

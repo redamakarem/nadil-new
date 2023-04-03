@@ -325,6 +325,9 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     Route::get('bookings/{id}/edit',[RABookingController::class,'edit'])->name('restaurant-admin.bookings.edit');
     Route::get('bookings/create',[RABookingController::class,'create'])->name('restaurant-admin.bookings.create');
 
+    // Users
+    Route::get('/users/{role}',[RestaurantAdminUserController::class,'byRole'])->name('restaurant-admin.users.roles');
+
     // Reports
     Route::get('/reports', [RAReportsController::class,'index'])->name('restaurant-admin.reports.index');
 
@@ -343,8 +346,7 @@ Route::group(['prefix' => 'user', 'middleware'=>['auth','role:user','ensure_pass
     Route::get('/booking/{id}/thanks',[\App\Http\Controllers\SiteController::class,'show_booking_confirmation'])
     ->name('site.bookings.confirmation');
     
-    // Users
-    Route::get('/users/{role}',[RestaurantAdminUserController::class,'byRole'])->name('restaurant-admin.users.roles');
+    
 });
 
 Route::get('/restaurant/{id}/book',[\App\Http\Controllers\SiteController::class,'book_restaurant'])

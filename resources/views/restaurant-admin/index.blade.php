@@ -59,7 +59,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary card-tabs">
+            {{-- <div class="card card-primary card-tabs">
                 <div class="card-header p-0 pt-1">
                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
                         <li class="nav-item">
@@ -105,6 +105,45 @@
                     </div>
                 </div>
 
+            </div> --}}
+
+            <div class="card">
+                <div class="card-header">
+                    <!-- BEGIN Nav -->
+                    <div class="nav nav-lines card-header-lines" id="card1-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="card1-home-tab" data-bs-toggle="tab" href="#card1-expected" aria-selected="true" role="tab">Expected</a>
+                        <a class="nav-item nav-link" id="card1-profile-tab" data-bs-toggle="tab" href="#card1-arrived" aria-selected="false" tabindex="-1" role="tab">Arrived</a>
+                        <a class="nav-item nav-link" id="card1-contact-tab" data-bs-toggle="tab" href="#card1-no-show" aria-selected="false" tabindex="-1" role="tab">No Show</a>
+                        <a class="nav-item nav-link" id="card1-contact-tab" data-bs-toggle="tab" href="#card1-cancelled" aria-selected="false" tabindex="-1" role="tab">Cancelled</a>
+                    </div>
+                    <!-- END Nav -->
+                </div>
+                <div class="card-body">
+                    <!-- BEGIN Tab -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="card1-expected" role="tabpanel" aria-labelledby="#card1-home-tab">
+                            <p class="mb-0">
+                                @livewire('components.todays-bookings-table')
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="card1-arrived" role="tabpanel" aria-labelledby="#card1-profile-tab">
+                            <p class="mb-0">
+                                @livewire('components.todays-bookings-table',[3])
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="card1-no-show" role="tabpanel" aria-labelledby="#card1-contact-tab">
+                            <p class="mb-0">
+                                @livewire('components.todays-bookings-table',[4])
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="card1-cancelled" role="tabpanel" aria-labelledby="#card1-contact-tab">
+                            <p class="mb-0">
+                                @livewire('components.todays-bookings-table',[5])
+                            </p>
+                        </div>
+                    </div>
+                    <!-- END Tab -->
+                </div>
             </div>
         </div>
     </div>

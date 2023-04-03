@@ -10,8 +10,10 @@ class UserController extends Controller
 {
     public function byRole($role_id)
     {
-
-        $users = Role::with('users')->findOrFail($role_id)->users;
+        if (auth()->user()->hasRole('restaurant-super-admin')) {
+            $users = Role::with('users')->findOrFail($role_id)->users->whereIn('restaurant_id',auth()->user()->restaurants->pluck('id'));
+        }
+        
         return view('restaurant-admin.users.roles',compact(['users']));
     }
 }

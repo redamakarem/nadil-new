@@ -54,7 +54,7 @@
                                                     wire:click.prevent="confirmRestaurantDeletion({{ $user->id }})">Delete</a>
                                             </li>
                                             @role('super-admin')
-                                                @if ($user->id != auth()->id())
+                                                @if ($user->id != auth()->id() && !$user->hasRole('user'))
                                                     <li><a class="dropdown-item"
                                                             href="{{ route('users.impersonate', $user->id) }}">Impersonate</a>
                                                     </li>

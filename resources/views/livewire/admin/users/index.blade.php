@@ -39,10 +39,8 @@
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
+                                    
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="#">View</a>
                                         <a class="dropdown-item" href="{{route('admin.users.edit',$user->id)}}">Edit</a>

@@ -108,8 +108,13 @@ class SiteController extends Controller
 
     public function userRegister()
     {
-
+        $agent = new Agent();
+        if ($agent->isDesktop()){
         return view('site.user-register');
+        }
+        else{
+            return view('auth.mobile.register');
+        }
     }
 
     public function contact()
