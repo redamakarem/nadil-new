@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Site\User\Profile;
 
+use App\Models\Governate;
 use App\Models\Profile;
 use Auth;
 use Livewire\Component;
@@ -10,6 +11,8 @@ class Edit extends Component
 {
     public Profile $profile;
     public $selected_date;
+    public $governates;
+    public $area;
 
     protected $rules =[
         'profile.name' => ['required'],
@@ -24,6 +27,7 @@ class Edit extends Component
     {
         $this->profile = Auth::user()->profile?? new Profile();
         $this->profile->user_id = Auth::user()->id;
+        $this->governates = Governate::all();
     }
 
     public function submit()

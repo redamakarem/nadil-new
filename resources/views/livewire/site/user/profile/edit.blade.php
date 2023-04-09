@@ -41,6 +41,22 @@
                         </div>
     
                     </div>
+                    <div class="w-full">
+                        <div
+                            class="flex items-center w-full bg-white font-lato placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-4 rounded-[19px] space-x-4">
+                            <select wire:model='area' class="border-0 outline-none w-full focus:outline-none ltr:font-lato uppercase text-[21px] tracking-[10px] rtl:font-ahlan rtl:tracking-normal">
+                                <option value="">{{ __('Select Area') }}</option>
+                            @foreach ($governates as $governate)
+                                <optgroup label="{{ $governate->name_en }}">
+                                    @foreach ($governate->areas as $area)
+                                        <option value="{{ $area->id }}">{{ $area->name_en }}</option>
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
+                            </select>
+                        </div>
+    
+                    </div>
                     <div class="w-full" wire:ignore>
                         <input id="dob" type="text" placeholder="Date of Birth" wire:model.lazy="profile.dob"
                                class="flex items-center w-full font-lato placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-4 rounded-[19px]">
