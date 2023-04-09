@@ -1,4 +1,4 @@
 @extends('layouts.site-tw')
 @section('content')
-    @livewire('site.user.register')
+    @livewire('site.user-registration')
 @endsection

@@ -30,6 +30,19 @@
                             <option value="1">Female</option>
                         </select>
                     </div>
+                    <div class="mb-3 shadow input-container">
+                        @error('area') <span class="danger">{{$message}}</span> @enderror
+                        <select class="w-full rounded-[19px] shadow-md font-lato uppercase py-4" aria-label="Gender" wire:model="area">
+                            <option value="">{{ __('Select Area') }}</option>
+                            @foreach ($governates as $governate)
+                                <optgroup label="{{ $governate->name_en }}">
+                                    @foreach ($governate->areas as $area)
+                                        <option value="{{ $area->id }}">{{ $area->name_en }}</option>
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="mb-3" wire:ignore>
                         @error('date_of_birth') <span class="danger">{{$message}}</span> @enderror
                         <input  id="dob"

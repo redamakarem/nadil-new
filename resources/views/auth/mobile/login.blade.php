@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">OR</div>
-        <a href="{{route('register')}}" class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">Create a new account</a href="{{route('register')}}">
+        <a href="{{route('site.user-register')}}" class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">Create a new account</a href="{{route('register')}}">
     </div>
 
 @endsection

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
 use App\Mail\UserRegistered as MailUserRegistered;
+use App\Models\Governate;
 
 class UserRegistration extends Component
 {
@@ -21,10 +22,13 @@ class UserRegistration extends Component
     public $password;
     public $password_confirmation;
     public $date_of_birth;
+    public $governates;
+    public $area;
     public function mount(Profile $profile)
     {
         $this->profile = new Profile();
         $this->date_of_birth = '';
+        $this->governates = Governate::all();
     }
 
     protected function rules()
@@ -33,9 +37,10 @@ class UserRegistration extends Component
             'profile.name' =>['required'],
             'profile.email' =>['required','unique:users,email','email'],
             'profile.phone' =>['required'],
-            'profile.gender' =>['sometimes','integer'],
+            'profile.gender' =>['required'],
             'password' =>['required','confirmed'],
             'date_of_birth' =>['required'],
+            'area' =>['required'],
 
         ];
     }
@@ -52,6 +57,7 @@ class UserRegistration extends Component
             $this->profile->user_id = $new_user->id;
             $this->profile->dob = $this->date_of_birth;
             $new_user->assignRole('user');
+            $this->user->area_id = $this->area;
             $new_user->save();
             $this->profile->save();
             // $this->perform_password_reset();
