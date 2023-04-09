@@ -34,7 +34,10 @@ class Edit extends Component
     {
         $this->validate();
         $this->profile->dob = $this->selected_date;
+        $this->profile->user->area_id = $this->area;
+        $this->profile->user->save();
         $this->profile->save();
+        
     }
 
     public function render()
