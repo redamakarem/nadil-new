@@ -5,7 +5,7 @@
 <img src="{{asset('/images/booking-thanks.png')}}" class="w-32" alt="booking thanks">
 <div class="mt-4">Order #{{ $booking->booking_code }}</div>
 <div class="flex w-full justify-center">
-    <a href="#" class="uppercase mt-12 px-16 py-6 bg-nadilBg-100 shadow-md ltr:tracking-[6px] rtl:tracking-normal rounded-[19px]">Back to home</a>
+    <a href="{{route('home')}}" class="uppercase mt-12 px-16 py-6 bg-nadilBg-100 shadow-md ltr:tracking-[6px] rtl:tracking-normal rounded-[19px]">Back to home</a>
 </div>
 </div>
 @endsection
