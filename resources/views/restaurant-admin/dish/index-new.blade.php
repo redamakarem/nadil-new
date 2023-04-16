@@ -1,5 +1,5 @@
 @extends('layouts.restaurant-admin')
 
 @section('content')
-    @livewire('restaurant-admin.schedule.edit',[$schedule])
+    @livewire('restaurant-admin.dish-new.index',[$restaurant])
 @endsection

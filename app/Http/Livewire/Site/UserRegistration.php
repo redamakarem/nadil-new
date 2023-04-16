@@ -57,7 +57,7 @@ class UserRegistration extends Component
             $this->profile->user_id = $new_user->id;
             $this->profile->dob = $this->date_of_birth;
             $new_user->assignRole('user');
-            $this->user->area_id = $this->area;
+            $new_user->area_id = $this->area;
             $new_user->save();
             $this->profile->save();
             // $this->perform_password_reset();

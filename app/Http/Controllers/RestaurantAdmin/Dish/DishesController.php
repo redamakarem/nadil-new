@@ -116,8 +116,9 @@ class DishesController extends Controller
         //
     }
 
-    public function new_index()
+    public function new_index(Restaurant $restaurant)
     {
+        return view('restaurant-admin.dish.index-new',compact('restaurant'));
         
     }
 

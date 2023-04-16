@@ -16,9 +16,9 @@ class RestaurantAdminController extends Controller
      */
     public function index()
     {
-        $data = array();
-        $restaurant_id = auth()->user()->restaurants->first()->id;
-        $bookings = Booking::where('restaurant_id',$restaurant_id);
+        // $data = array();
+        // $restaurant_id = auth()->user()->restaurants->first()->id;
+        // $bookings = Booking::where('restaurant_id',$restaurant_id);
         return view('restaurant-admin.index');
     }
 

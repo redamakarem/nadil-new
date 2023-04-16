@@ -16,4 +16,4 @@ mix.js('resources/nadil-admin/src/js/app.js', 'public/js').postCss('resources/cs
     require('autoprefixer'),
     require('tailwindcss')
 ]);
-mix.disableSuccessNotifications();
+mix.disableNotifications();

@@ -70,5 +70,19 @@ return array (
   ),
   'lang' => array(
     'en' => 'English'
-  )
+  ),
+  'user_registration' => [
+    'title' =>'انشاء حساب',
+    'name' =>'اسمك',
+    'email' =>'بريدك الالكتروني',
+    'phone' =>'رقم هاتفك',
+    'gender' =>'اختر جنسك',
+    'male' =>'ذكر',
+    'female' =>'أنثى',
+    'area' =>'اختر منطقتك',
+    'dob' =>'تاريخ الميلاد',
+    'password' =>'كلمة المرور',
+    'confirm_password' =>'تأكيد كلمة المرور',
+    'register' =>'انشاء حساب',
+]
 );

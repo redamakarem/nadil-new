@@ -19,7 +19,12 @@ class TodaysBookingsTable extends Component
     public function mount($status_id = 1)
     {
         $this->status_id = $status_id;
-        $ids= auth()->user()->restaurants->pluck('id');
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $ids= auth()->user()->restaurants->pluck('id');
+        }else{
+            $ids= auth()->user()->workplace->pluck('id');
+            }
+        
         $this->bookings = Booking::with(['user'])->where('booking_status_id',$this->status_id)
         ->whereIn('restaurant_id',$ids)->get();
         $this->bookingStatuses = BookingStatus::all();

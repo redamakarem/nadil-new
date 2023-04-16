@@ -67,6 +67,20 @@
         ],
         'lang' => [
             'ar' =>'عربي'
+        ],
+        'user_registration' => [
+            'title' =>'Create an account',
+            'name' =>'Your Name',
+            'email' =>'Your Email',
+            'phone' =>'Your phone',
+            'gender' =>'Select Gender',
+            'male' =>'Male',
+            'female' =>'Female',
+            'area' =>'Select Area',
+            'dob' =>'Date of Birth',
+            'password' =>'Password',
+            'confirm_password' =>'Confirm Password',
+            'register' =>'Register',
         ]
 
 

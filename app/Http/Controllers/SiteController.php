@@ -119,7 +119,13 @@ class SiteController extends Controller
 
     public function contact()
     {
+        $agent = new Agent();
+        if ($agent->isDesktop()){
         return view('site.contact');
+        }
+        else{
+            return view('site.mobile.contact');
+        }
     }
 
     public function restaurants_by_cuisine($cuisine)

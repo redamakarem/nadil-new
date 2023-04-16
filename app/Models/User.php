@@ -74,6 +74,12 @@ class User extends Authenticatable
         return \Illuminate\Support\Str::initials($this->name);
     }
 
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
+    }
+    
+
     public function sendPasswordResetNotification($token){
         // $this->notify(new MyCustomResetPasswordNotification($token)); <--- remove this, use Mail instead like below
     

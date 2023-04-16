@@ -232,6 +232,9 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
     Route::get('contact-messages',[\App\Http\Controllers\Admin\ContactMessagesController::class,'index'])
         ->name('admin.contact-messages.index');
 
+    Route::get('contact-messages/{id}',[\App\Http\Controllers\Admin\ContactMessagesController::class,'show'])
+        ->name('admin.contact-messages.show');
+
     // Dishes New
     Route::get('dishes-new/index',[DishesController::class,'new_index'])->name('admin.dishes-new.index');
     Route::get('dishes-new/create',[DishesController::class,'new_create'])->name('admin.dishes-new.create');
@@ -290,7 +293,7 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         [RADishesController::class,'index'])
         ->name('restaurant-admin.restaurant.menu.categories.dishes');
 
-        Route::get('/dishes-new',[RADishesController::class, 'new_index'])->name('restaurant-admin.dishes-new.index');
+        Route::get('/{restaurant}/dishes-new',[RADishesController::class, 'new_index'])->name('restaurant-admin.dishes-new.index');
 
     Route::get('/restaurant/{restaurant}/menu/{menu}/categories/{category}/dishes/create',
         [RADishesController::class,'create'])
@@ -307,6 +310,9 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     Route::get('/restaurant/{restaurant}/schedules/create',
         [RAScheduleController::class,'create'])
         ->name('restaurant-admin.restaurant.schedules.create');
+    Route::get('/restaurant/{restaurant}/schedules/{schedule}/edit',
+        [RAScheduleController::class,'edit'])
+        ->name('restaurant-admin.restaurant.schedules.edit');
     // Tables
     Route::get('restaurant/{restaurant}/tables',[TableController::class,'index'])->name('restaurant-admin.restaurant.tables.index');
     Route::get('restaurant/{restaurant}/tables/create',[TableController::class,'create'])->name('restaurant-admin.restaurant.tables.create');

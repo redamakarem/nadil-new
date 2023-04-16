@@ -39,13 +39,13 @@
                             <td>{{$restaurant->is_active ? "Active" : "Inactive"}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                    <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurants.show',['id' => $restaurant->id])}}">View</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurants.edit',['id' => $restaurant->id])}}">Edit</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.dishes-new.index',['restaurant' => $restaurant])}}">Dishes</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.schedules.index',['restaurant' => $restaurant->id])}}">Schedules</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menus',['restaurant' => $restaurant->id])}}">Menus</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.tables.index',['restaurant' => $restaurant->id])}}">Tables</a>

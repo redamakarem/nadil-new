@@ -42,21 +42,34 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
             @livewire('admin.booking.calendar')
         </div>
-    </div>
-
-    </div>
-    <div class="row">
-        <div class="col-6">
-            @livewire('admin.reports.charts.all-bookings')
-        </div>
-        <div class="col-6">
+        <div class="col-md-12">
             <!-- BEGIN Portlet -->
             @livewire('admin.reports.top-stats')
             <!-- END Portlet -->
         </div>
-        
     </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            @livewire('admin.reports.charts.users-by-gender')
+        </div>
+        <div class="col-md-6">
+            @livewire('admin.reports.charts.all-bookings')
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            @livewire('admin.reports.new-users')
+        </div>
+        <div class="col-md-6">
+            @livewire('admin.reports.charts.users-by-age')
+        </div>
+    </div>
+
+    </div>
+    
 @endsection

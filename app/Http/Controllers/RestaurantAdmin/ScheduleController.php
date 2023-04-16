@@ -66,9 +66,18 @@ class ScheduleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Restaurant $restaurant, Schedule $schedule)
     {
-        //
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            if($restaurant->owner->id != auth()->id())
+            abort(403);
+        }
+        if(auth()->user()->hasRole(['restaurant-admin','restaurant-manager'])){
+            if($restaurant->id != auth()->user->restaurant->id)
+            abort(403);
+
+        }
+        return view('restaurant-admin.schedule.edit',compact(['schedule']));
     }
 
     /**

@@ -10,16 +10,8 @@
                 
             </a>
         </div>
-        <div class="menu-item">
-            <a href="{{ route('admin.reports.index') }}" data-menu-path="/index.html" class="menu-item-link">
-                <div class="menu-item-icon">
-                    <i class="fa fa-chart-pie"></i>
-                </div>
-                <span class="menu-item-text">Reports</span>
-                
-            </a>
-        </div>
         
+       
         <div class="menu-item">
             <button class="menu-item-link menu-item-toggle">
                 <div class="menu-item-icon">
@@ -150,6 +142,14 @@
                 </div>
             </div>
             <!-- END Menu Submenu -->
+        </div>
+        <div class="menu-item">
+            <a href="{{ route('admin.contact-messages.index') }}" data-menu-path="/index.html" class="menu-item-link">
+                <div class="menu-item-icon">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <span class="menu-item-text">Messages</span>
+            </a>
         </div>
     </div>
     <!-- END Menu -->

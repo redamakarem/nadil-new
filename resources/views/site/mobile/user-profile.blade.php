@@ -7,7 +7,7 @@
         <div class="text-lg uppercase font-lato font-bold">{{__('Name')}}</div>
         <div>{{$profile->name}}</div>
         <div class="text-lg uppercase font-lato font-bold">{{__('Address')}}</div>
-        <div>{{$profile->name}}</div>
+        <div>{{$profile->user->area->{'name_' . app()->getLocale()} }}</div>
         <div class="text-lg uppercase font-lato font-bold">{{__('Phone')}}</div>
         <div>{{$profile->phone}}</div>
         <div class="text-lg uppercase font-lato font-bold">{{__('Email')}}</div>

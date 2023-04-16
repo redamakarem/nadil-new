@@ -45,7 +45,7 @@ class="flex flex-col px-4 pt-8">
             <select wire:model.defer="seats" class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12">
                 <option value="">{{__('nadil.booking.num_guest')}}</option>
                 @for ($i = 1; $i <= $restaurant->max_party_size; $i++)
-                    <option value="{{$i}}">{{$i}} {{__('nadil.booking.guest')}}</option>
+                    <option value="{{$i}}">{{ $i }} {{ trans_choice('nadil.booking.guest', $i) }}</option>
                 @endfor
             </select>
     </div>
