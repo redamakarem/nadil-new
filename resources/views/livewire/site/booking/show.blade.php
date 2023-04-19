@@ -1,8 +1,12 @@
 <div class="w-full">
     <div wire:loading>
-        <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500 bg-opacity-25 top-0 left-0 z-30">
+        {{-- <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500 bg-opacity-25 top-0 left-0 z-30">
             <img src="{{ asset('/images/nadil-loader.png') }}" alt="" class="w-24 h-24">
+        </div> --}}
+        <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500/20  top-0 left-0 z-30">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_6yhhrbk6.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop  autoplay></lottie-player>
         </div>
+        
     </div>
     <div class="flex flex-col items-center w-full ">
         @if ($errors->any())
@@ -21,7 +25,7 @@
         @endif --}}
 
         <div class="flex font-lato rtl:font-ahlan uppercase text-md ">{{ __('nadil.booking.select_date_time') }}</div>
-        <div class="flex w-full justify-between space-x-8">
+        <div class="flex w-full justify-between space-x-8 rtl:space-x-reverse">
             <div class="w-1/2">
                 <div class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[6px] rounded-[19px]">
                     {{ $display_date }}</div>
@@ -67,7 +71,7 @@
             <div class="w-1/2 flex flex-col items-center">
                 {{-- <input type="number" step="1" min="0" max="{{$restaurant->max_party_size}}" wire:model.defer="seats"> --}}
                 <p>{{ __('nadil.messages.booking_party_size', ['max' => $restaurant->max_party_size]) }}</p>
-                <select wire:model.defer="seats">
+                <select wire:model.defer="seats" class="text-center rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase h-14 mt-8 w-3/4">
                     <option value="">{{ __('nadil.booking.num_guest') }}</option>
                     @for ($i = 1; $i <= $restaurant->max_party_size; $i++)
                         <option value="{{ $i }}">{{ $i }}
@@ -133,6 +137,8 @@ input.chk-btn+label:hover {
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ar.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 
 
     <script>

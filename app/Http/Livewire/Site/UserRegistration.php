@@ -60,11 +60,9 @@ class UserRegistration extends Component
             $new_user->area_id = $this->area;
             $new_user->save();
             $this->profile->save();
-            // $this->perform_password_reset();
             event(new UserRegistered($new_user));
-            // $new_user->update(['password' => Hash::make($new_user->password)]);
+            $this->redirect(route('site.registration-thanks'));
             $this->resetFields();
-            // session()->flash('success','Check your email to set your password');
         });
 
     }

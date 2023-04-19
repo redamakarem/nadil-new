@@ -118,6 +118,7 @@ module.exports = {
     variants: {
         extend: {
             opacity: ['disabled'],
+            space: ['responsive', 'direction'],
         },
     },
     corePlugins: {

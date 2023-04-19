@@ -117,6 +117,11 @@ class SiteController extends Controller
         }
     }
 
+    public function registrationThanks()
+    {
+        return view('site.registration-thanks');
+    }
+
     public function contact()
     {
         $agent = new Agent();

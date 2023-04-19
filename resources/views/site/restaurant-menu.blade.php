@@ -39,13 +39,13 @@
                         @endif
 
                     </div>
-                    <div class="flex w-full px-4 mt-6 space-x-8 justify-center">
+                    <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
                         <a href="tel://{{ $restaurant->phone }}"
                             class="uppercase font-lato rtl:tracking-normal rtl:font-ahlan px-8 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]">{{ __('nadil.general.phone') }}</a>
                         <a href="mailto:{{ $restaurant->email }}"
                             class="uppercase font-lato rtl:tracking-normal rtl:font-ahlan px-8 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]">{{ __('nadil.general.email') }}</a>
                     </div>
-                    <div class="flex w-full px-4 mt-6 space-x-8 justify-center">
+                    <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
                         @if (!empty($restaurant->facebook))
                             <a href="{{ $restaurant->facebook }}"
                                 class="uppercase px-4 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]"><i

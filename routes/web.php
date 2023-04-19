@@ -61,6 +61,8 @@ Route::get('/contact',[\App\Http\Controllers\SiteController::class,'contact'])
     ->name('site.contact');
 Route::get('/user-register',[\App\Http\Controllers\SiteController::class,'userRegister'])
     ->name('site.user-register');
+Route::get('/registration-thanks',[\App\Http\Controllers\SiteController::class,'registrationThanks'])
+    ->name('site.registration-thanks');
 Route::get('/about',[\App\Http\Controllers\SiteController::class,'about'])
     ->name('site.about');
 
