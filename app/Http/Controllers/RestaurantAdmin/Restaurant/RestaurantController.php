@@ -70,6 +70,14 @@ class RestaurantController extends Controller
             }
 
         }
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $restaurant = Restaurant::findOrFail($id);
+            if(auth()->user()->id==$restaurant->owner->id){
+                return view('restaurant-admin.restaurant.edit',compact('restaurant'));
+            }else{
+                abort(403,'Unauthorized');
+            }
+        }
         $restaurant = Restaurant::findOrFail($id);
         // if(auth()->user()->workplace->id==$restaurant->id)
         return view('restaurant-admin.restaurant.edit',compact('restaurant'));

@@ -23,7 +23,7 @@
             <div class="w-full">
                 <h2
                     class="ltr:font-lato rtl:font-ahlan text-center font-bold uppercase text-lg ltr:tracking-[4px] rtl:tracking-normal">
-                    Login</h2>
+                    {{__('nadil.auth.login')}}</h2>
             </div>
             <div class="w-full">
                 <input type="text" placeholder="{{ __('nadil.auth.email') }}" wire:model="email"
@@ -39,9 +39,9 @@
                 </div>
                 <div class="pt-4 flex justify-between p-8 underline">
                     <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[4px] rtl:tracking-normal uppercase "
-                        href="{{ route('site.user-register') }}">{{ __('Create Account') }}</a>
+                        href="{{ route('site.user-register') }}">{{__('nadil.user_registration.title')}}</a>
                     <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[4px] rtl:tracking-normal uppercase "
-                        href="{{ route('password.email') }}">{{ __('Forgot Password') }}</a>
+                        href="{{ route('password.email') }}">{{__('nadil.auth.forgot_password')}}</a>
                     
                 </div>
             </div>
@@ -50,8 +50,8 @@
                     <a href="{{route('site.user-register')}}">{{__('Register')}}</a>
                 </div> --}}
             <div class="flex flex-col items-center justify-center">
-                <p class="text-center mb-4">Or login with</p>
-                <div class="flex justify-center space-x-8">
+                <p class="text-center mb-4">{{__('nadil.auth.login_with')}}</p>
+                <div class="flex justify-center space-x-8 rtl:space-x-reverse">
                     <a href="{{ route('site.auth.google') }}"><i class="fa-brands fa-google text-3xl"></i></a>
                     <a href="{{ route('site.auth.facebook') }}"><i class="fa-brands fa-facebook text-3xl"></i></a>
                 </div>

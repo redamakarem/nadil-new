@@ -96,7 +96,7 @@
                             
 
                         </div>
-                        <div class="flex justify-end items-end space-x-2 ">
+                        <div class="flex justify-end items-end space-x-2 rtl:space-x-reverse ">
                             <a
                                 href="#"
                                 class=" rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:font-normal text-sm ltr:font-semibold  text-[12px] text-white min-w-max"
@@ -104,7 +104,7 @@
                             @foreach (config('app.available_locales') as $locale)
                                 @if (app()->getLocale() != $locale)
                                 <a href="{{ request()->url() }}?language={{ $locale }}"
-                                   class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out text-white ltr:font-ahlan rtl:font-lato text-xl">
+                                   class="inline-flex items-center px-1 pt-1 text-sm font-medium focus:outline-none transition duration-150 ease-in-out text-white ltr:font-ahlan rtl:font-lato text-xl">
                                     {{__('nadil.lang.'.$locale)}}
                                 </a>
                                 @endif
@@ -170,10 +170,10 @@
             class="content bg-black h-20 flex justify-between"
         >
             <div></div>
-            <div class="flex space-x-6 items-center mx-2">
-                <a href="" class="text-white font-bold font-din uppercase tracking-[4px]">Cancellation Policy</a>
-                <a href="" class="text-white font-bold font-din uppercase tracking-[4px]">Contact Us</a>
-                <a href="" class="text-white font-bold font-din uppercase tracking-[4px]">FAQ</a>
+            <div class="flex space-x-6 items-center mx-2 rtl:space-x-reverse">
+                <a href="" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.cancellation')}}</a>
+                <a href="" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.contact')}}</a>
+                <a href="" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.faq')}}</a>
             </div>
         </div>
     </footer>

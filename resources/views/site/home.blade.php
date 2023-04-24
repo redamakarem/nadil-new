@@ -89,7 +89,7 @@
             </div>
 
             {{--   Restaurants by meal types     --}}
-            <div class="greeting uppercase font-lato">{{__('nadil.general.meal_type')}}</div>
+            <div class="greeting uppercase font-lato rtl:font-ahlan">{{__('nadil.general.meal_type')}}</div>
 
             @foreach ($meal_types as $meal_type)
                 <h2 class="mt-6 uppercase ltr:font-lato rtl:font-ahlan text-[#454545]">

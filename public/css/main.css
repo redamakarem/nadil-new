@@ -1147,6 +1147,19 @@ select {
     margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+}
 .overflow-hidden {
     overflow: hidden;
 }
@@ -1346,6 +1359,10 @@ select {
 .object-contain {
     -o-object-fit: contain;
        object-fit: contain;
+}
+.object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .p-0 {
     padding: 0px;
@@ -1862,6 +1879,15 @@ select {
 .placeholder\:font-bold::placeholder {
     font-weight: 700;
 }
+.placeholder\:font-normal::-moz-placeholder {
+    font-weight: 400;
+}
+.placeholder\:font-normal:-ms-input-placeholder {
+    font-weight: 400;
+}
+.placeholder\:font-normal::placeholder {
+    font-weight: 400;
+}
 .placeholder\:uppercase::-moz-placeholder {
     text-transform: uppercase;
 }
@@ -2089,6 +2115,15 @@ select {
     letter-spacing: 0em;
 }
 [dir="rtl"] .placeholder\:rtl\:tracking-normal::placeholder {
+    letter-spacing: 0em;
+}
+[dir="rtl"] .rtl\:placeholder\:tracking-normal::-moz-placeholder {
+    letter-spacing: 0em;
+}
+[dir="rtl"] .rtl\:placeholder\:tracking-normal:-ms-input-placeholder {
+    letter-spacing: 0em;
+}
+[dir="rtl"] .rtl\:placeholder\:tracking-normal::placeholder {
     letter-spacing: 0em;
 }
 .dark .dark\:border-gray-700 {

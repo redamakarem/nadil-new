@@ -64,6 +64,8 @@
             'register' => 'Register',
             'reset_password' => 'Reset Password',
             'register_msg' => 'Registration Successful. You can now',
+            'forgot_password' => 'Forgot Password',
+            'login_with' => 'Or login with',
         ],
         'lang' => [
             'ar' =>'عربي'
@@ -81,7 +83,25 @@
             'password' =>'Password',
             'confirm_password' =>'Confirm Password',
             'register' =>'Register',
-        ]
+        ],
+        'contact' => [
+            'title' =>'Contact Us',
+            'name' =>'Your Name',
+            'email' =>'Your Email',
+            'subject' =>'Subject',
+            'message' =>'Your Message',
+            'send' =>'Send',
+            'success' =>'Message sent. We will get back to you as soon as possible.',
+        ],
+        'footer' => [
+            'about' =>'About',
+            'contact' =>'Contact',
+            'terms' =>'Terms & Conditions',
+            'privacy' =>'Privacy Policy',
+            'faq' =>'FAQ',
+            'cancellation' =>'Cancellation Policy',
+            'all_rights' =>'All Rights Reserved',
+        ],
 
 
     ];

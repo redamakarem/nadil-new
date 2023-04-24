@@ -79,7 +79,7 @@
 
                         <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
 
-                            Message sent. We will get back to you as soon as possible.
+                            {{__('nadil.contact.success')}}
 
                         </div>
 
@@ -87,28 +87,28 @@
 
                 </div>
                 <div class="w-full">
-                    <input type="text" placeholder="Name" wire:model.lazy="contact.name"
-                           class="flex items-center w-full font-lato placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]">
+                    <input type="text" placeholder="{{__('nadil.contact.name')}}" wire:model.lazy="contact.name"
+                           class="flex items-center w-full font-lato rtl:font-ahlan rtl:placeholder:tracking-normal rtl:placeholder:font-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]">
                 </div>
 
 
                 <div class="w-full">
-                    <input type="text" placeholder="Email" wire:model.lazy="contact.email"
-                           class="flex items-center w-full font-lato placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]">
+                    <input type="text" placeholder="{{__('nadil.contact.email')}}" wire:model.lazy="contact.email"
+                           class="flex items-center w-full font-lato rtl:font-ahlan rtl:placeholder:tracking-normal rtl:placeholder:font-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]">
                 </div>
 
                 <div class="w-full">
-                    <input type="text" placeholder="Subject" wire:model.lazy="contact.subject"
-                           class="flex items-center w-full font-lato placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]">
+                    <input type="text" placeholder="{{__('nadil.contact.subject')}}" wire:model.lazy="contact.subject"
+                           class="flex items-center w-full font-lato rtl:font-ahlan rtl:placeholder:tracking-normal rtl:placeholder:font-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]">
                 </div>
                 <div class="w-full">
-                    <textarea rows="4"  placeholder="Message" wire:model.lazy="contact.message"
-                              class="flex items-center w-full font-lato placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]"></textarea>
+                    <textarea rows="4"  placeholder="{{__('nadil.contact.message')}}" wire:model.lazy="contact.message"
+                              class="flex items-center w-full font-lato rtl:font-ahlan rtl:placeholder:tracking-normal rtl:placeholder:font-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-8 rounded-[19px]"></textarea>
                 </div>
                 <div class="flex w-full justify-end">
                     <button type="submit"
-                            class="font-lato uppercase px-12 py-4 bg-white shadow-md rounded-[12px] tracking-[4px] font-bold">All
-                        Done!
+                            class="font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal uppercase px-12 py-4 bg-white shadow-md rounded-[12px] tracking-[4px] font-bold">
+                            {{__('nadil.contact.send')}}
                     </button>
                 </div>
             </form>

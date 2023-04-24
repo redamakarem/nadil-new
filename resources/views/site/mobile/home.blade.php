@@ -36,7 +36,7 @@
                 </div>
                 <input
                     class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:uppercase w-full mb-4"
-                    type="text" name="search_name" id="search_name" placeholder="Search">
+                    type="text" name="search_name" id="search_name" placeholder="{{__('nadil.general.search')}}">
         </div>
         <div class="flex justify-center mb-6">
             <button
