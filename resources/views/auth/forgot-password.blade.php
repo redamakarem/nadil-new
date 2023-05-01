@@ -44,7 +44,7 @@
         <div class="form-group">
             @if($errors->any())
                 <div class="alert alert-danger">
-                    <p><strong>Opps Something went wrong</strong></p>
+                    <p><strong>{{__('nadil.general.validation_error_header')}}</strong></p>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -63,7 +63,7 @@
             
             <div class="flex w-full justify-end">
                 <button type="submit"
-                        class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">{{__('nadil.auth.login')}}
+                        class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">{{__('nadil.auth.reset_password')}}
                 </button>
             </div>
         </form>

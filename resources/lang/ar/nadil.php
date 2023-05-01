@@ -34,6 +34,7 @@ return array (
     'swal_text' => 'سيتم الغاء الحجز',
     'swal_confirm_text' => 'اجل, أريد الغاء الحجز',
     'swal_cancel_text' => 'اغلاق',
+    'validation_error_header' => 'هناك خطأ في الحقول التالية',
 ],
   'booking' => [
     'book_now' => 'احجز الان',
@@ -45,7 +46,10 @@ return array (
     'select_date' => 'اختر التاريخ',
     'no_available_slots' => 'لا يوجد خانات قابلة للحجز',
     'cancel_booking' => 'الغاء الحجز',
-    'reserved_message' => 'تمت عملية الحجز بنجاح'
+    'reserved_message' => 'تمت عملية الحجز بنجاح',
+    'accessible' => 'متاح لذوي الاحتياجات الخاصة',
+    'private_rooms' => 'غرف خاصة',
+    'dress_code' => 'الزي المطلوب',
 
 ],
 'dishes' =>[

@@ -114,7 +114,9 @@ class Show extends Component
                 $query->where('booking_time', '<=', $time);
                 $query->where('booking_end_time', '>=', $time);
             })->pluck('table_id');
-        $this->available_tables = $this->restaurant->diningTables->whereNotIn('id', $reserved_tables);
+        $this->available_tables = $this->restaurant->diningTables
+        ->where('is_active',true)
+        ->whereNotIn('id', $reserved_tables);
     }
 
     public function getAvailableSeats($time_slot)

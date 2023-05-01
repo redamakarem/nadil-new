@@ -31,12 +31,11 @@
                             
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                    <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.tables.edit',['restaurant' => $restaurant,'diningTable' =>$dining_table])}}">Edit</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menus',['restaurant' => $restaurant->id])}}">Menus</a>
                                     </div>
                                 </div>

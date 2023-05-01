@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\RestaurantAdmin\Table;
 
 use App\Http\Controllers\Controller;
+use App\Models\DiningTable;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
@@ -28,4 +29,20 @@ class TableController extends Controller
         
         return view('restaurant-admin.dining-tables.create',compact('restaurant'));
     }
+
+    public function edit(Restaurant $restaurant, DiningTable $diningTable)
+    {
+        
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $diningTable=auth()->user()->restaurants->contains($restaurant->id)?$diningTable:null;
+
+            return view('restaurant-admin.dining-tables.edit',compact('diningTable'));
+        }
+        if(auth()->user()->workplace->id??-1==$restaurant->id){
+            return view('restaurant-admin.dining-tables.edit',compact('diningTable'));
+        }
+
+        abort(403,'Unauthorized');
+    }
+   
 }

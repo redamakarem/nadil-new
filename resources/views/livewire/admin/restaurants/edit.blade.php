@@ -166,9 +166,17 @@
                         <label class="form-check-label" for="private_rooms">{{ __('Private Rooms') }}</label>
                     </div>
                     <div class="form-group">
-                        <label for="instagram">Opening Hours</label>
+                        <label for="instagram">Opening Hours English</label>
                         <input type="text" name="instagram" class="form-control" id="instagram"
-                            placeholder="Eg: 10 am to 11pm" wire:model="restaurant.opening_hours">
+                            placeholder="Eg: 10 am to 11pm" wire:model="restaurant.opening_hours_en">
+                        @error('form_data.facebook')
+                            <p class="error">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram">Opening Hours Arabic</label>
+                        <input type="text" name="instagram" class="form-control" id="instagram"
+                            placeholder="Eg: 10 am to 11pm" wire:model="restaurant.opening_hours_ar">
                         @error('form_data.facebook')
                             <p class="error">{{ $message }}</p>
                         @enderror

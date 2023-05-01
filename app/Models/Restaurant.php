@@ -37,7 +37,8 @@ class Restaurant extends Model implements HasMedia
         'instagram',
         'accessible',
         'private_rooms',
-        'opening_hours',
+        'opening_hours_en',
+        'opening_hours_ar',
         'dress_code'
     ];
 

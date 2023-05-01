@@ -16,19 +16,19 @@
                     <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
                         {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
                     <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
-                        {{ $restaurant->opening_hours }}</div>
+                        {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
                     <div class="px-8 flex w-full">
                         <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
                     </div>
                     <div>
-                        <div>Accessible: @if ($restaurant->accessible)
+                        <div>{{__('nadil.booking.accessible')}}: @if ($restaurant->accessible)
                                 <span><i class="fas fa-check text-green-500"></i></span>
                             @else
                                 <span><i class="fas fa-times text-red-500"></i></span>
                             @endif
 
                         </div>
-                        <div>Private Rooms:@if ($restaurant->private_rooms)
+                        <div>{{__('nadil.booking.private_rooms')}}:@if ($restaurant->private_rooms)
                                 <span><i class="fas fa-check text-green-500"></i></span>
                             @else
                                 <span><i class="fas fa-times text-red-500"></i></span>

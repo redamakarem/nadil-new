@@ -318,6 +318,7 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     // Tables
     Route::get('restaurant/{restaurant}/tables',[TableController::class,'index'])->name('restaurant-admin.restaurant.tables.index');
     Route::get('restaurant/{restaurant}/tables/create',[TableController::class,'create'])->name('restaurant-admin.restaurant.tables.create');
+    Route::get('restaurant/{restaurant}/tables/{diningTable}/edit',[TableController::class,'edit'])->name('restaurant-admin.restaurant.tables.edit');
 
     // Staff
     Route::get('restaurant/{restaurant}/staff', [RestaurantController::class,'showStaff'])

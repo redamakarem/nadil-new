@@ -29,6 +29,7 @@
             'swal_text' => 'This will cancel the booking',
             'swal_confirm_text' => 'Yes, cancel booking',
             'swal_cancel_text' => 'Cancel',
+            'validation_error_header' => 'Oops, something went wrong!',
         ],
         'messages' =>[
             'booking_party_size' => 'If you want to book more than :max seats, please contact the restaurant',
@@ -53,7 +54,9 @@
             'no_available_slots' => 'No reservable slots on the selected date',
             'cancel_booking' => 'Cancel Booking',
             'reserved_message' => 'Your reservation has been placed',
-
+            'accessible' => 'Accessible',
+            'private_rooms' => 'Private Rooms',
+            'dress_code' => 'Dress Code',
         ],
         'auth' => [
             'email' => 'Email',
@@ -67,6 +70,7 @@
             'forgot_password' => 'Forgot Password',
             'login_with' => 'Or login with',
         ],
+        
         'lang' => [
             'ar' =>'عربي'
         ],
