@@ -8,7 +8,7 @@
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm" >
-                            <a href="{{route('admin.dishes-new.create')}}" class="btn btn-primary">Add</a>
+                            <a href="{{route('restaurant-admin.dishes-new.create')}}" class="btn btn-primary">Add</a>
                         </div>
                     </div>
                 </div>

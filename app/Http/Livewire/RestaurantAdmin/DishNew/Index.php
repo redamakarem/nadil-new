@@ -12,7 +12,11 @@ class Index extends Component
 
     public function mount(Restaurant $restaurant)
     {
-        $this->dishes = $restaurant->dishes;
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $this->dishes = Dish::whereIn('restaurant_id',auth()->user()->restaurants->pluck('id'))->get();
+        }else{
+            $this->dishes = Dish::where('restaurant_id',auth()->user()->workplace->id)->get();
+        }
     }
     public function render()
     {

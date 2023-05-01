@@ -16,6 +16,7 @@
                     <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Restaurant</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Start Time</th>
@@ -28,6 +29,7 @@
                     @forelse($schedules as $schedule)
                         <tr>
                             <td>{{$schedule->name}}</td>
+                            <td>{{$schedule->restaurant->name_en}}</td>
                             <td>{{$schedule->from_date}}</td>
                             <td>{{$schedule->to_date}}</td>
                             <td>{{$schedule->from_time}}</td>

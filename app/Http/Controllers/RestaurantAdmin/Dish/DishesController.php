@@ -122,7 +122,7 @@ class DishesController extends Controller
         
     }
 
-    public function new_dish()
+    public function new_create()
     {
         return view('restaurant-admin.dish.create-new');
     }

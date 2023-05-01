@@ -302,7 +302,8 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         [RADishesController::class,'index'])
         ->name('restaurant-admin.restaurant.menu.categories.dishes');
 
-        Route::get('/{restaurant}/dishes-new',[RADishesController::class, 'new_index'])->name('restaurant-admin.dishes-new.index');
+        Route::get('/dishes-new',[RADishesController::class, 'new_index'])->name('restaurant-admin.dishes-new.index');
+        Route::get('/dishes-new/create/',[RADishesController::class, 'new_create'])->name('restaurant-admin.dishes-new.create');
 
     Route::get('/restaurant/{restaurant}/menu/{menu}/categories/{category}/dishes/create',
         [RADishesController::class,'create'])

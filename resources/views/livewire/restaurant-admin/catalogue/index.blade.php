@@ -3,11 +3,11 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Responsive Hover Table</h3>
+                <h3 class="card-title">Menus</h3>
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="{{route('restaurant-admin.restaurant.menus.create',['restaurant' => $restaurant])}}" class="btn btn-primary">Add</a>
+                        <a href="#" class="btn btn-primary">Add</a>
                     </div>
                 </div>
             </div>
@@ -17,6 +17,7 @@
                     <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Restaurant</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Start Time</th>
@@ -28,23 +29,23 @@
                     @forelse($menus as $menu)
                         <tr>
                             <td>{{$menu->name}}</td>
+                            <td>{{$menu->restaurant->name_en}}</td>
                             <td>{{$menu->from_date}}</td>
                             <td>{{$menu->to_date}}</td>
                             <td>{{$menu->from_time}}</td>
                             <td>{{$menu->to_time}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                    <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="#">View</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menus.edit',
-                                            ['restaurant' =>$restaurant,'menu' => $menu])}}">Edit</a>
+                                            ['restaurant' => $menu->restaurant,'menu' => $menu])}}">Edit</a>
                                         <a class="dropdown-item" href="#"
                                         >Delete</a>
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menu.categories.index',['restaurant' =>$restaurant,'menu' => $menu])}}">Categories</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menu.categories.index',['restaurant' =>$menu->restaurant,'menu' => $menu])}}">Categories</a>
                                     </div>
                                 </div>
                             </td>

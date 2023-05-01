@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\RestaurantAdmin\Catalogue;
 
+use App\Models\DishesMenu;
 use App\Models\Restaurant;
 use Livewire\Component;
 
 class Index extends Component
 {
     public  Restaurant $restaurant;
-    public $menus;
+    public $menus = null;
     public function render()
     {
         return view('livewire.restaurant-admin.catalogue.index');
@@ -16,7 +17,12 @@ class Index extends Component
 
     public function mount($restaurant)
     {
-        $this->restaurant = $restaurant;
-        $this->menus = $this->restaurant->menus;
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+           $restaurants = auth()->user()->restaurants->pluck('id');
+           $this->menus = DishesMenu::whereIn('restaurant_id',$restaurants)->get(); 
+        }
+        else{
+            $this->menus = DishesMenu::where('restaurant_id',auth()->user()->restaurant->id)->get();
+        }
     }
 }

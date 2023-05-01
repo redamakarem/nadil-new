@@ -15,8 +15,12 @@ class All extends Component
 
     private function get_schedules()
     {
+        if(auth()->user()->hasRole('restaurant-super-admin')){
         $restaurants = auth()->user()->restaurants->pluck('id');
         $this->schedules = Schedule::whereIn('restaurant_id',$restaurants)->get();
+        }else{
+            $this->schedules = Schedule::where('restaurant_id',auth()->user()->restaurant->id)->get();
+        }
     }
     public function render()
     {
