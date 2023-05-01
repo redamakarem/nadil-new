@@ -1,27 +1,28 @@
 <?php
 
 use Carbon\Carbon;
+use App\Models\Booking;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Admin\Reports\NewUsers;
 use App\Http\Controllers\Admin\AreaController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\DishesController;
 use App\Http\Controllers\Admin\CuisineController;
 use App\Http\Controllers\Admin\ReportsController;
 use App\Http\Controllers\GoogleSocialiteController;
 use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\Admin\RestaurantsController;
-use App\Http\Controllers\RestaurantAdmin\Table\TableController;
 use App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController;
-use App\Http\Controllers\RestaurantAdmin\ScheduleController as RAScheduleController;
-use App\Http\Controllers\RestaurantAdmin\Dish\DishesController as RADishesController;
 use App\Http\Controllers\RestaurantAdmin\ReportsController as RAReportsController;
+use App\Http\Controllers\RestaurantAdmin\ScheduleController as RAScheduleController;
+use App\Http\Controllers\RestaurantAdmin\Table\TableController as RATableController;
+use App\Http\Controllers\RestaurantAdmin\Dish\DishesController as RADishesController;
 use App\Http\Controllers\RestaurantAdmin\CatalogueCategory\CatalogueCategoryController;
-use App\Http\Controllers\RestaurantAdmin\Booking\BookingController as RABookingController;
 use App\Http\Controllers\RestaurantAdmin\UserController as RestaurantAdminUserController;
-use App\Http\Livewire\Admin\Reports\NewUsers;
-use App\Models\Booking;
+use App\Http\Controllers\RestaurantAdmin\Booking\BookingController as RABookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -242,6 +243,12 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
     Route::get('dishes-new/create',[DishesController::class,'new_create'])->name('admin.dishes-new.create');
     Route::get('dishes-new/edit/{id}',[DishesController::class,'new_edit'])->name('admin.dishes-new.edit');
 
+
+    // Tables
+    Route::get('restaurant/{restaurant}/tables',[TableController::class,'index'])->name('admin.restaurant.tables.index');
+    Route::get('restaurant/{restaurant}/tables/create',[TableController::class,'create'])->name('admin.restaurant.tables.create');
+    Route::get('restaurant/{restaurant}/tables/{diningTable}/edit',[TableController::class,'edit'])->name('admin.restaurant.tables.edit');
+
     // Areas
 
     Route::get('areas',[AreaController::class,'index'])->name('admin.areas.index');
@@ -316,9 +323,9 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         [RAScheduleController::class,'edit'])
         ->name('restaurant-admin.restaurant.schedules.edit');
     // Tables
-    Route::get('restaurant/{restaurant}/tables',[TableController::class,'index'])->name('restaurant-admin.restaurant.tables.index');
-    Route::get('restaurant/{restaurant}/tables/create',[TableController::class,'create'])->name('restaurant-admin.restaurant.tables.create');
-    Route::get('restaurant/{restaurant}/tables/{diningTable}/edit',[TableController::class,'edit'])->name('restaurant-admin.restaurant.tables.edit');
+    Route::get('restaurant/{restaurant}/tables',[RATableController::class,'index'])->name('restaurant-admin.restaurant.tables.index');
+    Route::get('restaurant/{restaurant}/tables/create',[RATableController::class,'create'])->name('restaurant-admin.restaurant.tables.create');
+    Route::get('restaurant/{restaurant}/tables/{diningTable}/edit',[RATableController::class,'edit'])->name('restaurant-admin.restaurant.tables.edit');
 
     // Staff
     Route::get('restaurant/{restaurant}/staff', [RestaurantController::class,'showStaff'])

@@ -53,6 +53,7 @@
                                             <li><a class="dropdown-item" href="{{route('admin.restaurants.menus',['restaurant' => $restaurant->id])}}">Menus</a></li>
                                             <li><a class="dropdown-item" href="{{route('admin.restaurant.schedules.index',['restaurant' => $restaurant->id])}}">Schedules</a></li>
                                             <li><a class="dropdown-item" href="{{route('admin.restaurant.dishes.index',['restaurant' => $restaurant->id])}}">Dishes</a></li>
+                                            <li><a class="dropdown-item" href="{{route('admin.restaurant.tables.index',['restaurant' => $restaurant])}}">Tables</a></li>
                                             
                                         </ul>
                                     </div>
