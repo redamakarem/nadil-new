@@ -43,9 +43,9 @@
         </div>
     </div>
 
-    <div class="flex justify-center my-8">
+    <div class="bg-black/70 bottom-0 fixed flex justify-center my-8 py-12 w-full z-10">
         <a
-        class="bg-nadilBtn-100 rounded-xl shadow-lg px-6 py-2 uppercase font-lato rtl:font-ahlan rtl:tracking-normal" href="{{route('site.restaurants.book',$restaurant->id)}}">{{__('nadil.booking.book_now')}}</a>
+        class=" bg-nadilBtn-100 rounded-xl shadow-lg px-6 py-2 uppercase font-lato rtl:font-ahlan rtl:tracking-normal" href="{{route('site.restaurants.book',$restaurant->id)}}">{{__('nadil.booking.book_now')}}</a>
     </div>
 
     <div class="flex justify-center">
@@ -61,7 +61,7 @@
             <a class="bg-nadilBtn-100 rounded-xl shadow-lg px-6 py-2 uppercase font-lato" href="#">{{__('nadil.general.phone')}}</a>
         </div>
         <div class="my-4 font-lato font-thin uppercase tracking-[0.6rem]">Socials</div>
-        <div class="flex justify-center w-full space-x-4">
+        <div class="flex justify-center w-full space-x-4 mb-24">
             @if (!empty($restaurant->facebook))
                 <a href="{{ $restaurant->facebook }}"
                     class="flex justify-center items-center uppercase bg-nadilBtn-100 rounded-xl w-12 h-12 text-center">

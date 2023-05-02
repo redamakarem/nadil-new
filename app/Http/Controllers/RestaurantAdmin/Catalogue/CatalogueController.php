@@ -14,14 +14,9 @@ class CatalogueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($restaurant)
+    public function index()
     {
-        $rest = Restaurant::with(['menus','owner'])->findOrFail($restaurant);
-        if (auth()->id()==$rest->owner->id) {
-            return view('restaurant-admin.catalogue.index', ['restaurant' => $rest]);
-        }else{
-            abort(403);
-        }
+        return view('restaurant-admin.catalogue.index');
     }
 
     /**

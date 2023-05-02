@@ -15,14 +15,14 @@ class Index extends Component
         return view('livewire.restaurant-admin.catalogue.index');
     }
 
-    public function mount($restaurant)
+    public function mount()
     {
         if(auth()->user()->hasRole('restaurant-super-admin')){
            $restaurants = auth()->user()->restaurants->pluck('id');
            $this->menus = DishesMenu::whereIn('restaurant_id',$restaurants)->get(); 
         }
         else{
-            $this->menus = DishesMenu::where('restaurant_id',auth()->user()->restaurant->id)->get();
+            $this->menus = auth()->user()->workplace->menus;
         }
     }
 }

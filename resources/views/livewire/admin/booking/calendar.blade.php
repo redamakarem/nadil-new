@@ -15,7 +15,6 @@
 
         #calendar-container{
 
-            width: 100%;
 
         }
 
@@ -23,9 +22,8 @@
 
             padding: 10px;
 
-            margin: 10px;
+            
 
-            width: 1340px;
 
             height: 610px;
 

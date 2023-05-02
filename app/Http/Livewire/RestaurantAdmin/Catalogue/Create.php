@@ -15,6 +15,7 @@ class Create extends Component
     public $end_time;
     public  $route;
     public Restaurant $restaurant;
+    public $restaurants_list;
 
     protected $listeners = ['menuAdded' => 'goToMenus'];
 
@@ -30,6 +31,11 @@ class Create extends Component
     {
         $this->restaurant = $restaurant;
         $this->route = url()->previous();
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $this->restaurants_list = auth()->user()->restaurants;
+        }else{
+            $this->restaurants_list = auth()->user()->workplace;
+        }
     }
 
     public function goToMenus()

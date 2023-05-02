@@ -590,6 +590,9 @@ select {
     top: 0px;
     bottom: 0px;
 }
+.bottom-8 {
+    bottom: 2rem;
+}
 .-left-4 {
     left: -1rem;
 }
@@ -613,6 +616,9 @@ select {
 }
 .top-0 {
     top: 0px;
+}
+.bottom-0 {
+    bottom: 0px;
 }
 .z-0 {
     z-index: 0;
@@ -1137,6 +1143,16 @@ select {
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1146,19 +1162,6 @@ select {
     --tw-space-y-reverse: 0;
     margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-.space-x-10 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
 }
 .overflow-hidden {
     overflow: hidden;
@@ -1878,15 +1881,6 @@ select {
 }
 .placeholder\:font-bold::placeholder {
     font-weight: 700;
-}
-.placeholder\:font-normal::-moz-placeholder {
-    font-weight: 400;
-}
-.placeholder\:font-normal:-ms-input-placeholder {
-    font-weight: 400;
-}
-.placeholder\:font-normal::placeholder {
-    font-weight: 400;
 }
 .placeholder\:uppercase::-moz-placeholder {
     text-transform: uppercase;

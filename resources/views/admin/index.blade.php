@@ -42,8 +42,11 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             @livewire('admin.booking.calendar')
+        </div>
+        <div class="col-md-6">
+            @livewire('admin.bookings-for-today')
         </div>
         <div class="col-md-12">
             <!-- BEGIN Portlet -->

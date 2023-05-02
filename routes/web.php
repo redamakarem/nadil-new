@@ -276,13 +276,13 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     Route::get('/restaurant/{id}/',[\App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController::class,'show'])
         ->name('restaurant-admin.restaurants.show');
     // Menus
-    Route::get('restaurant/{restaurant}/menus/',
+    Route::get('menus/',
         [\App\Http\Controllers\RestaurantAdmin\Catalogue\CatalogueController::class,'index'])
-        ->name('restaurant-admin.restaurant.menus');
+        ->name('restaurant-admin.menus.index');
 
     Route::get('/restaurant/{restaurant}/menu/create',
     [\App\Http\Controllers\RestaurantAdmin\Catalogue\CatalogueController::class,'create'])
-        ->name('restaurant-admin.restaurant.menus.create');
+        ->name('restaurant-admin.menus.create');
 
     Route::get('/restaurant/{restaurant}/menu/{menu}/edit',
         [\App\Http\Controllers\RestaurantAdmin\Catalogue\CatalogueController::class,'edit'])
