@@ -325,9 +325,9 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         [RAScheduleController::class,'edit'])
         ->name('restaurant-admin.restaurant.schedules.edit');
     // Tables
-    Route::get('restaurant/{restaurant}/tables',[RATableController::class,'index'])->name('restaurant-admin.restaurant.tables.index');
-    Route::get('restaurant/{restaurant}/tables/create',[RATableController::class,'create'])->name('restaurant-admin.restaurant.tables.create');
-    Route::get('restaurant/{restaurant}/tables/{diningTable}/edit',[RATableController::class,'edit'])->name('restaurant-admin.restaurant.tables.edit');
+    Route::get('tables',[RATableController::class,'index'])->name('restaurant-admin.tables.index');
+    Route::get('tables/create',[RATableController::class,'create'])->name('restaurant-admin.tables.create');
+    Route::get('/tables/{diningTable}/edit',[RATableController::class,'edit'])->name('restaurant-admin.tables.edit');
 
     // Staff
     Route::get('restaurant/{restaurant}/staff', [RestaurantController::class,'showStaff'])

@@ -590,8 +590,8 @@ select {
     top: 0px;
     bottom: 0px;
 }
-.bottom-8 {
-    bottom: 2rem;
+.bottom-0 {
+    bottom: 0px;
 }
 .-left-4 {
     left: -1rem;
@@ -616,9 +616,6 @@ select {
 }
 .top-0 {
     top: 0px;
-}
-.bottom-0 {
-    bottom: 0px;
 }
 .z-0 {
     z-index: 0;
@@ -716,6 +713,9 @@ select {
 .mb-4 {
     margin-bottom: 1rem;
 }
+.mb-24 {
+    margin-bottom: 6rem;
+}
 .mr-2 {
     margin-right: 0.5rem;
 }
@@ -742,9 +742,6 @@ select {
 }
 .mt-5 {
     margin-top: 1.25rem;
-}
-.mb-24 {
-    margin-bottom: 6rem;
 }
 .mb-0 {
     margin-bottom: 0px;
@@ -1293,14 +1290,14 @@ select {
 .bg-\[\#E0E0E0\] {
     background-color: #E0E0E0;
 }
+.bg-black\/70 {
+    background-color: rgb(0 0 0 / 0.7);
+}
 .bg-info {
     background-color: #0ea5e9;
 }
 .bg-warning {
     background-color: #ff9800;
-}
-.bg-black\/70 {
-    background-color: rgb(0 0 0 / 0.7);
 }
 .bg-\[\#F8F8F8\] {
     background-color: #F8F8F8;

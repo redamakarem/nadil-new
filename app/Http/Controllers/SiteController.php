@@ -22,7 +22,7 @@ class SiteController extends Controller
             return redirect(route(session('target_route',''),session('booking_restaurant')));
         }
         $agent = new Agent();
-        $restaurants = Restaurant::publishable()->get();
+        $restaurants = Restaurant::where('is_active',true)->get();
         $cuisines = Cuisine::all();
         $meal_types = MealType::with('restaurants')->get();
         if ($agent->isDesktop()) {

@@ -39,6 +39,10 @@ class DishesMenu extends Model
     }
 
 
+    public function dishes()
+    {
+        return $this->hasMany(Dish::class,'menu_id','id');
+    }
     public function categories()
     {
         return $this->hasMany(DishesCategory::class,'catalogue_id','id');

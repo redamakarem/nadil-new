@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="bg-black/70 bottom-0 fixed flex justify-center my-8 py-12 w-full z-10">
+    <div class="bottom-0 fixed flex justify-center my-8 py-8 w-full z-10">
         <a
         class=" bg-nadilBtn-100 rounded-xl shadow-lg px-6 py-2 uppercase font-lato rtl:font-ahlan rtl:tracking-normal" href="{{route('site.restaurants.book',$restaurant->id)}}">{{__('nadil.booking.book_now')}}</a>
     </div>

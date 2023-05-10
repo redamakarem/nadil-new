@@ -115,12 +115,9 @@
                                id="phone" placeholder="Ex: 25555555" wire:model="restaurant.phone">
                         @error('phone')<p class="error">{{$message}}</p>@enderror
                     </div>
-                    <div class="form-group">
-                        <label>{{__('Active')}}</label>
-                        <livewire:components.toggle-button
-                            :model="$restaurant"
-                            field="is_active"
-                            key="{{ $restaurant->id }}"/>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="accessible" wire:model="restaurant.is_active">
+                        <label class="form-check-label" for="accessible">{{ __('Active') }}</label>
                     </div>
 
 

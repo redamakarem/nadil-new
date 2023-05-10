@@ -25,6 +25,6 @@ class Edit extends Component
     {
         $this->validate();
         $this->diningTable->save();
-        return redirect()->route('restaurant-admin.restaurant.tables.index',$this->diningTable->restaurant_id);
+        return redirect()->route('restaurant-admin.tables.index');
     }
 }

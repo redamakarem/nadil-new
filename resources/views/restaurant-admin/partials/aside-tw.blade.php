@@ -110,6 +110,13 @@
                     </a>
                 </div>
                 <div class="menu-item">
+                    <a href="{{ route('restaurant-admin.tables.index') }}"
+                        data-menu-path="/elements/advanced/block-ui.html" class="menu-item-link">
+                        <i class="menu-item-bullet"></i>
+                        <span class="menu-item-text">Tables</span>
+                    </a>
+                </div>
+                <div class="menu-item">
                     <a href="{{ route('restaurant-admin.dishes-new.index') }}"
                         data-menu-path="/elements/advanced/block-ui.html" class="menu-item-link">
                         <i class="menu-item-bullet"></i>

@@ -3,11 +3,11 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">{{$restaurant->name}}</h3>
+                <h3 class="card-title">Tables List</h3>
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="{{route('restaurant-admin.restaurant.tables.create',['restaurant' => $restaurant->id])}}" class="btn btn-primary">Add</a>
+                        <a href="#" class="btn btn-primary">Add</a>
 
 
                     </div>
@@ -20,14 +20,16 @@
                     <tr>
                         <th>Name</th>
                         <th>Capacity</th>
+                        <th>Restaurant</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse($restaurant->diningTables as $dining_table)
+                    @forelse($tables_list as $dining_table)
                         <tr>
                             <td>{{$dining_table->name}}</td>
                             <td>{{$dining_table->capacity}}</td>
+                            <td>{{$dining_table->restaurant->name_en}}</td>
                             
                             <td>
                                 <div class="btn-group">
@@ -35,8 +37,8 @@
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.tables.edit',['restaurant' => $restaurant,'diningTable' =>$dining_table])}}">Edit</a>
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menus',['restaurant' => $restaurant->id])}}">Menus</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.tables.edit',['restaurant' => $dining_table->restaurant,'diningTable' =>$dining_table])}}">Edit</a>
+                                        <a class="dropdown-item" href="#">Menus</a>
                                     </div>
                                 </div>
                             </td>

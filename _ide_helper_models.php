@@ -280,6 +280,8 @@ namespace App\Models{
  * @property int $is_active
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DishesCategory[] $categories
  * @property-read int|null $categories_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Dish[] $dishes
+ * @property-read int|null $dishes_count
  * @property-read \App\Models\Restaurant $restaurant
  * @method static \Database\Factories\DishesMenuFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu newModelQuery()
