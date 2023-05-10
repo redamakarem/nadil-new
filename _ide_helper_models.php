@@ -171,6 +171,7 @@ namespace App\Models{
  * @property int $restaurant_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $is_active
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count
  * @property-read \App\Models\Restaurant $restaurant
@@ -181,6 +182,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereCapacity($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereRestaurantId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DiningTable whereUpdatedAt($value)
@@ -275,6 +277,7 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string $name_ar
+ * @property int $is_active
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DishesCategory[] $categories
  * @property-read int|null $categories_count
  * @property-read \App\Models\Restaurant $restaurant
@@ -286,6 +289,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereFromDate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereFromTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereNameAr($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DishesMenu whereRestaurantId($value)

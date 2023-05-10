@@ -7,7 +7,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="#" class="btn btn-primary">Add</a>
+                        <a href="{{ route('restaurant-admin.menus.create') }}" class="btn btn-primary">Add</a>
                     </div>
                 </div>
             </div>
@@ -22,6 +22,7 @@
                         <th>End Date</th>
                         <th>Start Time</th>
                         <th>End Time</th>
+                        <th>Active</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -34,6 +35,7 @@
                             <td>{{$menu->to_date}}</td>
                             <td>{{$menu->from_time}}</td>
                             <td>{{$menu->to_time}}</td>
+                            <td>{{$menu->is_active?'Yes':'No'}}</td>
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>

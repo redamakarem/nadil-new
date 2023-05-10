@@ -14,28 +14,30 @@ class Create extends Component
     public $start_time;
     public $end_time;
     public  $route;
-    public Restaurant $restaurant;
+    public $selected_restaurant;
     public $restaurants_list;
 
     protected $listeners = ['menuAdded' => 'goToMenus'];
 
     protected $rules = [
         'name' => 'required',
+        'selected_restaurant' => 'required',
         'start_date' => 'required',
         'end_date' => 'required',
         'start_time' => 'required',
         'end_time' => 'required',
     ];
 
-    public function mount($restaurant)
+    public function mount()
     {
-        $this->restaurant = $restaurant;
-        $this->route = url()->previous();
+        $this->selected_restaurant = null;
         if(auth()->user()->hasRole('restaurant-super-admin')){
             $this->restaurants_list = auth()->user()->restaurants;
         }else{
-            $this->restaurants_list = auth()->user()->workplace;
-        }
+            $this->restaurants_list = collect([auth()->user()->workplace]);
+        }        
+        $this->route = url()->previous();
+        
     }
 
     public function goToMenus()
@@ -52,10 +54,9 @@ class Create extends Component
     {
         $this->validate();
 
-//        dd($this->name, $this->start_date, $this->end_date,$this->start_time,$this->end_time);
         DishesMenu::create([
             'name' => $this->name,
-            'restaurant_id' => $this->restaurant->id,
+            'restaurant_id' => $this->selected_restaurant,
             'from_date' => $this->start_date,
             'to_date' => $this->end_date,
             'from_time' => $this->start_time,

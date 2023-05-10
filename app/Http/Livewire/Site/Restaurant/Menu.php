@@ -9,6 +9,7 @@ class Menu extends Component
 {
 
     public Restaurant $restaurant;
+    public $active_menu;
     public function render()
     {
             return view('livewire.site.restaurant.menu');
@@ -17,6 +18,7 @@ class Menu extends Component
     public function mount($restaurant)
     {
         $this->restaurant = $restaurant;
+        $this->active_menu = $this->restaurant->menus->where('is_active',true)->first();
 
     }
 }

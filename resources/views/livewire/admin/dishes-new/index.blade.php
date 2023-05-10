@@ -41,7 +41,7 @@
                                         </button>
                                         <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                             <a class="dropdown-item" href="#">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.dishes-new.edit',['id' => $dish->id])}}">Edit</a>
+                                            <a class="dropdown-item" href="{{route('admin.dishes-new.edit',['dish' => $dish->id])}}">Edit</a>
                                             <a class="dropdown-item" href="#"
                                             >Delete</a>
                                             

@@ -25,6 +25,7 @@ class Edit extends Component
         'end_date' => 'required',
         'start_time' => 'required',
         'end_time' => 'required',
+        'menu.is_active' => 'sometimes|boolean',
     ];
 
 
@@ -54,6 +55,10 @@ class Edit extends Component
         $this->menu->to_date = $this->end_date;
         $this->menu->from_time = $this->start_time;
         $this->menu->to_time = $this->end_time;
+        if($this->menu->is_active){
+            $this->restaurant->menus()->update(['is_active' => false]);
+            $this->menu->is_active = true;
+        }
         $this->menu->save();
         $this->dispatchBrowserEvent('alert', [
             'type' => 'success',

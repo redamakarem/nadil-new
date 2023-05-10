@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label for="name">Menu Name</label>
                 <input wire:model="menu.name"
-                       type="text" class="form-control" id="name" placeholder="Enter cuisine name">
+                       type="text" class="form-control" id="name" placeholder="Enter menu name">
             </div>
             <div class="form-group" wire:ignore>
                 <label for="start_date">Start Date</label>
@@ -32,6 +32,14 @@
                 <label for="end_time">End Time</label>
                 <input wire:model="end_time"
                        type="text" class="form-control ptime" id="end_time" placeholder="Choose end time">
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" wire:model=menu.is_active id="is_active">
+                    <label class="form-check-label" for="is_active">
+                      Active
+                    </label>
+                  </div>
             </div>
             <div class="form-group">
                 @if($errors->any())

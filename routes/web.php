@@ -280,7 +280,7 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
         [\App\Http\Controllers\RestaurantAdmin\Catalogue\CatalogueController::class,'index'])
         ->name('restaurant-admin.menus.index');
 
-    Route::get('/restaurant/{restaurant}/menu/create',
+    Route::get('/restaurant/menu/create',
     [\App\Http\Controllers\RestaurantAdmin\Catalogue\CatalogueController::class,'create'])
         ->name('restaurant-admin.menus.create');
 
@@ -304,6 +304,7 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
 
         Route::get('/dishes-new',[RADishesController::class, 'new_index'])->name('restaurant-admin.dishes-new.index');
         Route::get('/dishes-new/create/',[RADishesController::class, 'new_create'])->name('restaurant-admin.dishes-new.create');
+        Route::get('/dishes-new/{dish}/edit/',[RADishesController::class, 'new_edit'])->name('restaurant-admin.dishes-new.edit');
 
     Route::get('/restaurant/{restaurant}/menu/{menu}/categories/{category}/dishes/create',
         [RADishesController::class,'create'])

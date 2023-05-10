@@ -24,10 +24,9 @@ class CatalogueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($restaurant)
+    public function create()
     {
-        $rest = Restaurant::findOrFail($restaurant);
-        return view('restaurant-admin.catalogue.create',['restaurant' =>$rest]);
+        return view('restaurant-admin.catalogue.create');
     }
 
     /**

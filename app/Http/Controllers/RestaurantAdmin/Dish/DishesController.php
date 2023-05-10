@@ -126,4 +126,8 @@ class DishesController extends Controller
     {
         return view('restaurant-admin.dish.create-new');
     }
+    public function new_edit(Dish $dish)
+    {
+        return view('restaurant-admin.dish.edit-new',compact('dish'));
+    }
 }
