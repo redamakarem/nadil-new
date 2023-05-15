@@ -80,7 +80,10 @@ class SiteController extends Controller
              ]
         );
         // dd($validated_data);
-        $result = Restaurant::whereHas('menus')->where('name_'. app()->getLocale(),'LIKE','%'. $validated_data['search_name'].'%')->get()->filter(function ($value, $key) use($validated_data) {
+        $result = Restaurant::whereHas('menus')
+        ->where('name_'. app()->getLocale(),'LIKE','%'. $validated_data['search_name'].'%')
+        ->orWhereRelation('areaa','name_'. app()->getLocale(),$validated_data['search_name'])
+        ->get()->filter(function ($value, $key) use($validated_data) {
             return $value->getAvailableSeats($validated_data['search_date'],$validated_data['search_time']) > $validated_data['search_seats'];
         });
         if ($agent->isMobile()) {

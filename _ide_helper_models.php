@@ -425,6 +425,7 @@ namespace App\Models{
  * @property-read int|null $dining_tables_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Dish[] $dishes
  * @property-read int|null $dishes_count
+ * @property-read mixed $admin_name
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MealType[] $meal_types
  * @property-read int|null $meal_types_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media

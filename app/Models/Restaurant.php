@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Str;
 
 class Restaurant extends Model implements HasMedia
 {
@@ -199,5 +200,10 @@ class Restaurant extends Model implements HasMedia
         $query->whereHas('cuisines', function ($q) use ($cuisine) {
             return $q->where('id', $cuisine);
         });
+    }
+
+    public function getAdminNameAttribute()
+    {
+        return Str::slug($this->name_en . '-' . $this->areaa->name_en . '-' . $this->street_en);
     }
 }

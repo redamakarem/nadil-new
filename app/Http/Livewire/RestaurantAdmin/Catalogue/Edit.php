@@ -55,15 +55,21 @@ class Edit extends Component
         $this->menu->to_date = $this->end_date;
         $this->menu->from_time = $this->start_time;
         $this->menu->to_time = $this->end_time;
-        if($this->menu->is_active){
+        $active_menus = $this->restaurant->menus()->where('is_active', true)->count();
+        if($this->menu->is_active && $active_menus == 0){
             $this->restaurant->menus()->update(['is_active' => false]);
             $this->menu->is_active = true;
+            $this->dispatchBrowserEvent('alert', [
+                'type' => 'success',
+                'message' => "Menu created Successfully!!"
+            ]);
+        }
+        else{
+            $this->addError('menu.is_active', 'Only one menu can be active at a time');
+            $this->menu->is_active = false;
         }
         $this->menu->save();
-        $this->dispatchBrowserEvent('alert', [
-            'type' => 'success',
-            'message' => "Menu created Successfully!!"
-        ]);
+        
     }
 
 
