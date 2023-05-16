@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\RestaurantAdmin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Booking;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RestaurantAdminController extends Controller
 {
@@ -16,11 +17,28 @@ class RestaurantAdminController extends Controller
      */
     public function index()
     {
-        // $data = array();
-        // $restaurant_id = auth()->user()->restaurants->first()->id;
-        // $bookings = Booking::where('restaurant_id',$restaurant_id);
-        return view('restaurant-admin.index');
+        $data = array();
+        $data['booked'] = $this->get_bookings_by_status(1);
+        $data['expected'] = $this->get_bookings_by_status(2);
+        $data['arrived'] = $this->get_bookings_by_status(3);
+        $data['no_show'] = $this->get_bookings_by_status(4);
+        $data['cancelled'] = $this->get_bookings_by_status(5);
+        return view('restaurant-admin.index', compact('data'));
     }
+
+    private function get_bookings_by_status($status)
+    {
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $ids = auth()->user()->restaurants->pluck('id');
+        }else{
+            $ids = auth()->user()->workplace->id;
+        }
+
+        $bookings_count = Booking::with(['user'])->where('booking_status_id', $status)
+            ->whereIn('restaurant_id', $ids)->count();
+        return $bookings_count;
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -51,7 +69,6 @@ class RestaurantAdminController extends Controller
      */
     public function show($id)
     {
-        
     }
 
     /**

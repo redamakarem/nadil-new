@@ -13,11 +13,10 @@ class TableController extends Controller
     {
         return view('restaurant-admin.dining-tables.index');
     }
-    public function create($restaurant)
+    public function create()
     {
-        $restaurant = Restaurant::findOrFail($restaurant);
         
-        return view('restaurant-admin.dining-tables.create',compact('restaurant'));
+        return view('restaurant-admin.dining-tables.create');
     }
 
     public function edit(Restaurant $restaurant, DiningTable $diningTable)

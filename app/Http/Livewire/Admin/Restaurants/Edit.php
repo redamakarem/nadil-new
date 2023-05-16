@@ -69,7 +69,7 @@ class Edit extends Component
         $this->cuisines = $this->restaurant->cuisines->pluck('id')->toArray();
         $this->meal_types = $this->restaurant->meal_types->pluck('id')->toArray();
         $this->area = $this->restaurant->area;
-        $this->governates =Governate::all();
+        $this->governates = Governate::all();
     }
 
     public function render()
@@ -91,28 +91,25 @@ class Edit extends Component
         if ($this->restaurant->is_active) {
             if ($this->activable()) {
                 $this->restaurant->is_active = true;
-            }else{
+                $edited_restaurant = $this->restaurant->save();
+                $this->restaurant->cuisines()->sync($this->cuisines);
+                $this->restaurant->meal_types()->sync($this->meal_types);
+                if ($this->restaurant_image) {
+                    $this->restaurant->syncFromMediaLibraryRequest($this->restaurant_image)->toMediaCollection('restaurant_images');
+                }
+
+                if ($this->restaurant_bg) {
+                    $this->restaurant->syncFromMediaLibraryRequest($this->restaurant_bg)->toMediaCollection('restaurant_bgs');
+                }
+
+                $this->dispatchBrowserEvent('alert', [
+                    'type' => 'success',
+                    'message' => "Restaurant edited Successfully!!"
+                ]);
+            } else {
                 $this->restaurant->is_active = false;
             }
-        } 
-        $edited_restaurant = $this->restaurant->save();
-        $this->restaurant->cuisines()->sync($this->cuisines);
-        $this->restaurant->meal_types()->sync($this->meal_types);
-        //        $this->restaurant->clearMediaCollection('restaurant_images');
-        if ($this->restaurant_image) {
-            $this->restaurant->syncFromMediaLibraryRequest($this->restaurant_image)->toMediaCollection('restaurant_images');
         }
-
-        //        $this->restaurant->clearMediaCollection('restaurant_bgs');
-        if ($this->restaurant_bg) {
-            $this->restaurant->syncFromMediaLibraryRequest($this->restaurant_bg)->toMediaCollection('restaurant_bgs');
-        }
-        //        $this->restaurant->syncFromMediaLibraryRequest($this->restaurant_image)->toMediaCollection('restaurant_images');
-
-        $this->dispatchBrowserEvent('alert', [
-            'type' => 'success',
-            'message' => "Restaurant edited Successfully!!"
-        ]);
     }
 
     private function activable()
@@ -121,36 +118,33 @@ class Edit extends Component
         $has_menu = false;
         $has_dishes = false;
         $has_schedule = false;
-        if ($this->restaurant->diningTables->where('is_active',true)->count()>0) {
+        if ($this->restaurant->diningTables->where('is_active', true)->count() > 0) {
             $has_tables = true;
-        }else{
+        } else {
             $this->addError('no_tables', 'Restaurant has no tables');
         }
-        if ($this->restaurant->menus->where('is_active',true)->count()>0) {
+        if ($this->restaurant->menus->where('is_active', true)->count() > 0) {
             $has_menu = true;
-        }else{
+        } else {
             $this->addError('no_menu', 'Restaurant has no menu');
         }
-        if ($this->restaurant->dishes->count()>0) {
+        if ($this->restaurant->dishes->count() > 0) {
             $has_dishes = true;
-            
-        }
-        else{
+        } else {
             $this->addError('no_dishes', 'Restaurant has no dishes');
         }
         if ($this->restaurant->schedules
-        ->where('from_date','<',Carbon::now())
-        ->where('to_date','>',Carbon::now())->count()>0) {
+            ->where('from_date', '<', Carbon::now())
+            ->where('to_date', '>', Carbon::now())->count() > 0
+        ) {
             $has_schedule = true;
-            
-        }
-        else{
+        } else {
             $this->addError('no_schedules', 'Restaurant has no active schedule');
         }
         if ($has_dishes && $has_menu && $has_tables && $has_schedule) {
             return true;
-    }else{
-        return false;
-    }
+        } else {
+            return false;
+        }
     }
 }

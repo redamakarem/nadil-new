@@ -1,61 +1,89 @@
 @extends('layouts.restaurant-admin')
 
 @section('content')
-    <div class="row">
-        @if(\Illuminate\Support\Facades\Session::has('info'))
-            <p class="alert-success">{{\Illuminate\Support\Facades\Session::get('info')}}</p>
-        @endif
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>{{1}}</h3>
-
-                    <p>Restaurants</p>
+<div class="row">
+    <div class="col-12">
+        <div class="portlet">
+            <div class="widget10 widget10-vertical-md">
+                <div class="widget10-item">
+                    <div class="widget10-content">
+                        <h2 class="widget10-title">{{ $data['booked'] }}</h2>
+                        <span class="widget10-subtitle">Booked</span>
+                    </div>
+                    <div class="widget10-addon">
+                        <!-- BEGIN Avatar -->
+                        <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                            <div class="avatar-display">
+                                <i class="fa fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                        <!-- END Avatar -->
+                    </div>
                 </div>
-                <div class="icon">
-                    <i class="ion ion-android-restaurant"></i>
+                <div class="widget10-item">
+                    <div class="widget10-content">
+                        <h2 class="widget10-title">{{ $data['expected'] }}</h2>
+                        <span class="widget10-subtitle">Expected</span>
+                    </div>
+                    <div class="widget10-addon">
+                        <!-- BEGIN Avatar -->
+                        <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                            <div class="avatar-display">
+                                <i class="fa fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                        <!-- END Avatar -->
+                    </div>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="widget10-item">
+                    <div class="widget10-content">
+                        <h2 class="widget10-title">{{ $data['arrived'] }}</h2>
+                        <span class="widget10-subtitle">Arrived</span>
+                    </div>
+                    <div class="widget10-addon">
+                        <!-- BEGIN Avatar -->
+                        <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                            <div class="avatar-display">
+                                <i class="fa fa-users"></i>
+                            </div>
+                        </div>
+                        <!-- END Avatar -->
+                    </div>
+                </div>
+                <div class="widget10-item">
+                    <div class="widget10-content">
+                        <h2 class="widget10-title">{{ $data['no_show'] }}</h2>
+                        <span class="widget10-subtitle">No Show</span>
+                    </div>
+                    <div class="widget10-addon">
+                        <!-- BEGIN Avatar -->
+                        <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                            <div class="avatar-display">
+                                <i class="fa fa-users"></i>
+                            </div>
+                        </div>
+                        <!-- END Avatar -->
+                    </div>
+                </div>
+                <div class="widget10-item">
+                    <div class="widget10-content">
+                        <h2 class="widget10-title">{{ $data['cancelled'] }}</h2>
+                        <span class="widget10-subtitle">Cancelled</span>
+                    </div>
+                    <div class="widget10-addon">
+                        <!-- BEGIN Avatar -->
+                        <div class="avatar avatar-label-info avatar-circle widget10-avatar">
+                            <div class="avatar-display">
+                                <i class="fa fa-users"></i>
+                            </div>
+                        </div>
+                        <!-- END Avatar -->
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-
-            @livewire('admin.components.restaurant-registration-submissions-box')
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-                <div class="inner">
-                    <h3>1</h3>
-
-                    <p>Clients</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>65</h3>
-
-                    <p>Unique Visitors</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
     </div>
+</div>
 
     <div class="row">
         <div class="col-md-12">

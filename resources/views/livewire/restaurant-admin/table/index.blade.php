@@ -7,7 +7,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="#" class="btn btn-primary">Add</a>
+                        <a href="{{ route('restaurant-admin.tables.create') }}" class="btn btn-primary">Add</a>
 
 
                     </div>

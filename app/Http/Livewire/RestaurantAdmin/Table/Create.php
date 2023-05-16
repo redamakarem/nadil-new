@@ -10,27 +10,34 @@ use Livewire\Component;
 class Create extends Component
 {
 
-
+    public $restaurant_list;
+    public $selected_restaurant;
     public $restaurant;
     public Collection $inputs;
 
     protected $rules = [
         'inputs.*.name' => 'required',
         'inputs.*.capacity' => 'required',
+        'inputs.*.restaurant_id' => 'required',
     ];
 
 
     protected $messages = [
         'inputs.*.name.required' => 'This name field is required.',
         'inputs.*.capacity.required' => 'This capacity field is required.',
+        'inputs.*.restaurant_id.required' => 'This restaurant field is required.',
     ];
 
 
 
-    public function mount($restaurant)
+    public function mount()
     {
-        $this->restaurant = $restaurant;
-
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            $this->restaurant_list = Restaurant::whereIn('id',auth()->user()->restaurants->pluck('id')->toArray())->get();
+        }
+        else{
+            $this->restaurant_list = Restaurant::where('id',auth()->user()->workplace->id)->get();
+        }
         $this->fill([
             'inputs' => collect([
                 ['name' => '', 'capacity' => 0]
@@ -51,7 +58,8 @@ class Create extends Component
     {
         $this->validate();
         foreach($this->inputs as $input){
-            $this->restaurant->diningTables()->create([
+            DiningTable::create([
+                'restaurant_id' => $input['restaurant_id'],
                 'name' => $input['name'],
                 'capacity' => $input['capacity'],
             ]);

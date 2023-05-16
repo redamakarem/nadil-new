@@ -3,7 +3,7 @@
     @forelse ($inputs as $key => $value )
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Add table for restaurant {{$restaurant->name}} (ID: {{$restaurant->id}})</h3>
+            <h3 class="card-title">Add table</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -22,6 +22,17 @@
                     @endif
                 </div>
     
+                <div class="form-group">
+                    <label for="restaurant">Restaurant</label>
+                    <select class="form-control" style="width: 100%;"
+                            id="restaurant" name="restaurant_id" wire:model="inputs.{{$key}}.restaurant_id"
+                            data-placeholder="Select restaurant" >
+                        <option value="">Select Restaurant</option>
+                        @foreach($restaurant_list as $restaurant)
+                            <option value="{{$restaurant->id}}">{{$restaurant->admin_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="name">Table Name</label>
                     <input wire:model="inputs.{{$key}}.name"
