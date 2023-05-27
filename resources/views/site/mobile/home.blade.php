@@ -106,6 +106,7 @@
         {{ __('nadil.general.meal_type') }}</div>
 
         @foreach ($meal_types as $meal_type)
+        @if ($meal_type->active_restaurants->count() > 0)
         <h2 class=" mx-4 mt-6 uppercase ltr:font-lato rtl:font-ahlan text-[#454545]">
             {{ $meal_type->{'name_' . app()->getLocale()} }}</h2>
         <div class="relative carousel-container flex rtl:flex-row-reverse items-center mx-4">
@@ -132,6 +133,7 @@
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 meals-next rounded-full z-10 -right-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-right"></i></div>
         </div>
+        @endif
     @endforeach
 
 

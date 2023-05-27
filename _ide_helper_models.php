@@ -334,6 +334,8 @@ namespace App\Models{
  * @property string $name_ar
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Restaurant[] $active_restaurants
+ * @property-read int|null $active_restaurants_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Restaurant[] $restaurants
  * @property-read int|null $restaurants_count
  * @method static \Database\Factories\MealTypeFactory factory(...$parameters)

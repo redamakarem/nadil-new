@@ -95,7 +95,7 @@
             <div class="greeting uppercase font-lato rtl:font-ahlan">{{ __('nadil.general.meal_type') }}</div>
 
             @foreach ($meal_types as $meal_type)
-                @if ($meal_type->restaurants->count() > 0)
+                @if ($meal_type->active_restaurants->count() > 0)
                     <h2 class="mt-6 uppercase ltr:font-lato rtl:font-ahlan text-[#454545]">
                         {{ $meal_type->{'name_' . app()->getLocale()} }}</h2>
                     <div class="relative carousel-container flex rtl:flex-row-reverse items-center">

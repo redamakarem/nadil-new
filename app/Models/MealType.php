@@ -14,6 +14,11 @@ class MealType extends Model
 
     public function restaurants()
     {
+        return $this->belongsToMany(Restaurant::class)->publishable();
+    }
+
+    public function active_restaurants()
+    {
         return $this->belongsToMany(Restaurant::class)->active();
     }
 }
