@@ -31,7 +31,7 @@
     options = {
           series: series,
           chart: {
-          width: 550,
+          width: 750,
           type: 'donut',
         },
         labels: labels,

@@ -416,6 +416,7 @@ namespace App\Models{
  * @property string $opening_hours_en
  * @property string $dress_code
  * @property string|null $opening_hours_ar
+ * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \App\Models\Area|null $areaa
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count
@@ -445,9 +446,9 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant hasScheduleForDate($date)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant newQuery()
+ * @method static \Illuminate\Database\Query\Builder|Restaurant onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant publishable()
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant query()
- * @method static \Illuminate\Database\Eloquent\Builder|Restaurant slotBookable()
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereAccessible($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereArea($value)
@@ -455,6 +456,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereBuilding($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereCoordinates($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereDressCode($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereEstimatedDiningTime($value)
@@ -476,6 +478,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereStreetEn($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|Restaurant withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Restaurant withoutTrashed()
  */
 	class Restaurant extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }

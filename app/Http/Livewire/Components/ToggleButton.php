@@ -29,8 +29,5 @@ class ToggleButton extends Component
         $this->model->setAttribute($this->field, $value)->save();
     }
 
-    private function validate_restaurant(Restaurant $restaurant)
-    {
-        
-    }
+    
 }

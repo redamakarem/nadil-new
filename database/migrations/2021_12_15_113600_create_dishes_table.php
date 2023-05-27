@@ -19,8 +19,6 @@ class CreateDishesTable extends Migration
             $table->text('description');
             $table->unsignedBigInteger('price');
             $table->string('prep_time');
-//            $table->unsignedBigInteger('cuisine_id');
-//            $table->foreign('cuisine_id')->references('id')->on('cuisines')->onDelete('cascade');
             $table->unsignedBigInteger('restaurant_id');
             $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
             $table->unsignedBigInteger('menu_id');

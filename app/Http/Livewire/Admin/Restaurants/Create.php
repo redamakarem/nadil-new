@@ -41,7 +41,7 @@ class Create extends Component
         'form_data.estimated_dining_time' => 'required|numeric',
         'restaurant_image' => 'required',
         'coordinates' => 'required',
-        'form_data.block' => 'sometimes|numeric',
+        'form_data.block' => 'numeric',
         'form_data.street_en' => 'required',
         'form_data.street_ar' => 'required',
         'form_data.building' => 'sometimes|numeric',

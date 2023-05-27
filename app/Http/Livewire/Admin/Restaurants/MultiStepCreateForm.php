@@ -14,10 +14,7 @@ class MultiStepCreateForm extends Component
     public $restaurant;
 
 
-    protected $rules = [
-        'restaurant.name_en' => ['required'],
-        'restaurant.name_ar' => ['required'],
-    ];
+    
     public function mount($cuisines,$users, Restaurant $restaurant)
     {
         $this->cuisines = $cuisines;

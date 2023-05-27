@@ -76,6 +76,7 @@ class Create extends Component
         $input_time =  Carbon::parse($this->selected_time)->format('H:i:s');
         if ($this->getAvailableSeats($input_time) >= $this->booking->seats){
             $this->booking->restaurant_id = $this->selected_restaurant;           
+            $this->booking->user_id = $this->selected_user;           
             $this->booking->booking_date = Carbon::parse($this->selected_date)->format('Y-m-d');
             $this->booking->booking_time = Carbon::parse($this->selected_time)->format('H:i:s');
             $this->booking->booking_end_time = Carbon::parse($this->selected_time)->addMinutes($this->restaurant->estimated_dining_time)->format('H:i:s');

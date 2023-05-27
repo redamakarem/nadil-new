@@ -23,6 +23,7 @@ class Edit extends Component
     public $selected_restaurant;
     public $selected_date;
     public $selected_time;
+    public $selected_tables;
     public $display_time;
     public $slot_options;
     public $available_tables;
@@ -43,6 +44,7 @@ class Edit extends Component
         $this->selected_user = $this->booking->user_id;
         $this->selected_date = $this->booking->booking_date;
         $this->selected_time = $this->booking->booking_time;
+        $this->selected_tables = $this->booking->reserved_tables->pluck('id')->toArray();
         $this->display_time = Carbon::parse($this->selected_time)->format("h:i A");
         $this->initListsForFields();
         $this->booking_tables = Restaurant::find($this->selected_restaurant)->reserved_tables;

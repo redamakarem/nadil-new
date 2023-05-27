@@ -21,6 +21,7 @@
                         <th>Name</th>
                         <th>Capacity</th>
                         <th>Restaurant</th>
+                        <th>Active</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -30,6 +31,12 @@
                             <td>{{$dining_table->name}}</td>
                             <td>{{$dining_table->capacity}}</td>
                             <td>{{$dining_table->restaurant->name_en}}</td>
+                            <td>
+                                <livewire:components.toggle-button
+                    :model="$dining_table"
+                    field="is_active"
+                    key="{{ $dining_table->id }}"/>
+                            </td>
                             
                             <td>
                                 <div class="btn-group">

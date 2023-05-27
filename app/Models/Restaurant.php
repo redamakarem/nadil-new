@@ -10,12 +10,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Str;
 
 class Restaurant extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
     protected $fillable = [
         'name_en',
         'name_ar',
@@ -177,11 +180,7 @@ class Restaurant extends Model implements HasMedia
         return $query->where('is_active', 1);
     }
 
-    public function scopeSlotBookable(Builder $query)
-    {
-        $this->dd('YAAS');
-        return $query;
-    }
+    
     public function scopePublishable(Builder $query)
     {
         return $query->whereHas('menus');
