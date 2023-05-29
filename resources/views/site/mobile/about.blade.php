@@ -1,20 +1,20 @@
-@extends('layouts.site-tw')
+@extends('layouts.site-mobile')
 @section('content')
 
-<div id="page-wrapper">
-    <div class="banner h-auto bg-red-400">
-        <div class="flex mx-18 gap-4 min-h-[500px]">
-            <div class="w-1/2 flex flex-col justify-center">
-                <h2 class="font-lato uppercase text-5xl text-center text-white leading-[60px]">All your booking needs <br> in one place</h2>
+<div id="page-wrapper" ">
+    <div class="banner h-auto min-h-[200px] bg-red-400">
+        <div class="flex flex-col gap-y-4">
+            <div>
+                <h2 class="font-lato text-3xl mx-6 my-8 text-center text-white uppercase">All your booking needs in one place</h2>
             </div>
-            <div class="w-1/2">
-                <img src="{{asset('/images/about.png')}}" alt="" class="h-full w-auto" />
+            <div>
+                <img src="{{asset('/images/about.png')}}" alt="" class="h-full w-full object-cover" />
             </div>
         </div>
     </div>
     <div id="page-content" class="flex flex-grow flex-col w-[85%] max-w-12xl mx-auto py-[80px] ">
         <div class="flex flex-col">
-            <div class="flex flex-col-reverse lg:flex-row lg:space-x-10 justify-between lg:rtl:space-x-reverse">
+            <div class="flex flex-col-reverse gap-y-4">
                 <div class="lg:w-1/2">@livewire('site.restaurant.register')</div>
                 <div class="lg:w-1/2"><img src="{{asset('/images/about.png')}}" alt="" class="object-cover w-full rounded-lg"/></div>
             </div>

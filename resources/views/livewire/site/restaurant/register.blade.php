@@ -1,5 +1,6 @@
    
-        <div class="flex flex-col justify-center h-full bg-nadilBtn-100 space-y-6 px-8 rounded-lg">
+        <div class="flex flex-col justify-center h-full bg-nadilBtn-100 space-y-6 px-8 py-12 rounded-lg">
+            <h2 class="text-2xl font-lato uppercase">{{ __('Join Us') }}</h2>
             <div class="form-container ">
                 <form wire:submit.prevent="register">
                     <div class="mb-3 shadow input-container flex flex-col">

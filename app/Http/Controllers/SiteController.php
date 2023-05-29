@@ -151,7 +151,13 @@ class SiteController extends Controller
 
     public function about()
     {
+        $agent = new Agent();
+        if ($agent->isDesktop()){
         return view('site.about');
+        }
+        else{
+            return view('site.mobile.about');
+        }
     }
 
     public function show_booking_confirmation($booking_id)
