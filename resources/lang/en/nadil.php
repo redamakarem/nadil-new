@@ -11,6 +11,7 @@
             'settings' => 'Settings',
             'logout' => 'Logout',
             'register' => 'Register',
+            'businesses' => 'For Businesses',
         ],
         'general' =>[
             'slogan' => 'CURATED TO PROVIDE YOU WITH THE BEST',

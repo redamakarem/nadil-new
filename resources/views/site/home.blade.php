@@ -24,17 +24,17 @@
                     <div class="flex my-4 items-center">
                         <div class="w-1/2 flex">
                             <input
-                                class="flex-1 font-lato flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none rounded-l-lg"
+                                class="flex-1 font-lato flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none ltr:rounded-l-lg rtl:rounded-r-lg"
                                 type="text" name="search_date" id="search_date" placeholder="Date">
                             <div class="bg-gray-600 w-[1px] h-[72px] opacity-40"></div>
 
                             <input
-                                class="flex-1 font-lato flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none"
+                                class="flex-1 font-lato flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none "
                                 type="text" name="search_time" id="search_time" placeholder="Time">
                             <div class="bg-gray-600 w-[1px] h-[72px] opacity-40"></div>
 
                             <select
-                                class="flex-1 font-lato rtl:font-ahlan rtl:tracking-normal flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none rounded-r-lg"
+                                class="flex-1 font-lato rtl:font-ahlan rtl:tracking-normal flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none ltr:rounded-r-lg rtl:rounded-l-lg"
                                 type="text" name="search_seats" id="search_seats">
                                 <option value="1">1 {{ trans_choice('nadil.booking.guest', 1) }}</option>
                                 <option value="2">2 {{ trans_choice('nadil.booking.guest', 2) }}</option>

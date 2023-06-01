@@ -73,6 +73,7 @@ return array (
     'settings' => 'الاعدادات',
     'signup' => 'انشاء حساب',
     'register' => 'انشاء حساب',
+    'businesses' => 'للشركات',
   ),
   'lang' => array(
     'en' => 'English'

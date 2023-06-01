@@ -98,9 +98,9 @@
                         </div>
                         <div class="flex justify-end items-end space-x-2 rtl:space-x-reverse ">
                             <a
-                                href="#"
+                                href="{{route('site.about')}}"
                                 class=" rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:font-normal text-sm ltr:font-semibold  text-[12px] text-white min-w-max"
-                            >For Businesses</a>
+                            >{{__('nadil.menu.businesses')}}</a>
                             @foreach (config('app.available_locales') as $locale)
                                 @if (app()->getLocale() != $locale)
                                 <a href="{{ request()->url() }}?language={{ $locale }}"

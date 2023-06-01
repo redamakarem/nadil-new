@@ -43,8 +43,8 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
 
 <body class="">
     <main>
-        <div id="mobile-wrapper" class="relative min-h-screen" x-data="{ isOpen: false }">
-            <div class="sidebar flex-col fixed bg-white dark:bg-black inset-y-0 {{ app()->getLocale() == 'en' ? 'left-0' : 'right-0' }} z-10 w-2/3 max-w-md transform transition duration-200"
+        <div id="mobile-wrapper" class="relative min-h-screen bg-black" x-data="{ isOpen: false }">
+            <div class="sidebar flex-col fixed z-50 bg-white dark:bg-black inset-y-0 {{ app()->getLocale() == 'en' ? 'left-0' : 'right-0' }} z-10 w-2/3 max-w-md transform transition duration-200"
                 :class="isOpen ? '' : document.getElementsByTagName('html')[0].getAttribute('lang') == 'en' ?
                     '-translate-x-full' : 'translate-x-full'">
 
@@ -86,6 +86,7 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
                 @guest
                     <a href="{{ route('register') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.register')}}</a>
                 @endguest
+                <a href="{{ route('register') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.businesses')}}</a>
                 <div>
                     @foreach (config('app.available_locales') as $locale)
                         @if (app()->getLocale() != $locale)
@@ -124,9 +125,14 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
                 </div>
             </div>
         </div>
-        <div class="content flex-col items-center bg-nadilBg-100 rounded-[60px] relative -top-16">
+        <div class="content flex-col items-center bg-nadilBg-100 rounded-[60px] shadow-lg relative -top-16">
             @yield('content')
-
+            
+        </div>
+        <div class="bg-black h-24 text-white flex justify-between px-12">
+            <div class="uppercase font-lato rtl:font-ahlan">Cancellation Policy</div>
+            <div class="uppercase font-lato rtl:font-ahlan">Contact</div>
+            <div class="uppercase font-lato rtl:font-ahlan">FAQ</div>
         </div>
         </div>
 
