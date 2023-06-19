@@ -58,6 +58,11 @@
             'accessible' => 'Accessible',
             'private_rooms' => 'Private Rooms',
             'dress_code' => 'Dress Code',
+            'date' => 'Date',
+            'time' => 'Time',
+            'seats' => 'Seats',
+            'area' => 'Seats',
+
         ],
         'auth' => [
             'email' => 'Email',

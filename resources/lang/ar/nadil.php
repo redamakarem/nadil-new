@@ -50,6 +50,10 @@ return array (
     'accessible' => 'متاح لذوي الاحتياجات الخاصة',
     'private_rooms' => 'غرف خاصة',
     'dress_code' => 'الزي المطلوب',
+    'date' => 'التاريخ',
+    'time' => 'الوقت',
+    'seats' => 'العدد',
+    'area' => 'المنطقة',
 
 ],
 'dishes' =>[

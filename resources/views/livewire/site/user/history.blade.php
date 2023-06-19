@@ -22,16 +22,16 @@
                     @if ($selected_booking)
                     <div class="flex flex-col justify-between w-full py-8">
                         <div class="text-center">
-                            <div>{{__('Date')}}</div>
+                            <div>{{__('nadil.booking.date')}}</div>
                             <div>{{$selected_booking->booking_date}}</div>
                         </div>
                         <div class="text-center">
-                            <div>{{__('People')}}</div>
+                            <div>{{__('nadil.booking.seats')}}</div>
                             <div>{{$selected_booking->seats}}</div>
                         </div>
                         <div class="text-center">
-                            <div>{{__('Address')}}</div>
-                            <div>{{$selected_booking->restaurant->address}}</div>
+                            <div>{{__('nadil.booking.area')}}</div>
+                            <div>{{$selected_booking->restaurant->areaa->{'name_'.app()->getLocale()} }}</div>
                         </div>
                         <div class="text-center">
                             <div class="text-black text-center"> {{ $booking->booking_status->{'name_'.app()->getLocale()}  }}</div>
