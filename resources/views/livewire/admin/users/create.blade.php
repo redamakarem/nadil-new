@@ -48,6 +48,7 @@
                        <select class="select2 form-control" style="width: 100%;"
                                id="restaurants" 
                                wire:model="form_data.restaurant_id">
+                               <option value="">{{__('Select Restaurant')}}</option>
                            @foreach($restaurants as $restaurant)
                                <option value="{{$restaurant->id}}">{{$restaurant->name_en}}</option>
                            @endforeach

@@ -436,7 +436,7 @@
                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                             <div
                                                 style="font-family:cairo;font-size:13px;font-weight:bold;line-height:1;text-align:center;color:#000000;">
-                                                مرحبا Waleed</div>
+                                                مرحبا {{$user->name}}</div>
                                         </td>
                                     </tr>
                                     <tr>

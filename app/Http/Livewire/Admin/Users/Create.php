@@ -18,7 +18,7 @@ class Create extends Component
         'form_data.name' => 'required',
         'form_data.email' => 'required|email',
         'form_data.password' => 'required',
-        'form_data.restaurant_id' => 'required',
+        'form_data.restaurant_id' => 'sometimes',
         'form_data.password_confirmation' => 'required|same:form_data.password',
 
 

@@ -51,7 +51,7 @@
                                             <li><a class="dropdown-item"
                                                     href="{{ route('admin.users.edit', $user->id) }}">Edit</a></li>
                                             <li> <a class="dropdown-item" href="#"
-                                                    wire:click.prevent="confirmRestaurantDeletion({{ $user->id }})">Delete</a>
+                                                    wire:click.prevent="confirmUserDeletion({{ $user->id }})">Delete</a>
                                             </li>
                                             @role('super-admin')
                                                 @if ($user->id != auth()->id() && !$user->hasRole('user'))
