@@ -40,12 +40,8 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default">Action</button>
-                                        <button type="button" id="dropdownSubMenu1"
-                                            class="btn btn-default dropdown-toggle dropdown-icon"
-                                            data-toggle="dropdown">
-                                            <span class="sr-only">Toggle Dropdown</span>
-                                        </button>
+                                        <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
+                                        
                                         <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                             <a class="dropdown-item" href="#">View</a>
                                             <a class="dropdown-item"
@@ -97,4 +93,19 @@
             // toastr.success(evt.detail.info,'Success');
         });
     </script>
+@endpush
+
+@push('styles')
+    <style>
+        @media (max-width: 767px) {
+    .table-responsive .dropdown-menu {
+        position: static !important;
+    }
+}
+@media (min-width: 768px) {
+    .table-responsive {
+        overflow: visible;
+    }
+}
+    </style>
 @endpush

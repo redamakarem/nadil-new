@@ -14,7 +14,7 @@
                        type="number" class="form-control"  placeholder="Enter table capacity">
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="accessible" wire:model="diningTable.name">
+                <input type="checkbox" class="form-check-input" id="accessible" wire:model="diningTable.is_active">
                 <label class="form-check-label" for="accessible">{{ __('Active') }}</label>
             </div>
             

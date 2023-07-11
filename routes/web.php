@@ -66,6 +66,9 @@ Route::get('/registration-thanks',[\App\Http\Controllers\SiteController::class,'
     ->name('site.registration-thanks');
 Route::get('/about',[\App\Http\Controllers\SiteController::class,'about'])
     ->name('site.about');
+Route::get('/privacy',[\App\Http\Controllers\SiteController::class,'privacy'])
+    ->name('site.legal.privacy');
+
 
 
 Route::get('/test-map', function (){
@@ -257,6 +260,11 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
 
     // Reports
     Route::get('reports',[ReportsController::class,'index'])->name('admin.reports.index');
+
+    // Legal
+    Route::get('legal',[App\Http\Controllers\Admin\LegalController::class,'index'])->name('admin.legal.index');
+    Route::get('legal/create',[App\Http\Controllers\Admin\LegalController::class,'create'])->name('admin.legal.create');
+    Route::get('legal/privacy',[App\Http\Controllers\Admin\LegalController::class,'privacy'])->name('admin.legal.privacy');
 });
 
 
@@ -318,12 +326,12 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     //    Schedules
     Route::get('/schedules',[RAScheduleController::class,'all'])->name('restaurant-admin.schedules.index');
     Route::get('/restaurant/{restaurant}/schedules', [RAScheduleController::class,'index'])->name('restaurant-admin.restaurant.schedules.index');
-    Route::get('/restaurant/{restaurant}/schedules/create',
+    Route::get('/schedules/create',
         [RAScheduleController::class,'create'])
-        ->name('restaurant-admin.restaurant.schedules.create');
-    Route::get('/restaurant/{restaurant}/schedules/{schedule}/edit',
+        ->name('restaurant-admin.schedules.create');
+    Route::get('/schedules/{schedule}/edit',
         [RAScheduleController::class,'edit'])
-        ->name('restaurant-admin.restaurant.schedules.edit');
+        ->name('restaurant-admin.schedules.edit');
     // Tables
     Route::get('tables',[RATableController::class,'index'])->name('restaurant-admin.tables.index');
     Route::get('tables/create',[RATableController::class,'create'])->name('restaurant-admin.tables.create');

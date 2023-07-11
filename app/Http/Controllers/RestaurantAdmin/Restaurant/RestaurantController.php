@@ -61,28 +61,9 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host','restaurant-manager'])){
-            $restaurant = Restaurant::findOrFail($id);
-            if(auth()->user()->workplace->id==$restaurant->id){
-                return view('restaurant-admin.restaurant.edit',compact('restaurant'));
-            }else{
-                abort(403,'Unauthorized');
-            }
-
-        }
-        if(auth()->user()->hasRole('restaurant-super-admin')){
-            $restaurant = Restaurant::findOrFail($id);
-            if(auth()->user()->id==$restaurant->owner->id){
-                return view('restaurant-admin.restaurant.edit',compact('restaurant'));
-            }else{
-                abort(403,'Unauthorized');
-            }
-        }
         $restaurant = Restaurant::findOrFail($id);
-        // if(auth()->user()->workplace->id==$restaurant->id)
+        $this->authorize('edit',$restaurant);
         return view('restaurant-admin.restaurant.edit',compact('restaurant'));
-        // else
-        // abort(403,'Unauthorized');
     }
 
     /**

@@ -17,7 +17,8 @@ class Create extends Component
     public $slot_length;
     public $slot_capacity;
     public  $route;
-    public Restaurant $restaurant;
+    public $restaurants;
+    public $restaurant_id;
 
     protected $listeners = ['ScheduleAdded' => 'goSchedules'];
 
@@ -28,11 +29,16 @@ class Create extends Component
         'start_time' => 'required',
         'end_time' => 'required',
         'slot_length' => 'required',
+        'restaurant_id' => 'required',
     ];
 
-    public function mount(Restaurant $restaurant)
+    public function mount()
     {
-        $this->restaurant = $restaurant;
+        if (auth()->user()->hasRole('restaurant-super-admin')) {
+            $this->restaurants = auth()->user()->restaurants;
+        }else{
+            $this->restaurants = auth()->user()->workplace;
+        }
         $this->route = url()->previous();
     }
 

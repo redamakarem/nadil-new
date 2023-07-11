@@ -1,17 +1,25 @@
 <div class="card card-primary">
     <div class="card-header">
-        <h3 class="card-title">Add Schedule for restaurant {{$restaurant->name_en}} (ID: {{$restaurant->id}})</h3>
+        <h3 class="card-title">Add Schedule</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
     <form wire:submit.prevent="submit">
         <div class="card-body">
             
-
+            <div class="form-group">
+                <label for="name_en">Restaurant</label>
+                <select class="form-control" wire:model='selected_restaurant_id'>
+                    <option value="">{{__('Select Restaurant')}}</option>
+                    @foreach ($restaurants as $restaurant)
+                        <option value="{{$restaurant->id}}">{{$restaurant->name_en}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="form-group">
                 <label for="name">Schedule Name</label>
                 <input wire:model="name"
-                       type="text" class="form-control" id="name" placeholder="Enter cuisine name">
+                       type="text" class="form-control" id="name" placeholder="Enter schedule name">
             </div>
             <div class="form-group" wire:ignore>
                 <label for="start_date">Start Date</label>

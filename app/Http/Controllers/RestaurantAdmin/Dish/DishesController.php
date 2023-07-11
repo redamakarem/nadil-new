@@ -124,10 +124,12 @@ class DishesController extends Controller
 
     public function new_create()
     {
+        
         return view('restaurant-admin.dish.create-new');
     }
     public function new_edit(Dish $dish)
     {
+        $this->authorize('edit',$dish);
         return view('restaurant-admin.dish.edit-new',compact('dish'));
     }
 }

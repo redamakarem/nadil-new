@@ -67,6 +67,7 @@
             </div>
             <!-- END Menu Submenu -->
         </div>
+        @hasanyrole('restaurant-super-admin|restaurant-manager')
         <div class="menu-item">
             <a href="{{ route('restaurant-admin.bookings') }}" data-menu-path="/index.html" class="menu-item-link">
                 <div class="menu-item-icon">
@@ -76,6 +77,7 @@
 
             </a>
         </div>
+        @endhasanyrole
         <div class="menu-item">
             <button class="menu-item-link menu-item-toggle">
                 <div class="menu-item-icon">

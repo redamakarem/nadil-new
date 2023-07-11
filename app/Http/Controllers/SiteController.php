@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Legal;
 use App\Models\Booking;
 use App\Models\Cuisine;
 use App\Models\MealType;
-use App\Models\Restaurant;
 use App\Models\Schedule;
-use Carbon\Carbon;
 use Carbon\CarbonPeriod;
-use Illuminate\Database\Eloquent\Builder;
+use App\Models\Restaurant;
+use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Jenssegers\Agent\Agent;
+use Illuminate\Database\Eloquent\Builder;
 
 class SiteController extends Controller
 {
@@ -157,6 +158,17 @@ class SiteController extends Controller
         }
         else{
             return view('site.mobile.about');
+        }
+    }
+    public function privacy()
+    {
+        $agent = new Agent();
+        $privacy = Legal::where('slug', 'privacy-policy')->first();
+        if ($agent->isDesktop()){
+        return view('site.privacy',compact('privacy'));
+        }
+        else{
+            return view('site.mobile.privacy',compact('privacy'));
         }
     }
 

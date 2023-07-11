@@ -48,7 +48,7 @@
                                         <a class="dropdown-item" href="#">View</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.bookings.edit',['id' => $booking->id])}}">Edit</a>
                                         <a class="dropdown-item" href="#"
-                                           wire:click.prevent="confirmCuisineDeletion({{$booking->id}})">Delete</a>
+                                           wire:click.prevent="confirmBookingDeletion({{$booking->id}})">Delete</a>
                                     </div>
                                 </div>
                             </td>

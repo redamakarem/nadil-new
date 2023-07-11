@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\Restaurant;
 use App\Models\Schedule;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -39,10 +40,18 @@ class SchedulePolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user)
+    public function create(User $user,Restaurant $restaurant)
     {
-        //
+        if($user->can('Create own schedule')){
+            return true;
+        }
+           if($user->can('Create Schedule')){
+               return true;
+           }
+           return false;
     }
+   
+    
 
     /**
      * Determine whether the user can update the model.
@@ -54,6 +63,20 @@ class SchedulePolicy
     public function update(User $user, Schedule $schedule)
     {
         //
+    }
+
+    public function edit(User $user, Schedule $schedule)
+    {
+        if($user->can('Edit own schedule')){
+            if($user->hasAnyRole(['restaurant-admin','restaurant-manager'])){
+                return $user->workplace->id == $schedule->restaurant->id;
+            }else if($user->hasRole('restaurant-super-admin')){
+                return $user->restaurants->contains($schedule->restaurant);}
+        }
+           if($user->can('Edit Schedule')){
+               return true;
+           }
+           return false;
     }
 
     /**

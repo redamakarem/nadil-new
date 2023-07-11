@@ -14,6 +14,8 @@ class RestaurantSeeder extends Seeder
      */
     public function run()
     {
-        Restaurant::factory(10)->create();
+        Restaurant::factory(10)->create()->each(function ($restaurant) {
+            $restaurant->cuisines()->attach(rand(1, 4));
+        });
     }
 }

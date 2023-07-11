@@ -41,7 +41,13 @@ class DiningTablePolicy
      */
     public function create(User $user)
     {
-        //
+        if($user->can('Create own table')){
+            return true;
+        }
+        if($user->can('Create table')){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -54,6 +60,18 @@ class DiningTablePolicy
     public function update(User $user, DiningTable $diningTable)
     {
         //
+    }
+    public function edit(User $user, DiningTable $diningTable)
+    {
+        if($user->can('Edit own table')){
+            if($user->hasAnyRole(['restaurant-admin','restaurant-manager'])){
+                return $user->workplace->id == $diningTable->restaurant->id;
+            }else if($user->hasRole('restaurant-super-admin')){
+                return $user->restaurants->contains($diningTable->restaurant);}
+        }
+        if($user->can('Edit table')){
+            return true;
+        }
     }
 
     /**

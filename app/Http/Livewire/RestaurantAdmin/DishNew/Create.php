@@ -33,7 +33,8 @@ class Create extends Component
         'new_dish.description_en' =>['required'],
         'new_dish.description_ar' =>['required'],
         'new_dish.prep_time' =>['required'],
-        'new_dish.price' =>['required']
+        'new_dish.price' =>['required'],
+        'selected_menu' =>['required']
     ];
 
     public function updatedSelectedRestaurantId($value)

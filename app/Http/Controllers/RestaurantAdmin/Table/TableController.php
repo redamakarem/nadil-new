@@ -21,23 +21,8 @@ class TableController extends Controller
 
     public function edit(Restaurant $restaurant, DiningTable $diningTable)
     {   
-        
-        
-        if(auth()->user()->hasRole('restaurant-super-admin')){
-            if(!auth()->user()->restaurants->contains($diningTable->restaurant_id)){
-                abort(403,'Unauthorized');
-            }else{
-                return view('restaurant-admin.dining-tables.edit',compact('diningTable'));
-            }
-            
-
-            
-        }
-        if(auth()->user()->workplace->id??-1==$restaurant->id){
-            return view('restaurant-admin.dining-tables.edit',compact('diningTable'));
-        }
-
-        abort(403,'Unauthorized');
+        $this->authorize('edit', $diningTable);
+        return view('restaurant-admin.dining-tables.edit', compact('diningTable'));
     }
    
 }

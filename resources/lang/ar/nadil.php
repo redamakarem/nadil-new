@@ -54,6 +54,7 @@ return array (
     'time' => 'الوقت',
     'seats' => 'العدد',
     'area' => 'المنطقة',
+    'reservation_history' => 'تاريخ الحجوزات',
 
 ],
 'dishes' =>[

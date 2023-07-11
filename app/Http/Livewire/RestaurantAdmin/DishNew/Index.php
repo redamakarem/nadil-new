@@ -10,6 +10,26 @@ class Index extends Component
 {
     public $dishes;
 
+    public $idToRemove;
+
+
+    protected $listeners = ['deleteConfirmed' => 'deleteDish'];
+
+
+
+
+    public function confirmDishDeletion($id)
+    {
+        $this->idToRemove = $id;
+        $this->dispatchBrowserEvent('show-swal-delete');
+    }
+
+    public function deleteDish()
+    {
+        $dish = Dish::findOrFail($this->idToRemove);
+        $dish->delete();
+    }
+
     public function mount(Restaurant $restaurant)
     {
         if(auth()->user()->hasRole('restaurant-super-admin')){

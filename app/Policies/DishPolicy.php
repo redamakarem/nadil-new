@@ -2,13 +2,12 @@
 
 namespace App\Policies;
 
-use App\Models\Booking;
+use App\Models\Dish;
 use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Auth\Access\Response;
 
-class BookingPolicy
+class DishPolicy
 {
     use HandlesAuthorization;
 
@@ -27,10 +26,10 @@ class BookingPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Booking $booking)
+    public function view(User $user, Dish $dish)
     {
         //
     }
@@ -41,17 +40,31 @@ class BookingPolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user)
+    public function create(User $user,Restaurant $restaurant)
     {
-        
-        if($user->hasRole('user')){
-            return true;
-        }
-        if($user->can('Create Own Reservation')){
-         return true;
+        if($user->can('Create own dish')){
+            if($user->hasAnyRole(['restaurant-admin','restaurant-manager'])){
+                return $user->workplace->id == $restaurant->id;
+            }else if($user->hasRole('restaurant-super-admin')){
+                return $user->restaurants->contains($restaurant);}
             
         }
-        if($user->can('Create Reservation')){
+        if($user->can('Create Dish')){
+            return true;
+        }
+        return false;
+    }
+
+    public function edit(User $user, Dish $dish)
+    {
+        if($user->can('Edit own dish')){
+            if($user->hasAnyRole(['restaurant-admin','restaurant-manager'])){
+                return $user->workplace->id == $dish->restaurant->id;
+            }else if($user->hasRole('restaurant-super-admin')){
+                return $user->restaurants->contains($dish->restaurant);}
+            
+        }
+        if($user->can('Edit Dish')){
             return true;
         }
         return false;
@@ -61,25 +74,10 @@ class BookingPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function edit(User $user, Booking $booking)
-    {
-        if($user->can('Create Own Reservation')){
-            if($user->hasAnyRole(['restaurant-admin','restaurant-manager'])){
-                return $user->workplace->id == $booking->restaurant->id;
-            }else if($user->hasRole('restaurant-super-admin')){ 
-                return $user->restaurants->contains($booking->restaurant);
-            }
-               
-           }
-           if($user->can('Create Reservation')){
-               return true;
-           }
-           return false;
-    }
-    public function update(User $user, Booking $booking)
+    public function update(User $user, Dish $dish)
     {
         //
     }
@@ -88,10 +86,10 @@ class BookingPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Booking $booking)
+    public function delete(User $user, Dish $dish)
     {
         //
     }
@@ -100,10 +98,10 @@ class BookingPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Booking $booking)
+    public function restore(User $user, Dish $dish)
     {
         //
     }
@@ -112,10 +110,10 @@ class BookingPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Booking  $booking
+     * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Booking $booking)
+    public function forceDelete(User $user, Dish $dish)
     {
         //
     }

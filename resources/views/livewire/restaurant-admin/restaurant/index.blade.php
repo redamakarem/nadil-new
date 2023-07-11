@@ -97,8 +97,9 @@
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurants.show',['id' => $restaurants->id])}}">View</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurants.edit',['id' => $restaurants->id])}}">Edit</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.schedules.index',['restaurant' => $restaurants->id])}}">Schedules</a>
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.menus',['restaurant' => $restaurants->id])}}">Menus</a>
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.tables.index',['restaurant' => $restaurants->id])}}">Tables</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.menus.index')}}">Menus</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.tables.index')}}">Tables</a>
+                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.staff',['restaurant' => $restaurants->id])}}">Staff</a>
                                     </div>
                                 </div>
                             </td>
@@ -133,6 +134,14 @@
                 }
             })
         })
+    </script>
+    <script>
+        const dropdowns = document.querySelectorAll('.dropdown-toggle')
+const dropdown = [...dropdowns].map((dropdownToggleEl) => new bootstrap.Dropdown(dropdownToggleEl, {
+    popperConfig(defaultBsPopperConfig) {
+        return { ...defaultBsPopperConfig, strategy: 'fixed' };
+    }
+}));
     </script>
 @endpush
 

@@ -31,7 +31,7 @@ class RestaurantAdminController extends Controller
         if(auth()->user()->hasRole('restaurant-super-admin')){
             $ids = auth()->user()->restaurants->pluck('id');
         }else{
-            $ids = auth()->user()->workplace->id;
+            $ids = array(auth()->user()->workplace->id);
         }
 
         $bookings_count = Booking::with(['user'])->where('booking_status_id', $status)

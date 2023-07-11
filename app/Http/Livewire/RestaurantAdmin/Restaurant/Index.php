@@ -12,7 +12,6 @@ class Index extends Component
 
     public function mount()
     {
-        // dd(auth()->user()->getRoleNames());
         if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host','restaurant-manager'])){
             $this->restaurants = auth()->user()->workplace;
         }

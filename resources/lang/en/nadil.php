@@ -62,6 +62,7 @@
             'time' => 'Time',
             'seats' => 'Seats',
             'area' => 'Seats',
+            'reservation_history' => 'Reservation History',
 
         ],
         'auth' => [

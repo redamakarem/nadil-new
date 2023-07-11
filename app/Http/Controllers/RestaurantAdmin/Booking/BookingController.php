@@ -25,6 +25,7 @@ class BookingController extends Controller
      */
     public function create()
     {
+        $this->authorize('create',Booking::class);
         return view('restaurant-admin.booking.create');
     }
 

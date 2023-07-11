@@ -327,6 +327,33 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Legal
+ *
+ * @property int $id
+ * @property string $title_en
+ * @property string $title_ar
+ * @property string $slug
+ * @property string|null $content_en
+ * @property string|null $content_ar
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereContentAr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereContentEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereTitleAr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Legal whereUpdatedAt($value)
+ */
+	class Legal extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\MealType
  *
  * @property int $id

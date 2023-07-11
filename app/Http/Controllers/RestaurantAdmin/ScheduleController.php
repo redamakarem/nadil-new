@@ -32,10 +32,9 @@ class ScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($restaurant_id)
+    public function create()
     {
-        $restaurant = Restaurant::with('schedules')->findOrFail($restaurant_id);
-        return view('restaurant-admin.schedule.create',compact(['restaurant']));
+        return view('restaurant-admin.schedule.create');
     }
 
     /**
@@ -66,17 +65,9 @@ class ScheduleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Restaurant $restaurant, Schedule $schedule)
-    {
-        if(auth()->user()->hasRole('restaurant-super-admin')){
-            if($restaurant->owner->id != auth()->id())
-            abort(403);
-        }
-        if(auth()->user()->hasRole(['restaurant-admin','restaurant-manager'])){
-            if($restaurant->id != auth()->user->restaurant->id)
-            abort(403);
-
-        }
+    public function edit(Schedule $schedule)
+    {      
+        $this->authorize('edit',$schedule);
         return view('restaurant-admin.schedule.edit',compact(['schedule']));
     }
 
