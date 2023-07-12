@@ -22,7 +22,8 @@ class DishesCategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name_en'=>$this->faker->name(),
+            'name_ar'=>$this->faker->name(),
         ];
     }
 }
