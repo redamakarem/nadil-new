@@ -577,6 +577,9 @@ select {
     white-space: nowrap;
     border-width: 0;
 }
+.static {
+    position: static;
+}
 .fixed {
     position: fixed;
 }
@@ -622,6 +625,9 @@ select {
 }
 .z-10 {
     z-index: 10;
+}
+.-z-10 {
+    z-index: -10;
 }
 .z-30 {
     z-index: 30;
@@ -888,11 +894,11 @@ select {
 .max-h-\[296px\] {
     max-height: 296px;
 }
-.max-h-\[900px\] {
-    max-height: 900px;
-}
 .max-h-\[500px\] {
     max-height: 500px;
+}
+.max-h-\[900px\] {
+    max-height: 900px;
 }
 .min-h-\[300px\] {
     min-height: 300px;

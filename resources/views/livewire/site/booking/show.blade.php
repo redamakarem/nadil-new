@@ -1,12 +1,8 @@
 <div class="w-full">
-    <div class="absolute w-screen h-screen">
-        <div wire:loading>
-            {{-- <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500 bg-opacity-25 top-0 left-0 z-30">
-                <img src="{{ asset('/images/nadil-loader.png') }}" alt="" class="w-24 h-24">
-            </div> --}}
+        <div wire:loading class="absolute">
+            
             <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500/20  top-0 left-0 z-30">
                 <lottie-player src="https://lottie.host/07048e2a-58bc-4111-ac06-10c47c955114/MTwZhf7FYy.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop  autoplay></lottie-player>
-            </div>
             
         </div>
     </div>
