@@ -99,6 +99,41 @@ class RestaurantFactory extends Factory
         return $user;
     }
 
+    private function create_dishes(Restaurant $restaurant, $count = 5)
+    {
+        for ($i = 0; $i < $count; $i++) {
+            $restaurant->dishes()->create(
+                [
+                    'name_en' => $this->faker->name(),
+                    'name_ar' => $this->faker->name(),
+                    'description_en' => $this->faker->text(),
+                    'description_ar' => $this->faker->text(),
+                    'price' => $this->faker->randomFloat(2, 1, 100),
+                    'prep_time' => $this->faker->randomElement(['5','15']),
+                    'cuisine_id' => $restaurant->cuisines()->first()->id,
+                    'restaurant_id' => $restaurant->id,
+                    'menu_id' => $restaurant->menus()->pluck('id')->random(),
+                ]
+                );
+        }
+        
+    }
+
+    private function create_dining_tables(Restaurant $restaurant, $count = 5)
+    {
+        for ($i = 0; $i < $count; $i++) {
+            $restaurant->diningTables()->create(
+                [
+                    'name' => $this->faker->name(),
+                    'capacity' => $this->faker->randomElement(['2','4','6','8']),
+                    'restaurant_id' => $restaurant->id,
+                
+                ]
+                );
+        }
+        
+    }
+
     public function configure()
     {
         return $this->afterCreating(function (Restaurant $restaurant) {
@@ -115,6 +150,8 @@ class RestaurantFactory extends Factory
             $this->create_restaurant_admin_staff($restaurant->id);
             $this->create_restaurant_host_staff($restaurant->id);
             $this->create_restaurant_manager_staff($restaurant->id);
+            $this->create_dishes($restaurant,5);
+            $this->create_dining_tables($restaurant,5);
         });
     }
 }

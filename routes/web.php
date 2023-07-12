@@ -264,6 +264,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
     // Legal
     Route::get('legal',[App\Http\Controllers\Admin\LegalController::class,'index'])->name('admin.legal.index');
     Route::get('legal/create',[App\Http\Controllers\Admin\LegalController::class,'create'])->name('admin.legal.create');
+    Route::get('legal/{legal}/edit',[App\Http\Controllers\Admin\LegalController::class,'edit'])->name('admin.legal.edit');
     Route::get('legal/privacy',[App\Http\Controllers\Admin\LegalController::class,'privacy'])->name('admin.legal.privacy');
 });
 

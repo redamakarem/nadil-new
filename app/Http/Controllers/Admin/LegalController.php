@@ -17,7 +17,11 @@ class LegalController extends Controller
     {
         return view('admin.legal.create');
     }
-
+    public function edit(Legal $legal)
+    {
+        return view('admin.legal.edit', compact('legal'));
+    }
+    
     public function privacy()
     {
         $privacy = Legal::where('slug', 'privacy')->first();

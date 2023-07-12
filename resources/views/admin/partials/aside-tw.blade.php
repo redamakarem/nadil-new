@@ -151,6 +151,14 @@
                 <span class="menu-item-text">Messages</span>
             </a>
         </div>
+        <div class="menu-item">
+            <a href="{{ route('admin.legal.index') }}" data-menu-path="/index.html" class="menu-item-link">
+                <div class="menu-item-icon">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <span class="menu-item-text">Legal</span>
+            </a>
+        </div>
     </div>
     <!-- END Menu -->
 </div>

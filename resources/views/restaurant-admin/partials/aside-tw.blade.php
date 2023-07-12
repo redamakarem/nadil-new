@@ -139,6 +139,7 @@
             </div>
             <!-- END Menu Submenu -->
         </div>
+        
         @if (session('impersonated_by'))
             <div class="menu-item">
                 <a href="{{ route('users.leave-impersonate') }}" data-menu-path="/index.html" class="menu-item-link">
