@@ -171,9 +171,9 @@
         >
             <div></div>
             <div class="flex space-x-6 items-center mx-2 rtl:space-x-reverse">
-                <a href="" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.cancellation')}}</a>
+                <a href="{{route('site.legal.privacy')}}" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.cancellation')}}</a>
                 <a href="" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.contact')}}</a>
-                <a href="" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.faq')}}</a>
+                <a href="{{route('site.legal.faq')}}" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.faq')}}</a>
             </div>
         </div>
     </footer>

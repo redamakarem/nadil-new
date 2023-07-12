@@ -21,11 +21,16 @@ class LegalController extends Controller
     {
         return view('admin.legal.edit', compact('legal'));
     }
-    
+
     public function privacy()
     {
         $privacy = Legal::where('slug', 'privacy')->first();
         return view('admin.legal.privacy', compact('privacy'));
+    }
+    public function faq()
+    {
+        $faq = Legal::where('slug', 'faq')->first();
+        return view('admin.legal.privacy', compact('faq'));
     }
 
 }

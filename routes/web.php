@@ -68,6 +68,8 @@ Route::get('/about',[\App\Http\Controllers\SiteController::class,'about'])
     ->name('site.about');
 Route::get('/privacy',[\App\Http\Controllers\SiteController::class,'privacy'])
     ->name('site.legal.privacy');
+Route::get('/faq',[\App\Http\Controllers\SiteController::class,'faq'])
+    ->name('site.legal.faq');
 
 
 

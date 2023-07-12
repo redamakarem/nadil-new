@@ -171,6 +171,17 @@ class SiteController extends Controller
             return view('site.mobile.privacy',compact('privacy'));
         }
     }
+    public function faq()
+    {
+        $agent = new Agent();
+        $faq = Legal::where('slug', 'faq')->first();
+        if ($agent->isDesktop()){
+        return view('site.faq',compact('faq'));
+        }
+        else{
+            return view('site.mobile.faq',compact('faq'));
+        }
+    }
 
     public function show_booking_confirmation($booking_id)
     {
