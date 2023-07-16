@@ -30,7 +30,7 @@
                             <tr>
                                 <td>{{$dish->name_en}}</td>
                                 <td>{{$dish->restaurant->name_en}}</td>
-                                <td>{{$dish->cuisine->name_en}}</td>
+                                <td>{{$dish->cuisine->name_en?? 'Not defined'}}</td>
                                 <td>{{$dish->menu->name}}</td>
                                 <td>{{$dish->prep_time}}</td>
 

@@ -3,9 +3,12 @@
 namespace Database\Factories;
 
 use App\Models\Area;
-use App\Models\Restaurant;
+use App\Models\Dish;
 use App\Models\User;
+use App\Models\Restaurant;
+use Faker\Factory as FakerFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 class RestaurantFactory extends Factory
 {
@@ -16,16 +19,23 @@ class RestaurantFactory extends Factory
      */
     protected $model = Restaurant::class;
 
+    private $fakerAr;
+
+    
+
     /**
      * Define the model's default state.
      *
      * @return array
      */
+
+
     public function definition()
     {
+        $this->fakerAr = \Faker\Factory::create('ar-KW');
         return [
             'name_en' => $this->faker->name(),
-            'name_ar' => $this->faker->name(),
+            'name_ar' => $this->fakerAr->name(),
             'email' => $this->faker->safeEmail(),
             'address' => $this->faker->address(),
             'coordinates' => strval(rand(0,50)+(mt_rand() / mt_getrandmax())).','.strval(rand(0,50)+(mt_rand() / mt_getrandmax())),
@@ -47,7 +57,7 @@ class RestaurantFactory extends Factory
             'opening_hours_en' =>  $this->faker->randomElement(['8:00 AM - 10:00 PM','8:00 AM - 11:00 PM','8:00 AM - 12:00 AM']),
             'opening_hours_ar' =>  $this->faker->randomElement(['8:00 AM - 10:00 PM','8:00 AM - 11:00 PM','8:00 AM - 12:00 AM']),
             'dress_code' =>  $this->faker->randomElement(['Casual','Formal']),
-            'is_active' =>  false,
+            'is_active' =>  true,
             'is_featured' =>  false,
 
 
@@ -102,7 +112,7 @@ class RestaurantFactory extends Factory
     private function create_dishes(Restaurant $restaurant, $count = 5)
     {
         for ($i = 0; $i < $count; $i++) {
-            $restaurant->dishes()->create(
+            $dish = Dish::create(
                 [
                     'name_en' => $this->faker->name(),
                     'name_ar' => $this->faker->name(),
@@ -140,7 +150,7 @@ class RestaurantFactory extends Factory
             $restaurant->cuisines()->attach(rand(1, 4));
             $restaurant->schedules()->create([
                 'name' => $this->faker->name(),
-                'from_date' => $this->faker->dateTimeBetween('now', '+1 week')->format('Y-m-d'),
+                'from_date' => $this->faker->dateTimeBetween('yesterday', 'now')->format('Y-m-d'),
                 'to_date' => $this->faker->dateTimeBetween('+2 weeks', '+2 months')->format('Y-m-d'),
                 'from_time' => $this->faker->randomElement(['08:00:00','09:00:00','10:00:00']),
                 'to_time' => $this->faker->randomElement(['20:00:00','21:00:00','22:00:00']),
@@ -150,7 +160,7 @@ class RestaurantFactory extends Factory
             $this->create_restaurant_admin_staff($restaurant->id);
             $this->create_restaurant_host_staff($restaurant->id);
             $this->create_restaurant_manager_staff($restaurant->id);
-            $this->create_dishes($restaurant,5);
+            // $this->create_dishes($restaurant,5);
             $this->create_dining_tables($restaurant,5);
         });
     }

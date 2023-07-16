@@ -28,6 +28,9 @@ class DishesMenuFactory extends Factory
             'to_date' => $this->faker->dateTimeBetween('+1 week', '+1 year')->format('Y-m-d'),
             'from_time' => $this->faker->randomElement(['8:00:00','9:00:00','10:00:00']),
             'to_time' => $this->faker->randomElement(['20:00:00','21:00:00','22:00:00']),
+            'is_active' => true
         ];
     }
+
+    
 }

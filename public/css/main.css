@@ -891,6 +891,9 @@ select {
 .h-\[1301px\] {
     height: 1301px;
 }
+.h-48 {
+    height: 12rem;
+}
 .max-h-\[296px\] {
     max-height: 296px;
 }
@@ -1636,6 +1639,9 @@ select {
 }
 .uppercase {
     text-transform: uppercase;
+}
+.capitalize {
+    text-transform: capitalize;
 }
 .leading-5 {
     line-height: 1.25rem;

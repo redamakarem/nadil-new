@@ -23,6 +23,6 @@ class DishesCategory extends Model
 
     public function menu()
     {
-        return $this->belongsTo(DishesMenu::class);
+        return $this->belongsTo(DishesMenu::class,'catalogue_id');
     }
 }

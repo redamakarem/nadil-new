@@ -215,6 +215,7 @@ namespace App\Models{
  * @property-read int|null $media_count
  * @property-read \App\Models\DishesMenu $menu
  * @property-read \App\Models\Restaurant $restaurant
+ * @method static \Database\Factories\DishFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Dish newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Dish query()
