@@ -147,8 +147,8 @@ class RestaurantFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (Restaurant $restaurant) {
-            $restaurant->cuisines()->attach(rand(1, 4));
-            $restaurant->meal_types()->attach(rand(1, 3));
+            $restaurant->cuisines()->sync(rand(1, 4));
+            $restaurant->meal_types()->sync(rand(1, 3));
             $restaurant->addMediaFromUrl('https://nadil2.reda-makarem.com/images/usquyu.jpg')->toMediaCollection('restaurant_images');
             $restaurant->schedules()->create([
                 'name' => $this->faker->name(),
