@@ -52,7 +52,7 @@ return [
         'mailgun' => [
             'transport' => 'mailgun',
         ],
-        
+
 
         'postmark' => [
             'transport' => 'postmark',
@@ -109,3 +109,4 @@ return [
     ],
 
 ];
+
