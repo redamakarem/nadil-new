@@ -148,6 +148,7 @@ class RestaurantFactory extends Factory
     {
         return $this->afterCreating(function (Restaurant $restaurant) {
             $restaurant->cuisines()->attach(rand(1, 4));
+            $restaurant->addMediaFromUrl('http://nadil-test.test:8885/images/usquyu.jpg')->toMediaCollection('restaurant_images');
             $restaurant->schedules()->create([
                 'name' => $this->faker->name(),
                 'from_date' => $this->faker->dateTimeBetween('yesterday', 'now')->format('Y-m-d'),
