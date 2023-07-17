@@ -146,6 +146,7 @@ class RestaurantFactory extends Factory
 
     public function configure()
     {
+        
         return $this->afterCreating(function (Restaurant $restaurant) {
             $restaurant->cuisines()->sync(rand(1, 4));
             $restaurant->meal_types()->sync(rand(1, 3));
