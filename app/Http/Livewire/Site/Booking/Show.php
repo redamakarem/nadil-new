@@ -116,7 +116,7 @@ class Show extends Component
             })->pluck('table_id');
         $this->available_tables = $this->restaurant->diningTables
         ->where('is_active',true)
-        ->whereNotIn('id', $reserved_tables);
+        ->whereNotIn('id', $reserved_tables)->unique('id');
     }
 
     public function getAvailableSeats($time_slot)
