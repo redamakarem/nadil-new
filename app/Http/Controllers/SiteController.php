@@ -182,6 +182,17 @@ class SiteController extends Controller
             return view('site.mobile.faq',compact('faq'));
         }
     }
+    public function tos()
+    {
+        $agent = new Agent();
+        $tos = Legal::where('slug', 'terms-of-use')->first();
+        if ($agent->isDesktop()){
+        return view('site.tos',compact('tos'));
+        }
+        else{
+            return view('site.mobile.tos',compact('tos'));
+        }
+    }
 
     public function show_booking_confirmation($booking_id)
     {

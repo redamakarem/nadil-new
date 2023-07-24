@@ -7,7 +7,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="{{route('admin.cuisines.create')}}" class="btn btn-primary">Add</a>
+                        <a href="{{route('admin.legal.create')}}" class="btn btn-primary">Add</a>
 
 
                     </div>
