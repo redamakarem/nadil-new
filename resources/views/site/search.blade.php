@@ -2,7 +2,6 @@
 @section('content')
     <div id="main-content" class="h-full">
         <div class="flex flex-col px-24 py-[80px]">
-            <div class="greeting uppercase">So, What is the plan</div>
             <div>
                 @if ($errors->any())
                             <div class="alert alert-danger">
@@ -14,6 +13,52 @@
                                 </ul>
                             </div>
                         @endif
+            </div>
+            <div class="bg-black px-8 py-12 mb-12">
+                <div class="text-white greeting uppercase">{{ __('nadil.general.whats_the_plan') }}</div>
+                <form action="{{ route('site.restaurants.search') }}" method="POST" class="mb-6">
+                    @csrf
+                    <div class="flex my-4 items-center">
+                        <div class="w-1/2 flex">
+                            <input
+                                class="flex-1 font-lato flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none ltr:rounded-l-lg rtl:rounded-r-lg"
+                                type="text" name="search_date" id="search_date" placeholder="Date">
+                            <div class="bg-gray-600 w-[1px] h-[72px] opacity-40"></div>
+
+                            <input
+                                class="flex-1 font-lato flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none "
+                                type="text" name="search_time" id="search_time" placeholder="Time">
+                            <div class="bg-gray-600 w-[1px] h-[72px] opacity-40"></div>
+
+                            <select
+                                class="flex-1 font-lato rtl:font-ahlan rtl:tracking-normal flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none ltr:rounded-r-lg rtl:rounded-l-lg"
+                                type="text" name="search_seats" id="search_seats">
+                                <option value="1">1 {{ trans_choice('nadil.booking.guest', 1) }}</option>
+                                <option value="2">2 {{ trans_choice('nadil.booking.guest', 2) }}</option>
+                                <option value="3">3 {{ trans_choice('nadil.booking.guest', 3) }}</option>
+                                <option value="4">4 {{ trans_choice('nadil.booking.guest', 4) }}</option>
+                                <option value="5">5 {{ trans_choice('nadil.booking.guest', 5) }}</option>
+                                <option value="6">6 {{ trans_choice('nadil.booking.guest', 6) }}</option>
+                                <option value="7">7 {{ trans_choice('nadil.booking.guest', 7) }}</option>
+                                <option value="8">8 {{ trans_choice('nadil.booking.guest', 8) }}</option>
+                                <option value="9">9 {{ trans_choice('nadil.booking.guest', 9) }}</option>
+                                <option value="10">10 {{ trans_choice('nadil.booking.guest', 10) }}</option>
+                                <option value="10+">10+ {{ trans_choice('nadil.booking.guest', 11) }}</option>
+                            </select>
+                        </div>
+
+
+                        <div class="w-1/2 flex">
+                            <input
+                                class=" flex-1 font-lato placeholder:font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none rounded-lg mx-6"
+                                type="text" name="search_name" id="search_name"
+                                placeholder="{{ __('nadil.general.search') }}">
+                            <button
+                                class="font-lato rtl:font-ahlan rtl:tracking-normal border-none px-12 py-6 uppercase bg-nadilBtn-100 shadow-md outline-none rounded-lg"
+                                type="submit">{{ __('nadil.booking.book_now') }}</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="restaurant-search-results mb-8 grid grid-cols-4 gap-4">
                 @foreach ($result as $restaurant)
@@ -49,11 +94,25 @@
     <script src="{{ asset('pickadate/lib/compressed/picker.time.js') }}"></script>
     <script src="{{ asset('pickadate/lib/compressed/legacy.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ar.js"></script>
 
     <script>
-        jQuery('#search_time').pickatime({
-            interval: 15
-        })
+        var booking_time = flatpickr("#search_time", {
+
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "G:i K",
+            defaultDate: "18:00",
+            minuteIncrement: 15,
+            
+        });
+
+        var booking_date = flatpickr("#search_date", {
+            "locale": "{{ app()->getLocale() }}",
+            dateFormat: 'Y-m-d',
+            minDate: 'today',
+            defaultDate: 'today',
+        });
 
         var res_carousel = $('.restaurant-carousel');
         res_carousel.owlCarousel({
@@ -79,34 +138,34 @@
             res_carousel.trigger('prev.owl.carousel');
         })
 
-        $('.meals-carousel').each(function(index){
-            var meal_slider=$(this).owlCarousel({
-            loop: true,
-            rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
+        $('.meals-carousel').each(function(index) {
+            var meal_slider = $(this).owlCarousel({
+                loop: true,
+                rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
+                margin: 10,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
                 }
-            }
+            });
+            $(this).closest('.carousel-container').find('.meals-prev').click(function() {
+                console.log('PREV');
+                meal_slider.trigger('prev.owl.carousel');
+            })
+            $(this).closest('.carousel-container').find('.meals-next').click(function() {
+                console.log('MEXT');
+                meal_slider.trigger('next.owl.carousel');
+            })
         });
-        $( this ).closest('.carousel-container').find('.meals-prev').click(function() {
-            console.log('PREV');
-        meal_slider.trigger('prev.owl.carousel');
-    })
-    $( this ).closest('.carousel-container').find('.meals-next').click(function() {
-        console.log('MEXT');
-        meal_slider.trigger('next.owl.carousel');
-    })
-    });
-        
-        
+
+
 
         var cuisines_carousel = $('.cuisines-carousel');
         cuisines_carousel.owlCarousel({

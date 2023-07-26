@@ -129,6 +129,11 @@ input.chk-btn:checked+label,
 input.chk-btn+label:hover {
   background: #DDD;
 }
+
+input[type="radio"][disabled] + label 
+ {
+     color: Gray;
+ } 
     </style>
 @endpush
 

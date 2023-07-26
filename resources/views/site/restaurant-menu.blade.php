@@ -21,19 +21,24 @@
                         <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
                     </div>
                     <div>
-                        <div>{{__('nadil.booking.accessible')}}: @if ($restaurant->accessible)
-                                <span><i class="fas fa-check text-green-500"></i></span>
+                        <div class="grid grid-cols-2 gap-x-3 mt-4">
+                            <div>{{ __('nadil.booking.accessible') }}:</div>
+                            @if ($restaurant->accessible)
+                                <div class="text-center"><span><i class="fas fa-check text-green-500"></i></span></div>
                             @else
-                                <span><i class="fas fa-times text-red-500"></i></span>
+                                <div class="text-center"><span><i class="fas fa-times text-red-500"></i></span></div>
+                            @endif
+
+
+                            <div>{{ __('nadil.booking.private_rooms') }}:</div>
+                            @if ($restaurant->private_rooms)
+                                <div class="text-center"><span><i class="fas fa-check text-green-500"></i></span></div>
+                            @else
+                                <div class="text-center"><span><i class="fas fa-times text-red-500"></i></span></div>
                             @endif
 
                         </div>
-                        <div>{{__('nadil.booking.private_rooms')}}:@if ($restaurant->private_rooms)
-                                <span><i class="fas fa-check text-green-500"></i></span>
-                            @else
-                                <span><i class="fas fa-times text-red-500"></i></span>
-                            @endif
-                        </div>
+                        
                         @if (!empty($restaurant->dress_code))
                             <div>Dress Code: <span>{{ $restaurant->dress_code }}</span></div>
                         @endif
@@ -53,8 +58,8 @@
                         @endif
                         @if (!empty($restaurant->instagram))
                             <a href="{{ $restaurant->instagram }}"
-                                class="uppercase px-4 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]"><i
-                                    class="fa-brands fa-instagram"></i></a>
+                                class="uppercase px-2 py-2 bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-[19px]"><i
+                                    class="fa-brands fa-instagram text-lg"></i></a>
                         @endif
 
                     </div>

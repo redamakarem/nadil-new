@@ -26,11 +26,15 @@ class SiteController extends Controller
         $restaurants = Restaurant::where('is_active',true)->get();
         $cuisines = Cuisine::all();
         $meal_types = MealType::with('restaurants')->get();
+        $featured = Restaurant::where('is_active',true)->where('is_featured',true)->get();
+        $latest = Restaurant::where('is_active',true)->orderBy('created_at','desc')->take(12)->get();
         if ($agent->isDesktop()) {
             return view('site.home', [
                 'restaurants' => $restaurants,
                 'cuisines' => $cuisines,
                 'meal_types' => $meal_types,
+                'featured' => $featured,
+                'latest' => $latest,
             ]);
         }
 
@@ -39,6 +43,8 @@ class SiteController extends Controller
             'restaurants' => $restaurants,
             'cuisines' => $cuisines,
             'meal_types' => $meal_types,
+            'featured' => $featured,
+            'latest' => $latest,
         ]);
     }
 
@@ -77,13 +83,15 @@ class SiteController extends Controller
                 'search_date' => ['required'],
                 'search_time' => ['required'],
                 'search_seats' => ['required'],
-                'search_name' => ['required']
+                'search_name' => ['sometimes','nullable']
              ]
         );
         // dd($validated_data);
         $result = Restaurant::whereHas('menus')
         ->where('name_'. app()->getLocale(),'LIKE','%'. $validated_data['search_name'].'%')
         ->orWhereRelation('areaa','name_'. app()->getLocale(),$validated_data['search_name'])
+        ->orWhereRelation('cuisines','name_'. app()->getLocale(),$validated_data['search_name'])
+        ->where('is_active',true)
         ->get()->filter(function ($value, $key) use($validated_data) {
             return $value->getAvailableSeats($validated_data['search_date'],$validated_data['search_time']) > $validated_data['search_seats'];
         });
