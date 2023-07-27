@@ -60,6 +60,9 @@
                     </div>
                 </form>
             </div>
+            @if ($result->count() > 0)
+                
+            
             <div class="restaurant-search-results mb-8 grid grid-cols-4 gap-4">
                 @foreach ($result as $restaurant)
                     <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
@@ -76,6 +79,11 @@
                     </div>
                 @endforeach
             </div>
+            @else
+            <div class="flex flex-col justify-center items-center">
+                <div>No results found</div>
+            </div>
+            @endif
             
         </div>
     </div>
