@@ -36,9 +36,9 @@ class UserRegistration extends Component
         return [
             'profile.name' =>['required'],
             'profile.email' =>['required','unique:users,email','email'],
-            'profile.phone' =>['required'],
+            'profile.phone' =>['required','numeric'],
             'profile.gender' =>['required'],
-            'password' =>['required','confirmed'],
+            'password' =>['required','confirmed','min:8'],
             'date_of_birth' =>['required'],
             'area' =>['required'],
 

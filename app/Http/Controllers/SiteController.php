@@ -96,10 +96,10 @@ class SiteController extends Controller
             return $value->getAvailableSeats($validated_data['search_date'],$validated_data['search_time']) > $validated_data['search_seats'];
         });
         if ($agent->isMobile()) {
-            return view('site.mobile.search',compact('result'));
+            return view('site.mobile.search',compact(['result','validated_data']));
         }
 
-        return view('site.search',compact('result'));
+        return view('site.search',compact(['result','validated_data']));
     }
 
     public function getTimeSlots($start_time, $end_time, $slot_length)

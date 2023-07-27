@@ -37,11 +37,13 @@
                                 <div class="text-center"><span><i class="fas fa-times text-red-500"></i></span></div>
                             @endif
 
-                        </div>
-                        
-                        @if (!empty($restaurant->dress_code))
-                            <div>Dress Code: <span>{{ $restaurant->dress_code }}</span></div>
+                            @if (!empty($restaurant->dress_code))
+                            <div>Dress Code: </div>
+                            <div class="text-center">{{ $restaurant->dress_code }}</div>
                         @endif
+
+                        </div>                 
+                        
 
                     </div>
                     <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
@@ -53,7 +55,7 @@
                     <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
                         @if (!empty($restaurant->facebook))
                             <a href="{{ $restaurant->facebook }}"
-                                class="uppercase px-4 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]"><i
+                                class="uppercase px-4 py-4 bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-[19px]"><i
                                     class="fa-brands fa-facebook-f"></i></a>
                         @endif
                         @if (!empty($restaurant->instagram))

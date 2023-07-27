@@ -32,18 +32,18 @@
 
                             <select
                                 class="flex-1 font-lato rtl:font-ahlan rtl:tracking-normal flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none ltr:rounded-r-lg rtl:rounded-l-lg"
-                                type="text" name="search_seats" id="search_seats">
-                                <option value="1">1 {{ trans_choice('nadil.booking.guest', 1) }}</option>
-                                <option value="2">2 {{ trans_choice('nadil.booking.guest', 2) }}</option>
-                                <option value="3">3 {{ trans_choice('nadil.booking.guest', 3) }}</option>
-                                <option value="4">4 {{ trans_choice('nadil.booking.guest', 4) }}</option>
-                                <option value="5">5 {{ trans_choice('nadil.booking.guest', 5) }}</option>
-                                <option value="6">6 {{ trans_choice('nadil.booking.guest', 6) }}</option>
-                                <option value="7">7 {{ trans_choice('nadil.booking.guest', 7) }}</option>
-                                <option value="8">8 {{ trans_choice('nadil.booking.guest', 8) }}</option>
-                                <option value="9">9 {{ trans_choice('nadil.booking.guest', 9) }}</option>
-                                <option value="10">10 {{ trans_choice('nadil.booking.guest', 10) }}</option>
-                                <option value="10+">10+ {{ trans_choice('nadil.booking.guest', 11) }}</option>
+                                type="text" name="search_seats" id="search_seats" >
+                                <option value="1" @if ($validated_data['search_seats'] == 1) selected @endif>1 {{ trans_choice('nadil.booking.guest', 1) }}</option>
+                                <option value="2" @if ($validated_data['search_seats'] == 2) selected @endif>2 {{ trans_choice('nadil.booking.guest', 2) }}</option>
+                                <option value="3" @if ($validated_data['search_seats'] == 3) selected @endif>3 {{ trans_choice('nadil.booking.guest', 3) }}</option>
+                                <option value="4" @if ($validated_data['search_seats'] == 4) selected @endif>4 {{ trans_choice('nadil.booking.guest', 4) }}</option>
+                                <option value="5" @if ($validated_data['search_seats'] == 5) selected @endif>5 {{ trans_choice('nadil.booking.guest', 5) }}</option>
+                                <option value="6" @if ($validated_data['search_seats'] == 6) selected @endif>6 {{ trans_choice('nadil.booking.guest', 6) }}</option>
+                                <option value="7" @if ($validated_data['search_seats'] == 7) selected @endif>7 {{ trans_choice('nadil.booking.guest', 7) }}</option>
+                                <option value="8" @if ($validated_data['search_seats'] == 8) selected @endif>8 {{ trans_choice('nadil.booking.guest', 8) }}</option>
+                                <option value="9" @if ($validated_data['search_seats'] == 9) selected @endif>9 {{ trans_choice('nadil.booking.guest', 9) }}</option>
+                                <option value="10" @if ($validated_data['search_seats'] == 10) selected @endif>10 {{ trans_choice('nadil.booking.guest', 10) }}</option>
+                                <option value="10+" @if ($validated_data['search_seats'] == 1) selected @endif>10+ {{ trans_choice('nadil.booking.guest', 11) }}</option>
                             </select>
                         </div>
 
@@ -102,7 +102,7 @@
             enableTime: true,
             noCalendar: true,
             dateFormat: "G:i K",
-            defaultDate: "18:00",
+            defaultDate: "{{ $validated_data['search_time']}}",
             minuteIncrement: 15,
             
         });
@@ -111,7 +111,7 @@
             "locale": "{{ app()->getLocale() }}",
             dateFormat: 'Y-m-d',
             minDate: 'today',
-            defaultDate: 'today',
+            defaultDate: '{{ $validated_data['search_date']}}',
         });
 
         var res_carousel = $('.restaurant-carousel');

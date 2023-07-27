@@ -120,7 +120,7 @@
                     <div id="logo" class="w-1/3 h-full flex justify-center items-center py-4">
                         <img src="{{asset('/images/logo@2x.png')}}" alt="" class="h-32 w-auto"/>
                     </div>
-                    <div class="flex space-x-2 mx-2 w-2/3 h-full justify-center items-center">
+                    <div class="flex space-x-2 mx-2 w-2/3 h-full justify-center items-center rtl:space-x-reverse">
                         <a
                             href="{{route('home')}}"
                             class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rounded-[19px]"
@@ -148,8 +148,8 @@
                             @foreach (config('app.available_locales') as $locale)
                                 @if (app()->getLocale() != $locale)
                                 <a href="{{ request()->url() }}?language={{ $locale }}"
-                                   class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out text-white">
-                                    [{{ strtoupper($locale) }}]
+                                   class="inline-flex items-center px-1 pt-1 text-sm font-medium focus:outline-none transition duration-150 ease-in-out text-white ltr:font-ahlan rtl:font-lato text-xl">
+                                   {{__('nadil.lang.'.$locale)}}
                                 </a>
                                 @endif
                             @endforeach

@@ -2,7 +2,7 @@
 @section('content')
 
 <div id="page-wrapper" style="background-image:url('{{$restaurant->getFirstMediaUrl('restaurant_bgs')}}'); background-size: cover">
-    <div id="page-content" class=" flex flex-grow flex-col max-w-12xl w-[80%] mx-auto py-[80px]">
+    <div id="page-content" class="flex flex-grow flex-col max-w-12xl mx-auto py-[80px]">
 
         <div class="flex">
             <div id="restaurant-details"
@@ -12,10 +12,37 @@
                 <a href="{{route('site.restaurants.book',$restaurant->id)}}" class="uppercase mt-12 px-16 py-6 bg-nadilBtn-100 tracking-[6px] rtl:tracking-normal rounded-[19px]">{{__('nadil.booking.book_now')}}</a>
                 <div class="uppercase font-din rtl:font-ahlan text-xl tracking-[6px] rtl:tracking-normal mt-3">{{$restaurant->areaa->governate->{'name_'.app()->getLocale()} }}</div>
                 <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">{{$restaurant->areaa->{'name_'.app()->getLocale()} }}</div>
-                <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">{{$restaurant->opening_hours }}</div>
+                <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                    {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
 
                 <div class="px-8 flex w-full">
                     <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px]"></div>
+                </div>
+                <div>
+                    <div class="grid grid-cols-2 gap-x-3 mt-4">
+                        <div>{{ __('nadil.booking.accessible') }}:</div>
+                        @if ($restaurant->accessible)
+                            <div class="text-center"><span><i class="fas fa-check text-green-500"></i></span></div>
+                        @else
+                            <div class="text-center"><span><i class="fas fa-times text-red-500"></i></span></div>
+                        @endif
+
+
+                        <div>{{ __('nadil.booking.private_rooms') }}:</div>
+                        @if ($restaurant->private_rooms)
+                            <div class="text-center"><span><i class="fas fa-check text-green-500"></i></span></div>
+                        @else
+                            <div class="text-center"><span><i class="fas fa-times text-red-500"></i></span></div>
+                        @endif
+
+                        @if (!empty($restaurant->dress_code))
+                        <div>Dress Code: </div>
+                        <div class="text-center">{{ $restaurant->dress_code }}</div>
+                    @endif
+
+                    </div>                 
+                    
+
                 </div>
                 <div class="flex flex-grow w-full px-4 mt-12">
     
@@ -25,7 +52,19 @@
                     </div>
     
                 </div>
-    
+                <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
+                    @if (!empty($restaurant->facebook))
+                        <a href="{{ $restaurant->facebook }}"
+                            class="uppercase px-4 py-4 bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-[19px]"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    @endif
+                    @if (!empty($restaurant->instagram))
+                        <a href="{{ $restaurant->instagram }}"
+                            class="uppercase px-2 py-2 bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-[19px]"><i
+                                class="fa-brands fa-instagram text-lg"></i></a>
+                    @endif
+
+                </div>
                 <div class="mt-16 pb-28 uppercase rtl:font-ahlan font-lato font-italic">&quot;{{__('nadil.general.slogan')}} &quot;</div>
             </div>
     

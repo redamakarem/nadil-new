@@ -5,9 +5,10 @@
                 <h3 class="font-lato font-italic uppercase text-[21px] tracking-[10px] mb-12">{{__('nadil.booking.reservation_history')}}</h3>
                 <div class="w-full flex flex-col max-h-[500px] space-y-8 scrollbar-hide overflow-y-scroll">
                     @foreach ($bookings as $booking )
-                    <div wire:click="select_restaurant('{{$booking->id}}')" class="shadow-md rounded-md py-8 cursor-pointer" style="background-image:url('{{$booking->restaurant->getFirstMediaUrl('restaurant_bgs')}}'); background-size: cover">
+                    <div wire:click="select_restaurant('{{$booking->id}}')" class="flex flex-col shadow-md rounded-md py-8 cursor-pointer" style="background-image:url('{{$booking->restaurant->getFirstMediaUrl('restaurant_bgs')}}'); background-size: cover">
                        <div class="text-3xl text-white text-center"> {{ $booking->restaurant->{'name_'.app()->getLocale()} }}</div>
                        <div class="text-white text-center"> {{ $booking->booking_date }}</div>
+                       <div class="text-white text-center"> {{ $booking->booking_status->{'name_'.app()->getLocale()} }}</div>
                     </div>
                     @endforeach
                 </div>

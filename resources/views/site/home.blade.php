@@ -69,7 +69,7 @@
                     class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[30%] w-12 h-12 flex justify-center items-center shadow-md">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
-                <div class="restaurant-carousel owl-carousel owl-theme mb-8">
+                <div class="restaurant-carousel owl-carousel owl-theme">
                     @foreach ($restaurants as $restaurant)
                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                             style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
@@ -101,7 +101,7 @@
                         class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[30%] w-12 h-12 flex justify-center items-center shadow-md">
                         <i class="fa-solid fa-chevron-left"></i>
                     </div>
-                    <div class="featured-carousel owl-carousel owl-theme mb-8">
+                    <div class="featured-carousel owl-carousel owl-theme">
                         @foreach ($featured as $item)
                             <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                                 style="background-image:url('{{ $item->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
@@ -134,7 +134,7 @@
                         class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[30%] w-12 h-12 flex justify-center items-center shadow-md">
                         <i class="fa-solid fa-chevron-left"></i>
                     </div>
-                    <div class="restaurant-carousel owl-carousel owl-theme mb-8">
+                    <div class="restaurant-carousel owl-carousel owl-theme ">
                         @foreach ($latest as $item)
                             <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                                 style="background-image:url('{{ $item->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
@@ -158,7 +158,7 @@
             </div>
 
             {{--   Restaurants by meal types     --}}
-            <div class="greeting uppercase font-lato rtl:font-ahlan">{{ __('nadil.general.meal_type') }}</div>
+            <div class="greeting uppercase font-lato rtl:font-ahlan mt-8">{{ __('nadil.general.meal_type') }}</div>
 
             @foreach ($meal_types as $meal_type)
                 @if ($meal_type->active_restaurants->count() > 0)
@@ -169,7 +169,7 @@
                             class="absolute bg-nadilBtn-100 carousel-nav p-4 meals-prev prev rounded-full z-10 -left-4 top-[30%] w-12 h-12 flex justify-center items-center shadow-md">
                             <i class="fa-solid fa-chevron-left"></i>
                         </div>
-                        <div class="owl-carousel owl-theme mb-8 meals-carousel">
+                        <div class="owl-carousel owl-theme meals-carousel">
                             @foreach ($meal_type->restaurants as $meal_restaurant)
                                 @if ($meal_restaurant->is_active)
                                     <div class="item flex flex-col justify-center rounded-xl border-2 h-32 shadow-md font-lato"
