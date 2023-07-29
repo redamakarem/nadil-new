@@ -17,8 +17,8 @@
 
 
 
-            <div class="bg-black px-8 py-12 mb-12 rounded-md">
-                <div class="text-white text-xl greeting uppercase">{{ __('nadil.general.whats_the_plan') }}</div>
+            <div class="">
+                <div class="text-xl greeting uppercase">{{ __('nadil.general.whats_the_plan') }}</div>
                 <form action="{{ route('site.restaurants.search') }}" method="POST" class="mb-6">
                     @csrf
                     <div class="flex my-4 items-center">

@@ -133,6 +133,11 @@ class Show extends Component
 
     public function slot_bookable($time_slot)
     {
+        if(Carbon::parse($this->selected_date)->isToday() && Carbon::parse($time_slot)->isPast()){
+            return false;
+        }
+        
+
         $input_date = Carbon::parse($this->selected_date)->format('Y-m-d');
         $input_time =  Carbon::parse($time_slot)->format('H:i:s');
         return $this->getAvailableSeats($input_time) >= $this->seats;

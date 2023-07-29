@@ -51,7 +51,7 @@
                         <div class="w-1/2 flex">
                             <input
                                 class=" flex-1 font-lato placeholder:font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal flex text-center border-none py-6 uppercase bg-nadilBtn-100 outline-none rounded-lg mx-6"
-                                type="text" name="search_name" id="search_name"
+                                type="text" name="search_name" id="search_name" value="{{ $validated_data['search_name'] }}"
                                 placeholder="{{ __('nadil.general.search') }}">
                             <button
                                 class="font-lato rtl:font-ahlan rtl:tracking-normal border-none px-12 py-6 uppercase bg-nadilBtn-100 shadow-md outline-none rounded-lg"
