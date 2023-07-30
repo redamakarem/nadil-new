@@ -31,6 +31,8 @@
             'swal_confirm_text' => 'Yes, cancel booking',
             'swal_cancel_text' => 'Cancel',
             'validation_error_header' => 'Oops, something went wrong!',
+            'weekdays' => 'Sun - Wed',
+            'weekends' => 'Thu - Sat',
         ],
         'messages' =>[
             'booking_party_size' => 'If you want to book more than :max seats, please contact the restaurant',
@@ -46,6 +48,7 @@
 
         'booking' => [
             'book_now' => 'Book Now',
+            'menu' => 'Menu',
             'select_date_time' => 'Please select date and time',
             'how_many_seats' => 'How many seats?',
             'guest' => 'guest|guests',

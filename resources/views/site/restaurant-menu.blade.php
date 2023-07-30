@@ -16,7 +16,9 @@
                     <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
                         {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
                     <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
-                        {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
+                       {{ __('nadil.general.weekdays') }}:{{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
+                    <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                       {{ __('nadil.general.weekends') }}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
                     <div class="px-8 flex w-full">
                         <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
                     </div>

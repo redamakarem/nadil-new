@@ -169,7 +169,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
         [\App\Http\Controllers\Admin\ScheduleController::class,'create'])
         ->name('admin.restaurant.schedules.create');
 
-    Route::get('/restaurant/{restaurant}/schedules/{schedule}/edit',
+    Route::get('/schedules/{sched}/edit',
         [\App\Http\Controllers\Admin\ScheduleController::class,'edit'])
         ->name('admin.restaurant.schedules.edit');
 

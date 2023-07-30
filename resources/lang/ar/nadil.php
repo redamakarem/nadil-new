@@ -35,9 +35,12 @@ return array (
     'swal_confirm_text' => 'اجل, أريد الغاء الحجز',
     'swal_cancel_text' => 'اغلاق',
     'validation_error_header' => 'هناك خطأ في الحقول التالية',
+    'weekdays' => 'الاحد - الاربعاء',
+    'weekends' => 'الخميس - السبت',
 ],
   'booking' => [
     'book_now' => 'احجز الان',
+    'menu' => 'القائمة',
     'select_date_time' => 'الرجاء اختيار التاريخ و الوقت',
     'how_many_seats' => 'عدد المقاعد',
     'guest' => 'ضيوف|ضيف',

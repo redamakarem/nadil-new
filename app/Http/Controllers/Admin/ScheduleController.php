@@ -60,11 +60,12 @@ class ScheduleController extends Controller
      * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function edit( $schedule,$restaurant)
+    public function edit( $schedule)
     {
+        
+        
         $sched = Schedule::findOrFail($schedule);
-        $rest = Restaurant::findOrFail($restaurant);
-        return view('admin.schedules.edit',['schedule' =>$sched, 'restaurant' => $rest]);
+        return view('admin.schedules.edit',['schedule' =>$sched]);
     }
 
     /**

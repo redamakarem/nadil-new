@@ -12,6 +12,7 @@ class Index extends Component
     public function mount()
     {
         $this->dishes = Dish::all();
+        // dd($this->dishes);
     }
     public function render()
     {

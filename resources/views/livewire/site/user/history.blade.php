@@ -58,6 +58,19 @@
                         <button wire:click="changeTab('cancelled')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase">Cancelled</button>
                     </div>
                     <div class="w-full flex flex-col max-h-[500px] space-y-8 scrollbar-hide overflow-y-scroll">
+                        
+                        @forelse ($filtered_bookings as $booking)
+                        <div wire:click="select_restaurant('{{$booking->id}}')" class="flex flex-col shadow-md rounded-md py-8 cursor-pointer" style="background-image:url('{{$booking->restaurant->getFirstMediaUrl('restaurant_bgs')}}'); background-size: cover">
+                            <div class="text-3xl text-white text-center"> {{ $booking->restaurant->{'name_'.app()->getLocale()} }}</div>
+                            <div class="text-white text-center"> {{ $booking->booking_date }}</div>
+                            <div class="text-white text-center"> {{ $booking->booking_status->{'name_'.app()->getLocale()} }}</div>
+                         </div>
+                        @empty
+                            <div class="flex flex-col justify-center items-center h-48">No bookings found</div>
+                        @endforelse
+                        
+                        
+                        {{-- @if ($filtered_bookings)
                         @foreach ($filtered_bookings as $booking )
                         <div wire:click="select_restaurant('{{$booking->id}}')" class="flex flex-col shadow-md rounded-md py-8 cursor-pointer" style="background-image:url('{{$booking->restaurant->getFirstMediaUrl('restaurant_bgs')}}'); background-size: cover">
                            <div class="text-3xl text-white text-center"> {{ $booking->restaurant->{'name_'.app()->getLocale()} }}</div>
@@ -65,6 +78,11 @@
                            <div class="text-white text-center"> {{ $booking->booking_status->{'name_'.app()->getLocale()} }}</div>
                         </div>
                         @endforeach
+                        @else
+                        <div class="flex flex-col justify-center h-44">
+                            <div class="w-full text-center">No bookings found</div>
+                        </div>
+                        @endif --}}
                     </div>
                 </div>
             </div>
