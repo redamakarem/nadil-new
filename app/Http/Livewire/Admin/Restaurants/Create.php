@@ -50,7 +50,10 @@ class Create extends Component
         'form_data.instagram' => 'sometimes',
         'form_data.accessible' => 'sometimes',
         'form_data.private_rooms' => 'sometimes',
-        'form_data.opening_hours' => 'sometimes',
+        'form_data.opening_hours_en' => 'sometimes',
+        'form_data.opening_hours_ar' => 'sometimes',
+        'form_data.weekend_opening_hours_en' => 'sometimes',
+        'form_data.weekend_opening_hours_ar' => 'sometimes',
         'form_data.dress_code' => 'sometimes',
         'is_active' => 'sometimes',
 
@@ -87,7 +90,10 @@ class Create extends Component
         $this->form_data['floor'] = '';
         $this->form_data['accessible'] = false;
         $this->form_data['private_rooms'] = false;
-        $this->form_data['opening_hours'] = '';
+        $this->form_data['opening_hours_en'] = '';
+        $this->form_data['opening_hours_ar'] = '';
+        $this->form_data['weekend_opening_hours_en'] = '';
+        $this->form_data['weekend_opening_hours_ar'] = '';
         $this->form_data['dress_code'] = '';
         $this->form_data['estimated_dining_time'] = 5;
         $this->users = User::role('restaurant-super-admin')->get();
@@ -123,7 +129,10 @@ class Create extends Component
                 'floor' => $this->form_data['floor'],
                 'accessible' => $this->form_data['accessible'],
                 'private_rooms' => $this->form_data['private_rooms'],
-                'opening_hours' => $this->form_data['opening_hours'],
+                'opening_hours_en' => $this->form_data['opening_hours_en'],
+                'opening_hours_ar' => $this->form_data['opening_hours_ar'],
+                'weekend_opening_hours_en' => $this->form_data['weekend_opening_hours_en'],
+                'weekend_opening_hours_ar' => $this->form_data['weekend_opening_hours_ar'],
                 'dress_code' => $this->form_data['dress_code'],
             ]
         );

@@ -447,6 +447,8 @@ namespace App\Models{
  * @property string $dress_code
  * @property string|null $opening_hours_ar
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property string|null $weekend_opening_hours_en
+ * @property string|null $weekend_opening_hours_ar
  * @property-read \App\Models\Area|null $areaa
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count
@@ -508,6 +510,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereStreetEn($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereWeekendOpeningHoursAr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereWeekendOpeningHoursEn($value)
  * @method static \Illuminate\Database\Query\Builder|Restaurant withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Restaurant withoutTrashed()
  */

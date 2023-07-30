@@ -43,6 +43,8 @@ class Restaurant extends Model implements HasMedia
         'private_rooms',
         'opening_hours_en',
         'opening_hours_ar',
+        'weekend_opening_hours_en',
+        'weekend_opening_hours_ar',
         'dress_code'
     ];
 

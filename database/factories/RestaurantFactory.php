@@ -56,6 +56,8 @@ class RestaurantFactory extends Factory
             'private_rooms' =>  $this->faker->boolean(),
             'opening_hours_en' =>  $this->faker->randomElement(['8:00 AM - 10:00 PM','8:00 AM - 11:00 PM','8:00 AM - 12:00 AM']),
             'opening_hours_ar' =>  $this->faker->randomElement(['8:00 AM - 10:00 PM','8:00 AM - 11:00 PM','8:00 AM - 12:00 AM']),
+            'weekend_opening_hours_en' =>  $this->faker->randomElement(['8:00 AM - 10:00 PM','8:00 AM - 11:00 PM','8:00 AM - 12:00 AM']),
+            'weekend_opening_hours_ar' =>  $this->faker->randomElement(['8:00 AM - 10:00 PM','8:00 AM - 11:00 PM','8:00 AM - 12:00 AM']),
             'dress_code' =>  $this->faker->randomElement(['Casual','Formal']),
             'is_active' =>  true,
             'is_featured' =>  false,

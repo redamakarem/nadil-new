@@ -53,6 +53,8 @@ class Edit extends Component
             'restaurant.private_rooms' => 'sometimes',
             'restaurant.opening_hours_en' => 'sometimes',
             'restaurant.opening_hours_ar' => 'sometimes',
+            'restaurant.weekend_opening_hours_en' => 'sometimes',
+            'restaurant.weekend_opening_hours_ar' => 'sometimes',
             'restaurant.estimated_dining_time' => 'required|numeric',
             'restaurant.is_active' => 'sometimes',
             'restaurant.dress_code' => 'sometimes',

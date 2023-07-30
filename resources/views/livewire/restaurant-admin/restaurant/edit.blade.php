@@ -117,6 +117,22 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="instagram">Weekend Opening Hours English</label>
+                        <input type="text" name="instagram" class="form-control" id="instagram"
+                            placeholder="Eg: 10 am to 11pm" wire:model="restaurant.weekend_opening_hours_en">
+                        @error('form_data.facebook')
+                            <p class="error">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram">Weekend Opening Hours English</label>
+                        <input type="text" name="instagram" class="form-control" id="instagram"
+                            placeholder="Eg: 10 am to 11pm" wire:model="restaurant.weekend_opening_hours_ar">
+                        @error('form_data.facebook')
+                            <p class="error">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="facebook">Facebook</label>
                         <input type="text" name="facebook" class="form-control"
                                id="facebook" placeholder="Eg: www.facebook.com" wire:model.defer="restaurant.facebook">
