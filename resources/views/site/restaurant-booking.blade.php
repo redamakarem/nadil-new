@@ -102,7 +102,7 @@
             console.log(coordsStr.toString());
             const myLatlng = { lat: parseFloat(lat), lng: parseFloat(lng) };
             const map = new google.maps.Map(document.getElementById("googleMap"), {
-                zoom: 10,
+                zoom: 17,
                 center: myLatlng,
             });
 

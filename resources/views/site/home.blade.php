@@ -76,7 +76,7 @@
                             <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                 <h4
-                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[24px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                     {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
                                 <div
                                     class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
@@ -108,7 +108,7 @@
                                 <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
                                     class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                     <h4
-                                        class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                        class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[24px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                         {{ $item->{'name_' . app()->getLocale()} }}</h4>
                                     <div
                                         class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
@@ -141,7 +141,7 @@
                                 <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
                                     class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                     <h4
-                                        class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                        class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[24px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                         {{ $item->{'name_' . app()->getLocale()} }}</h4>
                                     <div
                                         class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
@@ -177,7 +177,7 @@
                                         <a href="{{ route('site.restaurants.view', ['id' => $meal_restaurant->id]) }}"
                                             class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                             <h4
-                                                class="text-center uppercase text-white text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                                class="text-center font-bold uppercase text-white text-[24px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                                 {{ $meal_restaurant->{'name_' . app()->getLocale()} }}</h4>
                                             <div
                                                 class="address text-center uppercase text-white text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
@@ -210,7 +210,7 @@
                             <a href="{{ route('site.restaurants.view', ['id' => $cuisine->id]) }}"
                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                 <h4
-                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[24px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                     {{ $cuisine->{'name_' . app()->getLocale()} }}</h4>
                                 
                             </a>

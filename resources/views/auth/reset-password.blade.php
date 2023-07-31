@@ -50,9 +50,9 @@
 
 @extends('layouts.site-tw')
 @section('content')
-    <div class="flex lg:px-16">
-        <div class="flex-1 flex-col items-center ">
-            <div class="flex flex-col w-full rounded-lg p-4 lg:rounded-[64px] border-2 bg-[#EFEFEF] lg:my-12 lg:px-16 lg:py-12 lg:space-y-8">
+    <div class="h-full flex lg:px-16">
+        <div class="w-full h-full flex flex-col items-center justify-center ">
+            <div class="flex flex-col w-full justify-center rounded-lg p-4 lg:rounded-[64px] border-2 bg-[#EFEFEF] lg:my-12 lg:px-16 lg:py-12 lg:space-y-8 max-w-4xl">
                 
                 <form id="login-form" class="" action="{{ route('password.update') }}" method="POST">
                     @csrf
@@ -60,20 +60,20 @@
                         <h2 class="ltr:font-lato rtl:font-ahlan text-center font-bold uppercase text-lg ltr:tracking-[4px] rtl:tracking-normal">{{__('nadil.auth.reset_password')}}</h2>
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="flex items-center w-full font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-4 rounded-[19px]" placeholder="{{__('nadil.auth.email')}}" name="email"
+                        <input type="email" class="flex items-center w-full font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:font-bold text-[19px] tracking-[4px]  border-[#707070] border-2 p-4 rounded-[19px]" placeholder="{{__('nadil.auth.email')}}" name="email"
                             id="exampleInputEmail1">
                         @error('email')
                             <span class="error text-red">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="flex items-center w-full font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-4 rounded-[19px]" placeholder="{{__('nadil.auth.password')}}" name="password">
+                        <input type="password" class="flex items-center w-full font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:font-bold text-[19px] tracking-[4px]  border-[#707070] border-2 p-4 rounded-[19px]" placeholder="{{__('nadil.auth.password')}}" name="password">
                         @error('password')
                             <span class="error text-red">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="flex items-center w-full font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:font-bold text-[19px] tracking-[4px] uppercase border-[#707070] border-2 p-4 rounded-[19px]" placeholder="{{__('nadil.auth.confirm_password')}}"
+                        <input type="password" class="flex items-center w-full font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:font-bold text-[19px] tracking-[4px] border-[#707070] border-2 p-4 rounded-[19px]" placeholder="{{__('nadil.auth.confirm_password')}}"
                             name="password_confirmation">
                         @error('password_confirmation')
                             <span class="error text-red">{{ $message }}</span>

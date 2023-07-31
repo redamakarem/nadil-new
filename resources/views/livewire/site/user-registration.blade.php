@@ -99,7 +99,8 @@
 <script>
     var booking_date = flatpickr("#dob", {
         "locale": "{{app()->getLocale()}}",
-        dateFormat: 'y-m-d',
+        dateFormat: 'Y-m-d',
+        minDate: "2007-01-01",
     });
     booking_date.config.onChange.push(function(selectedDates,dateStr,instance) {
         console.log(dateStr);

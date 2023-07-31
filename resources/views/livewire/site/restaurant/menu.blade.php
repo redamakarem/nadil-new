@@ -25,7 +25,7 @@
                                     class="dish-container flex w-2/3 mx-auto bg-[#e0e0e0] px-8 py-12 rounded-[19px] shadow-md">
                                     <div class="w-1/4 flex justify-center">
                                         <img src="{{ $dish->getFirstMediaUrl('dish_images') }}" alt=""
-                                            class="rounded-full h-24 w-24 shadow-md">
+                                            class="rounded-full h-32 w-32 shadow-md">
                                     </div>
                                     <div class="w-3/4 flex flex-col ">
                                         <div
