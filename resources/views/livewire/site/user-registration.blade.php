@@ -68,6 +68,7 @@
                                type="password" class="w-full ltr:font-lato rtl:font-ahlan py-4 rounded-[19px] uppercase text-lg ltr:tracking-[4px] rtl:tracking-normal"
                                placeholder="{{__('nadil.user_registration.confirm_password')}}">
                     </div>
+                    <div class="my-3 px-4 ltr:font-lato rtl:font-ahlan uppercase text-lg ltr:tracking-[4px] rtl:tracking-normal">{{__('nadil.user_registration.register_agree')}} <a href="#" class="underline">{{__('nadil.footer.terms')}}</a> {{__('nadil.user_registration.and')}} <a href="#" class="underline">{{__('nadil.footer.cancellation')}}</a></div>
                     <div class="flex justify-end">
                         <button class="bg-nadilBg-100 uppercase px-6 py-4 rounded-md font-lato rtl:font-ahlan" type="submit">{{__('nadil.user_registration.register')}}</button>
                     </div>
@@ -100,7 +101,7 @@
     var booking_date = flatpickr("#dob", {
         "locale": "{{app()->getLocale()}}",
         dateFormat: 'Y-m-d',
-        minDate: "2007-01-01",
+        maxDate: "2007-12-31",
     });
     booking_date.config.onChange.push(function(selectedDates,dateStr,instance) {
         console.log(dateStr);

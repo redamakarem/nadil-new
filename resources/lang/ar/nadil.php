@@ -37,6 +37,7 @@ return array (
     'validation_error_header' => 'هناك خطأ في الحقول التالية',
     'weekdays' => 'الاحد - الاربعاء',
     'weekends' => 'الخميس - السبت',
+    'search_placeholder' => 'ابحث عن مطعم, منطقة, نوع الطعام',
 ],
   'booking' => [
     'book_now' => 'احجز الان',
@@ -99,6 +100,8 @@ return array (
     'password' =>'كلمة المرور',
     'confirm_password' =>'تأكيد كلمة المرور',
     'register' =>'انشاء حساب',
+    'register_agree' =>'بإنشاء حساب معنا فانت توافق على ',
+    'and' =>'و',
   ],
   'contact' => [
     'title' => 'تواصل معنا',
@@ -117,5 +120,6 @@ return array (
     'faq' =>'الاسئلة الشائعة',
     'cancellation' =>'سياسة الالغاء',
     'all_rights' =>'جميع الحقوق محفوظة',
+    'contact' =>'تواصل معنا',
 ],
 );

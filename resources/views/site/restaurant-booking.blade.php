@@ -74,8 +74,10 @@
             <div class="w-12"></div>
     
             <div id="booking"
-                 class="flex flex-1 px-16 py-16 min-h-80 rounded-[64px] bg-white">
-                @livewire('site.booking.show',[$restaurant])
+                 class="flex flex-1 px-16 py-16 min-h-80 border-2 rounded-[64px] bg-white">
+                <div class="bg-[#f5f5f5] flex w-full p-8 rounded-[64px]">
+                    @livewire('site.booking.show',[$restaurant])
+                </div>
             </div>
         </div>
     </div>

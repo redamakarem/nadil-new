@@ -33,9 +33,10 @@
             'validation_error_header' => 'Oops, something went wrong!',
             'weekdays' => 'Sun - Wed',
             'weekends' => 'Thu - Sat',
+            'search_placeholder' => 'Search to Restaurant, Location, Cuisine',
         ],
         'messages' =>[
-            'booking_party_size' => 'If you want to book more than :max seats, please contact the restaurant',
+            'booking_party_size' => 'For Parties Larger than :max seats, please contact the restaurant',
         ],
         'dishes' =>[
             'explore_more' => 'EXPLORE MORE DISHES',
@@ -97,6 +98,8 @@
             'password' =>'Password',
             'confirm_password' =>'Confirm Password',
             'register' =>'Register',
+            'register_agree' =>'By registering , you have read and agreed to our ',
+            'and' =>'and',
         ],
         'contact' => [
             'title' =>'Contact Us',
@@ -110,11 +113,12 @@
         'footer' => [
             'about' =>'About',
             'contact' =>'Contact',
-            'terms' =>'Terms & Conditions',
+            'terms' =>'Terms of Use',
             'privacy' =>'Privacy Policy',
             'faq' =>'FAQ',
             'cancellation' =>'Cancellation Policy',
             'all_rights' =>'All Rights Reserved',
+            'contact' =>'Contact Us',
         ],
 
 

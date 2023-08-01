@@ -696,6 +696,10 @@ select {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
 }
+.my-3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
 .ml-3 {
     margin-left: 0.75rem;
 }
@@ -2106,6 +2110,15 @@ select {
 }
 [dir="ltr"] .ltr\:tracking-\[2px\] {
     letter-spacing: 2px;
+}
+[dir="ltr"] .ltr\:tracking-normal {
+    letter-spacing: 0em;
+}
+[dir="ltr"] .ltr\:tracking-tight {
+    letter-spacing: -0.025em;
+}
+[dir="ltr"] .ltr\:tracking-wide {
+    letter-spacing: 0.025em;
 }
 [dir="ltr"] .ltr\:placeholder\:font-bold::-moz-placeholder {
     font-weight: 700;

@@ -71,7 +71,7 @@ Route::get('/privacy',[\App\Http\Controllers\SiteController::class,'privacy'])
 Route::get('/faq',[\App\Http\Controllers\SiteController::class,'faq'])
     ->name('site.legal.faq');
 Route::get('/tos',[\App\Http\Controllers\SiteController::class,'tos'])
-    ->name('site.legal.faq');
+    ->name('site.legal.tos');
 
 
 
