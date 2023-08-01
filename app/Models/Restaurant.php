@@ -99,6 +99,11 @@ class Restaurant extends Model implements HasMedia
         return $this->hasMany(BookingsTables::class);
     }
 
+    public function dress_code()
+    {
+        return $this->belongsTo(DressCode::class, 'dress_code_id', 'id');
+    }
+
     public function meal_types()
     {
         return $this->belongsToMany(MealType::class);

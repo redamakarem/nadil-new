@@ -465,11 +465,11 @@ namespace App\Models{
  * @property int $accessible
  * @property int $private_rooms
  * @property string $opening_hours_en
- * @property string $dress_code
  * @property string|null $opening_hours_ar
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null $weekend_opening_hours_en
  * @property string|null $weekend_opening_hours_ar
+ * @property int $dress_code_id
  * @property-read \App\Models\Area|null $areaa
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count
@@ -479,6 +479,7 @@ namespace App\Models{
  * @property-read int|null $dining_tables_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Dish[] $dishes
  * @property-read int|null $dishes_count
+ * @property-read \App\Models\DressCode $dress_code
  * @property-read mixed $admin_name
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MealType[] $meal_types
  * @property-read int|null $meal_types_count
@@ -510,7 +511,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereCoordinates($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereDressCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereDressCodeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereEstimatedDiningTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Restaurant whereFacebook($value)
