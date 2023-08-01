@@ -41,7 +41,7 @@
 
                             @if (!empty($restaurant->dress_code))
                             <div>Dress Code: </div>
-                            <div class="text-center">{{ $restaurant->dress_code }}</div>
+                            <div class="text-center">{{ $restaurant->dress_code->{'name_' . app()->getLocale()} }}</div>
                         @endif
 
                         </div>                 

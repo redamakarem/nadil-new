@@ -170,7 +170,7 @@
             class="content bg-black h-20 flex justify-between"
         >
             <div class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal flex flex-col justify-center px-4">
-                <div>All rights reserved</div>
+                <div>&copy; Nadil - All rights reserved</div>
             </div>
             <div class="flex space-x-6 items-center mx-2 rtl:space-x-reverse">
                 <a href="{{route('site.legal.tos')}}" class="text-white font-bold font-din uppercase tracking-[2px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.terms')}}</a>

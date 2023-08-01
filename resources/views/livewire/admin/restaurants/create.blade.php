@@ -232,13 +232,11 @@
                     </div>
                     <div class="form-group">
                         <label for="dress_code">Dress Code</label>
-                        <select name="dress_code" id="dress-code" class="form-control" wire:model.defer="form_data.dress_code">
+                        <select name="dress_code" id="dress-code" class="form-control" wire:model="form_data.dress_code_id">
                             <option value="">None</option>
-                            <option value="Casual">Casual</option>
-                            <option value="Smart Casual">Smart Casual</option>
-                            <option value="Business Casual">Business Casual</option>
-                            <option value="Semi-Formal">Semi-Formal</option>
-                            <option value="Formal">Formal</option>
+                            @foreach ($dress_codes as $dress_code)
+                                <option value="{{ $dress_code->id }}">{{ $dress_code->name_en }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Restaurants;
 
 use App\Models\Cuisine;
+use App\Models\DressCode;
 use App\Models\Governate;
 use App\Models\MealType;
 use App\Models\Restaurant;
@@ -23,6 +24,7 @@ class Create extends Component
     public $meal_types;
     public $governates;
     public $coordinates= '';
+    public $dress_codes;
     public $is_active = false;
 
 
@@ -54,7 +56,7 @@ class Create extends Component
         'form_data.opening_hours_ar' => 'sometimes',
         'form_data.weekend_opening_hours_en' => 'sometimes',
         'form_data.weekend_opening_hours_ar' => 'sometimes',
-        'form_data.dress_code' => 'sometimes',
+        'form_data.dress_code_id' => 'sometimes',
         'is_active' => 'sometimes',
 
     ];
@@ -69,6 +71,7 @@ class Create extends Component
         $this->cuisines = $cuisines;
         $this->meal_types = MealType::all();
         $this->users = $users;
+        $this->dress_codes = DressCode::all();
 
         $this->coordinates= '';
         $this->form_data['name_en'] = '';
@@ -94,7 +97,7 @@ class Create extends Component
         $this->form_data['opening_hours_ar'] = '';
         $this->form_data['weekend_opening_hours_en'] = '';
         $this->form_data['weekend_opening_hours_ar'] = '';
-        $this->form_data['dress_code'] = '';
+        $this->form_data['dress_code_id'] = '';
         $this->form_data['estimated_dining_time'] = 5;
         $this->users = User::role('restaurant-super-admin')->get();
         $this->governates = Governate::all();
@@ -133,7 +136,7 @@ class Create extends Component
                 'opening_hours_ar' => $this->form_data['opening_hours_ar'],
                 'weekend_opening_hours_en' => $this->form_data['weekend_opening_hours_en'],
                 'weekend_opening_hours_ar' => $this->form_data['weekend_opening_hours_ar'],
-                'dress_code' => $this->form_data['dress_code'],
+                'dress_code' => $this->form_data['dress_code_id'],
             ]
         );
         $new_restaurant->cuisines()->attach($this->form_data['cuisines']);

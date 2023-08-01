@@ -33,7 +33,7 @@
             'validation_error_header' => 'Oops, something went wrong!',
             'weekdays' => 'Sun - Wed',
             'weekends' => 'Thu - Sat',
-            'search_placeholder' => 'Search to Restaurant, Location, Cuisine',
+            'search_placeholder' => 'Restaurant, Location, Cuisine',
         ],
         'messages' =>[
             'booking_party_size' => 'For Parties Larger than :max seats, please contact the restaurant',

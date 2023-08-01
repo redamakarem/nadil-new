@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Cuisine;
 use Livewire\Component;
 use App\Models\MealType;
+use App\Models\DressCode;
 use App\Models\Governate;
 use App\Models\Restaurant;
 use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
@@ -23,7 +24,7 @@ class Edit extends Component
     public $coordinates;
     public $owner;
     public $governates;
-
+    public $dress_code;
     public $area;
 
 
@@ -57,7 +58,7 @@ class Edit extends Component
             'restaurant.weekend_opening_hours_ar' => 'sometimes',
             'restaurant.estimated_dining_time' => 'required|numeric',
             'restaurant.is_active' => 'sometimes',
-            'restaurant.dress_code' => 'sometimes',
+            'restaurant.dress_code_id' => 'sometimes',
             'cuisines' => 'required',
             'owner' => 'required',
         ];
@@ -72,15 +73,17 @@ class Edit extends Component
         $this->meal_types = $this->restaurant->meal_types->pluck('id')->toArray();
         $this->area = $this->restaurant->area;
         $this->governates = Governate::all();
+        $this->dress_code = $this->restaurant->dress_code_id;
     }
 
     public function render()
     {
         $cuisiness = Cuisine::all();
+        $dress_codess = DressCode::all();
         $ownerss = User::role('restaurant-super-admin')->get();
         $meal_typess = MealType::all();
         $users = User::role('restaurant-admin')->get();
-        return view('livewire.admin.restaurants.edit', compact(['cuisiness', 'users', 'meal_typess', 'ownerss']));
+        return view('livewire.admin.restaurants.edit', compact(['cuisiness', 'users', 'meal_typess', 'ownerss', 'dress_codess']));
     }
 
 
