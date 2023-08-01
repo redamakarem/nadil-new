@@ -6,18 +6,18 @@
             <div class="flex">
                 <div id="restaurant-details" class="flex flex-col items-center w-[375px] rounded-[64px] border-2 bg-white">
                     <h2
-                        class="ltr:font-lato rtl:font-ahlan text-4xl ltr:tracking-widest rtl:tracking-normal mt-16 uppercase text-center">
+                        class="ltr:font-lato rtl:font-ahlan text-4xl ltr:tracking-[2px] rtl:tracking-normal mt-16 uppercase text-center">
                         {{ $restaurant->{'name_' . app()->getLocale()} }}</h2>
                     <hr class="h-1 w-48 mt-4" />
                     <a href="{{ route('site.restaurants.book', $restaurant->id) }}"
-                        class="uppercase mt-12 px-16 py-6 bg-nadilBtn-100 ltr:tracking-[6px] rtl:tracking-normal rounded-[19px]">{{ __('nadil.booking.book_now') }}</a>
-                    <div class="uppercase ltr:font-din rtl:font-ahlan text-xl ltr:tracking-[6px] rtl:tracking-normal mt-3">
+                        class="uppercase mt-12 px-16 py-6 bg-nadilBtn-100 ltr:tracking-[2px] rtl:tracking-normal rounded-[19px]">{{ __('nadil.booking.book_now') }}</a>
+                    <div class="uppercase ltr:font-din rtl:font-ahlan text-xl ltr:tracking-[2px] rtl:tracking-normal mt-3">
                         {{ $restaurant->areaa->governate->{'name_' . app()->getLocale()} }}</div>
-                    <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                    <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
                         {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
-                    <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                    <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
                        {{ __('nadil.general.weekdays') }}:{{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
-                    <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                    <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
                        {{ __('nadil.general.weekends') }}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
                     <div class="px-8 flex w-full">
                         <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
@@ -50,9 +50,9 @@
                     </div>
                     <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
                         <a href="tel://{{ $restaurant->phone }}"
-                            class="uppercase font-lato rtl:tracking-normal rtl:font-ahlan px-8 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]">{{ __('nadil.general.phone') }}</a>
+                            class="uppercase font-lato rtl:tracking-normal rtl:font-ahlan px-8 py-4 bg-nadilBtn-100 tracking-[2px] rounded-[19px]">{{ __('nadil.general.phone') }}</a>
                         <a href="mailto:{{ $restaurant->email }}"
-                            class="uppercase font-lato rtl:tracking-normal rtl:font-ahlan px-8 py-4 bg-nadilBtn-100 tracking-[6px] rounded-[19px]">{{ __('nadil.general.email') }}</a>
+                            class="uppercase font-lato rtl:tracking-normal rtl:font-ahlan px-8 py-4 bg-nadilBtn-100 tracking-[2px] rounded-[19px]">{{ __('nadil.general.email') }}</a>
                     </div>
                     <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
                         @if (!empty($restaurant->facebook))

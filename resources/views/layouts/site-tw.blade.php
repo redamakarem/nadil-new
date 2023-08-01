@@ -80,17 +80,17 @@
                         <div class="flex space-x-2 mx-2 w-2/3 h-full justify-center items-center">
                             <a
                                 href="{{route('home')}}"
-                                class="bg-gray-400 rtl:ml-2 px-11 rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rtl:tracking-normal rounded-[19px]"
+                                class="bg-gray-400 rtl:ml-2 px-11 rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[2px] rtl:tracking-normal rounded-[19px]"
                             >{{__('nadil.menu.discover')}}</a
                             >
                             <a
                                 href="{{route('site.contact')}}"
-                                class="bg-gray-400 px-11 rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rtl:tracking-normal rounded-[19px]"
+                                class="bg-gray-400 px-11 rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[2px] rtl:tracking-normal rounded-[19px]"
                             >{{__('nadil.menu.contact')}}</a
                             >
                             <a
                                 href="{{route('login')}}"
-                                class="bg-gray-400 px-11 rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rtl:tracking-normal rounded-[19px]"
+                                class="bg-gray-400 px-11 rounded-md uppercase ltr:font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[2px] rtl:tracking-normal rounded-[19px]"
                             >{{__('nadil.menu.login')}}</a
                             >
                             
@@ -118,22 +118,22 @@
                     class="hidden lg:flex justify-between items-center h-full"
                 >
                     <div id="logo" class="w-1/3 h-full flex justify-center items-center py-4">
-                        <img src="{{asset('/images/logo@2x.png')}}" alt="" class="h-32 w-auto"/>
+                        <a href="{{route('site.home')}}"><img src="{{asset('/images/logo@2x.png')}}" alt="" class="h-32 w-auto"/></a>
                     </div>
                     <div class="flex space-x-2 mx-2 w-2/3 h-full justify-center items-center rtl:space-x-reverse">
                         <a
                             href="{{route('home')}}"
-                            class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rounded-[19px]"
+                            class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[2px] rounded-[19px]"
                         >{{__('nadil.menu.discover')}}</a
                         >
                         {{-- <a
                             href="{{route('user.history.show')}}"
-                            class="bg-gray-400 px-11  rounded-md uppercase rtl:font-ahlan rtl:tracking-normal rtl:font-normal font-lato text-sm ltr:font-semibold py-4 px-16 ltr:tracking-[4px] rtl:tracking-normal rounded-[19px]"
+                            class="bg-gray-400 px-11  rounded-md uppercase rtl:font-ahlan rtl:tracking-normal rtl:font-normal font-lato text-sm ltr:font-semibold py-4 px-16 ltr:tracking-[2px] rtl:tracking-normal rounded-[19px]"
                         >{{__('nadil.menu.reservations')}}</a
                         > --}}
                         <a
                             href="{{route('user.profile.show')}}"
-                            class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rounded-[19px]"
+                            class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[2px] rounded-[19px]"
                         >{{__('nadil.menu.profile')}}</a
                         >
                         <form action="{{route('logout')}}" method="POST" onclick="event.preventDefault();
@@ -141,7 +141,7 @@
                             @csrf
                             <a
                                 href="#"
-                                class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[4px] rounded-[19px]"
+                                class="bg-gray-400 px-11  rounded-md uppercase font-lato rtl:font-ahlan rtl:tracking-normal rtl:font-normal text-sm ltr:font-semibold py-4 px-16 tracking-[2px] rounded-[19px]"
                             >{{__('nadil.menu.logout')}}</a>
                         </form>
                         <div>
@@ -173,10 +173,10 @@
                 <div>All rights reserved</div>
             </div>
             <div class="flex space-x-6 items-center mx-2 rtl:space-x-reverse">
-                <a href="{{route('site.legal.tos')}}" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.terms')}}</a>
-                <a href="{{route('site.legal.privacy')}}" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.cancellation')}}</a>
-                <a href="{{route('site.legal.faq')}}" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.faq')}}</a>
-                <a href="{{route('site.contact')}}" class="text-white font-bold font-din uppercase tracking-[4px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.contact')}}</a>
+                <a href="{{route('site.legal.tos')}}" class="text-white font-bold font-din uppercase tracking-[2px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.terms')}}</a>
+                <a href="{{route('site.legal.privacy')}}" class="text-white font-bold font-din uppercase tracking-[2px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.cancellation')}}</a>
+                <a href="{{route('site.legal.faq')}}" class="text-white font-bold font-din uppercase tracking-[2px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.faq')}}</a>
+                <a href="{{route('site.contact')}}" class="text-white font-bold font-din uppercase tracking-[2px] rtl:font-ahlan rtl:tracking-normal rtl:font-normal">{{__('nadil.footer.contact')}}</a>
             </div>
         </div>
     </footer>

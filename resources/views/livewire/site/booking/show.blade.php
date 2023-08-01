@@ -26,7 +26,7 @@
         <div class="flex font-lato rtl:font-ahlan uppercase text-md ">{{ __('nadil.booking.select_date_time') }}</div>
         <div class="flex w-full justify-between space-x-8 rtl:space-x-reverse">
             <div class="w-1/2">
-                <div class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[6px] rounded-[19px]">
+                <div class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[2px] rounded-[19px]">
                     {{ $display_date }}</div>
                 <div wire:ignore class="flex justify-center">
                     <div id="booking-date"></div>
@@ -34,7 +34,7 @@
             </div>
             <div class="w-1/2 ">
                 <div
-                    class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[6px] rtl:tracking-normal rounded-[19px]">
+                    class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[2px] rtl:tracking-normal rounded-[19px]">
                     {{ $selected_time ?? __('nadil.booking.select_time') }}</div>
                 @if ($selected_date && $seats)
                     <div
@@ -82,7 +82,7 @@
             <div class="w-1/2 flex flex-col items-center">
                 {{-- <input type="number" step="1" min="0" max="{{$restaurant->max_party_size}}" wire:model.defer="seats"> --}}
                 <p>{{ __('nadil.messages.booking_party_size', ['max' => $restaurant->max_party_size]) }}</p>
-                <select wire:model.defer="seats"
+                <select wire:model="seats"
                     class="text-center rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase h-14 mt-8 w-3/4">
                     <option value="">{{ __('nadil.booking.num_guest') }}</option>
                     @for ($i = 1; $i <= $restaurant->max_party_size; $i++)
@@ -95,7 +95,7 @@
 
             <div class="w-1/2 flex flex-col items-center">
                 <button type="button" wire:click="submit"
-                    class="mb-4 inline-block px-8 py-6 rtl:font-ahlan rtl:tracking-normal bg-nadilBtn-100 tracking-[6px] rounded-[19px] hover:bg-grey-500 focus:bg-black focus:text-white focus:outline-none focus:ring-0 active:bg-black active:text-white disabled:text-gray-300 transition duration-150 ease-in-out">{{ __('nadil.booking.book_now') }}</button>
+                    class="mb-4 inline-block px-8 py-6 rtl:font-ahlan rtl:tracking-normal bg-nadilBtn-100 tracking-[2px] uppercase rounded-[19px] hover:bg-grey-500 focus:bg-black focus:text-white focus:outline-none focus:ring-0 active:bg-black active:text-white disabled:text-gray-300 transition duration-150 ease-in-out">{{ __('nadil.booking.book_now') }}</button>
             </div>
         </div>
 

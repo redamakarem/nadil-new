@@ -305,6 +305,27 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\DressCode
+ *
+ * @property int $id
+ * @property string $name_en
+ * @property string $name_ar
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode query()
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode whereNameAr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode whereNameEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DressCode whereUpdatedAt($value)
+ */
+	class DressCode extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Governate
  *
  * @property int $id

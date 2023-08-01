@@ -26,7 +26,9 @@ class Profile extends Model
 
     public function getInitialsAttribute(): string
     {
-        return \Illuminate\Support\Str::initials($this->name);
+        $names = collect(explode(' ', $this->name));
+        $letters = substr($names->first(),0,1) . substr($names->last(),0,1);
+        return strtoupper($letters);
     }
 
     public function getAgeAttribute()

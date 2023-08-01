@@ -73,6 +73,9 @@ Route::get('/faq',[\App\Http\Controllers\SiteController::class,'faq'])
 Route::get('/tos',[\App\Http\Controllers\SiteController::class,'tos'])
     ->name('site.legal.tos');
 
+Route::get('/password-reset-success',[\App\Http\Controllers\SiteController::class,'password_reset_success'])
+    ->name('site.password-reset-success');
+
 
 
 Route::get('/test-map', function (){

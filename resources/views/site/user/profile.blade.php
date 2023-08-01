@@ -8,17 +8,14 @@
             <div class="font-lato uppercase tracking-[6px]"> Your Profile</div>
         </div>
         <div class="">
-            <a href="#"
+            <a href="route('user.profile.show')"
                class="py-6 px-12 flex flex-1 justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[6px]">Account Details</a>
         </div>
         <div class="">
             <a href="{{ route('user.history.show') }}"
                class="py-6 px-12 flex flex-1 justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[6px]">History</a>
         </div>
-        <div class="">
-            <a href="#"
-               class="py-6 px-12 flex flex-1 justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[6px]">Orders</a>
-        </div>
+        
     </div>
     <div class="w-2/3 flex-col ">
 
@@ -27,23 +24,23 @@
                 @if ($profile)
                 <div class="flex items-center w-full justify-between">
                     <div class="flex flex-col w-2/3 py-8 px-12">
-                        <h3 class="font-lato font-italic uppercase text-[21px] tracking-[10px] mb-12">Account Details</h3>
+                        <h3 class="font-lato font-italic uppercase text-[21px] tracking-[2px] mb-12">Account Details</h3>
                         <div class="w-full flex flex-col space-y-8">
                             <div class="flex w-full space-x-8">
-                                <div class="font-lato font-bold uppercase text-[21px] tracking-[10px]">Name</div>
-                                <div class="font-lato uppercase text-[21px] tracking-[10px]">{{$profile->name}}</div>
+                                <div class="font-lato font-bold uppercase text-[21px] tracking-[2px]">Name</div>
+                                <div class="font-lato uppercase text-[21px] tracking-[2px]">{{$profile->name}}</div>
                             </div>
                             <div class="flex w-full space-x-8">
-                                <div class="font-lato font-bold uppercase text-[21px] tracking-[10px]">Address</div>
-                                <div class="font-lato uppercase text-[21px] tracking-[10px]">{{$profile->address}}</div>
+                                <div class="font-lato font-bold uppercase text-[21px] tracking-[2px]">Address</div>
+                                <div class="font-lato uppercase text-[21px] tracking-[2px]">{{$profile->address}}</div>
                             </div>
                             <div class="flex w-full space-x-8">
-                                <div class="font-lato font-bold uppercase text-[21px] tracking-[10px]">Phone</div>
-                                <div class="font-lato uppercase text-[21px] tracking-[10px]">{{$profile->phone}}</div>
+                                <div class="font-lato font-bold uppercase text-[21px] tracking-[2px]">Phone</div>
+                                <div class="font-lato uppercase text-[21px] tracking-[2px]">{{$profile->phone}}</div>
                             </div>
                             <div class="flex w-full space-x-8">
-                                <div class="font-lato font-bold uppercase text-[21px] tracking-[10px]">Email</div>
-                                <div class="font-lato uppercase text-[21px] tracking-[10px]">{{$profile->email}}</div>
+                                <div class="font-lato font-bold uppercase text-[21px] tracking-[2px]">Email</div>
+                                <div class="font-lato uppercase text-[21px] tracking-[2px]">{{$profile->email}}</div>
                             </div>
                         </div>
                     </div>

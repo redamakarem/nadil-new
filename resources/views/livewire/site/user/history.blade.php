@@ -50,12 +50,12 @@
 
         <div class="flex items-center w-full justify-between">
             <div class="flex flex-col w-1/2 py-8 px-12">
-                <h3 class="font-lato font-italic uppercase text-[21px] tracking-[10px] mb-12">{{__('nadil.booking.reservation_history')}}</h3>
+                <h3 class="font-lato font-italic uppercase text-[21px] tracking-[2px] mb-12">{{__('nadil.booking.reservation_history')}}</h3>
                 <div class="tabs-container">
                     <div class="tabs-headers flex justify-between space-x-4">
-                        <button wire:click="changeTab('upcoming')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase">Upcoming</button>
-                        <button wire:click="changeTab('past')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase">Past</button>
-                        <button wire:click="changeTab('cancelled')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase">Cancelled</button>
+                        <button wire:click="changeTab('upcoming')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase ltr:font-lato rtl:font-ahlan">Upcoming</button>
+                        <button wire:click="changeTab('past')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase ltr:font-lato rtl:font-ahlan">Past</button>
+                        <button wire:click="changeTab('cancelled')" class="bg-nadilBg-100 flex w-full h-full justify-center textlg uppercase ltr:font-lato rtl:font-ahlan">Cancelled</button>
                     </div>
                     <div class="w-full flex flex-col max-h-[500px] space-y-8 scrollbar-hide overflow-y-scroll">
                         
@@ -88,9 +88,9 @@
             </div>
             <div class="flex flex-col items-center w-1/2 py-8 justify-start h-full bg-white rounded-[64px] px-12 space-y-8">
                 @if ($selected_booking)
-                <div class="py-6 px-12 text-center justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[6px]">{{ $booking->restaurant->{'name_'.app()->getLocale()} }}</div>
+                <div class="py-6 px-12 text-center justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[2px]">{{ $booking->restaurant->{'name_'.app()->getLocale()} }}</div>
                 @else
-                <div class="py-6 px-12 text-center justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[6px]">{{ __('Select Reservation') }}</div>
+                <div class="py-6 px-12 text-center justify-center rounded-xl shadow-md w-full bg-nadilBtn-100 font-lato font-bold uppercase tracking-[2px]">{{ __('Select Reservation') }}</div>
                 @endif
                 <div class="flex flex-1 w-full h-6 bg-[#f5f5f5] rounded-[64px]">
                     @if ($selected_booking)

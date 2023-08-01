@@ -5,7 +5,7 @@
             <div class="category-container my-4">
                 @if ($category->dishes->count())
                     <div
-                        class="font-lato rtl:font-ahlan font-bold uppercase tracking-widest rtl:tracking-normal text-4xl text-center underline">
+                        class="font-lato rtl:font-ahlan font-bold uppercase tracking-[2px] rtl:tracking-normal text-4xl text-center underline">
                         {{ $category->{'name_' . app()->getLocale()} }}
                     </div>
 
@@ -14,10 +14,10 @@
                             @if (!$dish->is_featured)
                                 <div class="dish-container my-4 ">
                                     <div
-                                        class="flex flex-col ltr:font-lato rtl:font-ahlan font-bold uppercase ltr:tracking-[4px] rtl:tracking-normal text-2xl text-center">
+                                        class="flex flex-col ltr:font-lato rtl:font-ahlan font-bold uppercase ltr:tracking-[2px] rtl:tracking-normal text-2xl text-center">
                                         {{ $dish->{'name_' . app()->getLocale()} }}</div>
                                     <div
-                                        class="flex flex-col ltr:font-lato rtl:font-ahlan ltr:tracking-[4px] rtl:tracking-normal text-[20px] text-center">
+                                        class="flex flex-col ltr:font-lato rtl:font-ahlan ltr:tracking-[2px] rtl:tracking-normal text-[20px] text-center">
                                         {{ $dish->{'description_' . app()->getLocale()} }}</div>
                                 </div>
                             @else
@@ -29,10 +29,10 @@
                                     </div>
                                     <div class="w-3/4 flex flex-col ">
                                         <div
-                                            class="flex flex-col ltr:font-lato rtl:font-ahlan font-bold uppercase ltr:tracking-[4px] rtl:tracking-normal text-[22px] text-center">
+                                            class="flex flex-col ltr:font-lato rtl:font-ahlan font-bold uppercase ltr:tracking-[2px] rtl:tracking-normal text-[22px] text-center">
                                             {{ $dish->{'name_' . app()->getLocale()} }}</div>
                                         <div
-                                            class="flex flex-col ltr:font-lato rtl:font-ahlan ltr:tracking-[4px] rtl:tracking-normal text-[22px] text-center">
+                                            class="flex flex-col ltr:font-lato rtl:font-ahlan ltr:tracking-[2px] rtl:tracking-normal text-[22px] text-center">
                                             {{ $dish->{'description_' . app()->getLocale()} }}</div>
                                     </div>
                                 </div>

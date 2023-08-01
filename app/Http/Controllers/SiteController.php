@@ -213,4 +213,14 @@ class SiteController extends Controller
         }
         
     }
+
+    public function password_reset_success()
+    {
+        $agent = new Agent();
+        if ($agent->isDesktop()) {
+            return view('auth.password-reset-success');
+        } else {
+            return view('auth.mobile.password-reset-success');
+        }
+    }
 }

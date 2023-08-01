@@ -10,11 +10,11 @@
                 <h2 class="text-4xl tracking-widest mt-16 uppercase text-center rtl:tracking-normal">{{$restaurant->{'name_'.app()->getLocale()} }}</h2>
                 <hr class="h-1 w-48 mt-4" />
                 <a href="{{route('site.restaurants.view',['id' => $restaurant->id])}}" class="uppercase mt-12 px-16 py-6 bg-nadilBtn-100 tracking-[6px] rtl:tracking-normal rounded-[19px]">{{__('nadil.booking.menu')}}</a>
-                <div class="uppercase font-din rtl:font-ahlan text-xl tracking-[6px] rtl:tracking-normal mt-3">{{$restaurant->areaa->governate->{'name_'.app()->getLocale()} }}</div>
-                <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">{{$restaurant->areaa->{'name_'.app()->getLocale()} }}</div>
-                <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                <div class="uppercase font-din rtl:font-ahlan text-xl tracking-[2px] rtl:tracking-normal mt-3">{{$restaurant->areaa->governate->{'name_'.app()->getLocale()} }}</div>
+                <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">{{$restaurant->areaa->{'name_'.app()->getLocale()} }}</div>
+                <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
                     {{__('nadil.general.weekdays')}}:{{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
-                <div class="uppercase  text-center font-din text-md tracking-[3px] rtl:font-ahlan rtl:tracking-normal">
+                <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
                     {{__('nadil.general.weekends')}}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
 
 
@@ -50,8 +50,8 @@
                 <div class="flex flex-grow w-full px-4 mt-12">
     
                     <div class="mx-auto space-x-8">
-                        <a href="tel://{{$restaurant->phone}}" class="uppercase px-8 py-4 bg-nadilBtn-100 rtl:tracking-normal tracking-[6px] rounded-[19px]">{{__('nadil.general.phone')}}</a>
-                        <a href="mailto:{{$restaurant->email}}" class="uppercase px-8 py-4 bg-nadilBtn-100 rtl:tracking-normal tracking-[6px] rounded-[19px]">{{__('nadil.general.email')}}</a>
+                        <a href="tel://{{$restaurant->phone}}" class="uppercase px-8 py-4 bg-nadilBtn-100 rtl:tracking-normal tracking-[2px] rounded-[19px]">{{__('nadil.general.phone')}}</a>
+                        <a href="mailto:{{$restaurant->email}}" class="uppercase px-8 py-4 bg-nadilBtn-100 rtl:tracking-normal tracking-[2px] rounded-[19px]">{{__('nadil.general.email')}}</a>
                     </div>
     
                 </div>
