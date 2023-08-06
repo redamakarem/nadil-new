@@ -266,6 +266,12 @@
         select.text-center {
     text-align: -webkit-center;
 }
+select {
+   text-align-last: center;
+   text-align: center;
+   -ms-text-align-last: center;
+   -moz-text-align-last: center;
+}
     </style>
 @endpush
 @push('scripts')
