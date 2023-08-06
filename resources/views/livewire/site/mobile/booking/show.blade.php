@@ -41,10 +41,12 @@
     <div
         class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[6px] rounded-[19px] rtl:font-ahlan rtl:tracking-normal">
         {{ __('nadil.booking.how_many_seats') }}</div>
-    <div class="my-4 flex justify-center">
+    <div class="my-4 flex flex-col items-center">
         {{-- <input
             class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12"
             type="number" step="1" min="0" max="{{$restaurant->max_party_size}}" wire:model="seats" placeholder="{{ __('# of people') }}"> --}}
+
+            <p class="mb-8 uppercase font-lato rtl:font-ahlan rtl:tracking-normal text-center">{{ __('nadil.messages.booking_party_size', ['max' => $restaurant->max_party_size]) }}</p>
         <select wire:model.defer="seats"
             class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12">
             <option value="">{{ __('nadil.booking.num_guest') }}</option>
@@ -58,7 +60,7 @@
     <div
         class="uppercase text-center mt-12 mb-4 px-16 py-6 bg-nadilBtn-100 tracking-[4px] rounded-[19px] rtl:font-ahlan rtl:tracking-normal">
         {{ $selected_time ?? __('nadil.booking.select_time') }}</div>
-    <div class="overflow-y-scroll scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-100 px-8">
+    {{-- <div class="overflow-y-scroll scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-100 px-8">
         @if ($slots)
             @foreach (array_chunk($slots, 2, true) as $chunk)
                 <div class="flex justify-center">
@@ -71,6 +73,23 @@
                     @endforeach
                 </div>
             @endforeach
+        @else
+            <div class="flex flex-col justify-center h-44">
+                <div class="w-full text-center">{{ __('nadil.booking.no_available_slots') }}</div>
+            </div>
+        @endif
+    </div> --}}
+
+    {{-- Select time --}}
+
+    <div class="overflow-y-scroll scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-100 px-8">
+        @if ($slots)
+        <select wire:model='selected_time' class="my-8 rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12">
+            @foreach ($slots as $slot)
+                <option {{$this->slot_bookable($slot) ? '' : 'disabled'}} value="{{ $slot }}">{{ \Carbon\Carbon::parse($slot)->translatedFormat('h:i A') }}</option>
+
+            @endforeach
+        </select>
         @else
             <div class="flex flex-col justify-center h-44">
                 <div class="w-full text-center">{{ __('nadil.booking.no_available_slots') }}</div>

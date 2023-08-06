@@ -49,7 +49,7 @@
         href="{{route('site.restaurants.book',$restaurant->id)}}">{{__('nadil.booking.book_now')}}</a>
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center my-12">
         <div class="flex flex-col items-center w-full">
             <div id="googleMap" class="min-h-[300px] w-[100%]"></div>
         </div>
@@ -93,7 +93,7 @@
             console.log(coordsStr.toString());
             const myLatlng = { lat: parseFloat(lat), lng: parseFloat(lng) };
             const map = new google.maps.Map(document.getElementById("googleMap"), {
-                zoom: 10,
+                zoom: 17,
                 center: myLatlng,
             });
 

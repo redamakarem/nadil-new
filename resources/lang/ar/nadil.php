@@ -65,7 +65,7 @@ return array (
 
 ],
 'dishes' =>[
-  'explore_more' => 'استكشف المزيد من الاطباق',
+  'explore_more' => 'استكشف الاطباق',
 ],
 
   'footer' => 
