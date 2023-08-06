@@ -130,10 +130,12 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
             
         </div>
         <div class="bg-black h-24 text-white flex justify-between px-12">
-            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.terms')}}</a></div>
-            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.cancellation')}}</a></div>
-            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.faq')}}</a></div>
-            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.contact')}}</a></div>
+            <div class="grid grid-cols-2 gap-x-3 mt-4">
+                <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.terms')}}</a></div>
+            <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.cancellation')}}</a></div>
+            <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.faq')}}</a></div>
+            <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.contact')}}</a></div>
+            </div>
         </div>
         </div>
 
