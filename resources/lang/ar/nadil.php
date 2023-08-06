@@ -24,6 +24,8 @@ return array (
     'whats_the_plan' => 'هلا, ما هي الخطة لليوم؟',
     'pick_cuisine' => 'اختر النوع',
     'pick_spot' => 'اختر المكان',
+    'featured' => 'المطاعم المميزة',
+    'recently_added' => 'المطاعم المضافة حديثا',
     'meal_type' => 'أنواع الوجبات',
     'seats' => 'عدد المقاعد',
     'search' => 'بحث',
@@ -38,6 +40,7 @@ return array (
     'weekdays' => 'الاحد - الاربعاء',
     'weekends' => 'الخميس - السبت',
     'search_placeholder' => 'ابحث عن مطعم, منطقة, نوع الطعام',
+    'no_results' => 'لا يوجد نتائج',
 ],
   'booking' => [
     'book_now' => 'احجز الان',

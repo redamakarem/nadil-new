@@ -92,15 +92,15 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
                         @if (app()->getLocale() != $locale)
                         <a href="{{ request()->url() }}?language={{ $locale }}"
                            class="flex items-center py-3 px-8  text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out text-black dark:to-white">
-                            [{{ strtoupper($locale) }}]
+                           {{__('nadil.lang.'.$locale)}}
                         </a>
                         @endif
                     @endforeach
                 </div>
             </div>
-            @if (!empty($restaurant))
+            @if (!empty($current_restaurant))
                 <div class="header h-60 bg-black flex-col justify-center bg-cover"
-                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
+                    style="background-image:url('{{ $current_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                 @else
                     <div class="header h-80 bg-black flex-col justify-center bg-cover items-stretch"
                         style="background-image:url('{{ asset('images/nadil@2x.png') }}'); background-size: cover">
@@ -130,9 +130,10 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
             
         </div>
         <div class="bg-black h-24 text-white flex justify-between px-12">
-            <div class="uppercase font-lato rtl:font-ahlan">Cancellation Policy</div>
-            <div class="uppercase font-lato rtl:font-ahlan">Contact</div>
-            <div class="uppercase font-lato rtl:font-ahlan">FAQ</div>
+            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.terms')}}</a></div>
+            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.cancellation')}}</a></div>
+            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.faq')}}</a></div>
+            <div class="uppercase font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.contact')}}</a></div>
         </div>
         </div>
 

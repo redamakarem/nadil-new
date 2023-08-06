@@ -64,6 +64,39 @@
                 </form>
             </div>
 
+            {{-- Test --}}
+
+            <div>
+                <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
+                    <div class="slider-container">
+                        @foreach ($cuisines as $restaurant)
+                                <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
+                                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
+                                    <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
+                                        class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                        <h4
+                                            class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                            {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
+                                        
+                                    </a>
+                                </div>
+                            @endforeach
+                    </div>
+                
+                    <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
+                        <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                    </button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
+                        <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </button>
+                
+                </div>
+            </div>
+
             <div class="relative carousel-container restaurants-carousel flex rtl:flex-row-reverse items-center">
                 <div
                     class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[30%] w-12 h-12 flex justify-center items-center shadow-md">
@@ -233,10 +266,27 @@
     <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
     <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.time.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
 
     <style>
         .flatpickr-day.selected {
             background: #0a0e14;
+        }
+        .slider-nav::after,.slider-nav::before{
+            content: none !important;
+        }
+        .slider-nav {
+            opacity: 1 !important;
+        }
+
+        .slider-nav.slider-nav-next {
+            right: -30px;
+            left: unset;
+        }
+
+        .slider-nav.slider-nav-prev {
+            left: -30px;
+            right: unset;
         }
     </style>
 @endpush
@@ -247,6 +297,7 @@
     <script src="{{ asset('pickadate/lib/compressed/legacy.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 
     <script>
         var booking_time = flatpickr("#search_time", {

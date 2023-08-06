@@ -1,4 +1,4 @@
-@extends('layouts.site-mobile',['restaurant' => $restaurant])
+@extends('layouts.site-mobile',['current_restaurant' => $restaurant])
 @section('content')
     <div class="container mx-auto">
         <div class="flex flex-col justify-center">

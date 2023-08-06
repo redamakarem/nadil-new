@@ -20,6 +20,8 @@
             'whats_the_plan' => 'So, whats the plan?',
             'pick_cuisine' => 'Pick the cuisine',
             'pick_spot' => 'Pick the spot',
+            'featured' => 'Featured Restaurants',
+            'recently_added' => 'Recently Added',
             'meal_type' => 'Browse by meal type',
             'seats' => 'Seats',
             'search' => 'Search',
@@ -34,6 +36,7 @@
             'weekdays' => 'Sun - Wed',
             'weekends' => 'Thu - Sat',
             'search_placeholder' => 'Restaurant, Location, Cuisine',
+            'no_results' => 'No results found',
         ],
         'messages' =>[
             'booking_party_size' => 'For Parties Larger than :max seats, please contact the restaurant',

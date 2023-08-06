@@ -676,6 +676,10 @@ select {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+.my-3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
 .mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -695,10 +699,6 @@ select {
 .my-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
-}
-.my-3 {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
 }
 .ml-3 {
     margin-left: 0.75rem;
@@ -865,6 +865,9 @@ select {
 .h-80 {
     height: 20rem;
 }
+.h-48 {
+    height: 12rem;
+}
 .h-\[72px\] {
     height: 72px;
 }
@@ -876,9 +879,6 @@ select {
 }
 .h-auto {
     height: auto;
-}
-.h-48 {
-    height: 12rem;
 }
 .h-\[296px\] {
     height: 296px;
@@ -1011,11 +1011,11 @@ select {
 .max-w-12xl {
     max-width: 120rem;
 }
-.max-w-md {
-    max-width: 28rem;
-}
 .max-w-4xl {
     max-width: 56rem;
+}
+.max-w-md {
+    max-width: 28rem;
 }
 .max-w-xl {
     max-width: 36rem;
@@ -1675,6 +1675,9 @@ select {
 .tracking-\[3px\] {
     letter-spacing: 3px;
 }
+.tracking-\[2px\] {
+    letter-spacing: 2px;
+}
 .tracking-\[4px\] {
     letter-spacing: 4px;
 }
@@ -1695,9 +1698,6 @@ select {
 }
 .tracking-\[0\.5rem\] {
     letter-spacing: 0.5rem;
-}
-.tracking-\[2px\] {
-    letter-spacing: 2px;
 }
 .tracking-\[14px\] {
     letter-spacing: 14px;
@@ -2110,15 +2110,6 @@ select {
 }
 [dir="ltr"] .ltr\:tracking-\[2px\] {
     letter-spacing: 2px;
-}
-[dir="ltr"] .ltr\:tracking-normal {
-    letter-spacing: 0em;
-}
-[dir="ltr"] .ltr\:tracking-tight {
-    letter-spacing: -0.025em;
-}
-[dir="ltr"] .ltr\:tracking-wide {
-    letter-spacing: 0.025em;
 }
 [dir="ltr"] .ltr\:placeholder\:font-bold::-moz-placeholder {
     font-weight: 700;
