@@ -263,6 +263,9 @@
         .slider-nav {
             opacity: 1 !important;
         }
+        select.text-center {
+    text-align: -webkit-center;
+}
     </style>
 @endpush
 @push('scripts')
