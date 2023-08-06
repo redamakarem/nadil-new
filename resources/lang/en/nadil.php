@@ -42,7 +42,7 @@
             'booking_party_size' => 'For Parties Larger than :max seats, please contact the restaurant',
         ],
         'dishes' =>[
-            'explore_more' => 'EXPLORE MORE DISHES',
+            'explore_more' => 'EXPLORE THE DISHES',
         ],
         'footer' =>[
             'cancellation_policy' => 'cancellation policy',

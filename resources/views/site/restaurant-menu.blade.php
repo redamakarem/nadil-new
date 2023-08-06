@@ -16,9 +16,10 @@
                     <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
                         {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
                     <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
-                       {{ __('nadil.general.weekdays') }}:{{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
+                        {{ __('nadil.general.weekdays') }}:{{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
                     <div class="uppercase  text-center font-din text-md tracking-[2px] rtl:font-ahlan rtl:tracking-normal">
-                       {{ __('nadil.general.weekends') }}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
+                        {{ __('nadil.general.weekends') }}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}
+                    </div>
                     <div class="px-8 flex w-full">
                         <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
                     </div>
@@ -40,12 +41,13 @@
                             @endif
 
                             @if (!empty($restaurant->dress_code))
-                            <div>Dress Code: </div>
-                            <div class="text-center">{{ $restaurant->dress_code->{'name_' . app()->getLocale()} }}</div>
-                        @endif
+                                <div>Dress Code: </div>
+                                <div class="text-center">{{ $restaurant->dress_code->{'name_' . app()->getLocale()} }}
+                                </div>
+                            @endif
 
-                        </div>                 
-                        
+                        </div>
+
 
                     </div>
                     <div class="flex w-full px-4 mt-6 space-x-8 rtl:space-x-reverse justify-center">
