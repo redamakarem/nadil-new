@@ -39,7 +39,7 @@
             'no_results' => 'No results found',
         ],
         'messages' =>[
-            'booking_party_size' => 'For Parties Larger than :max seats, please contact the restaurant',
+            'booking_party_size' => 'Parties Larger than :max guests, please contact the restaurant',
         ],
         'dishes' =>[
             'explore_more' => 'EXPLORE THE DISHES',

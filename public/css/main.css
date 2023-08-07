@@ -1929,6 +1929,18 @@ select {
 .placeholder\:font-lato::placeholder {
     font-family: Lato;
 }
+.placeholder\:text-xs::-moz-placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+.placeholder\:text-xs:-ms-input-placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+.placeholder\:text-xs::placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
 .placeholder\:font-bold::-moz-placeholder {
     font-weight: 700;
 }
@@ -1946,6 +1958,15 @@ select {
 }
 .placeholder\:uppercase::placeholder {
     text-transform: uppercase;
+}
+.placeholder\:normal-case::-moz-placeholder {
+    text-transform: none;
+}
+.placeholder\:normal-case:-ms-input-placeholder {
+    text-transform: none;
+}
+.placeholder\:normal-case::placeholder {
+    text-transform: none;
 }
 .checked\:bg-black:checked {
     background-color: #000;
