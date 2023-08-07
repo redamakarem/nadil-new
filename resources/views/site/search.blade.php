@@ -14,7 +14,7 @@
                             </div>
                         @endif
             </div>
-            <div class="bg-black px-8 py-12 mb-12">
+            <div class="px-8 py-12 mb-12">
                 <div class="text-white greeting uppercase">{{ __('nadil.general.whats_the_plan') }}</div>
                 <form action="{{ route('site.restaurants.search') }}" method="POST" class="mb-6">
                     @csrf
@@ -43,7 +43,7 @@
                                 <option value="8" @if ($validated_data['search_seats'] == 8) selected @endif>8 {{ trans_choice('nadil.booking.guest', 8) }}</option>
                                 <option value="9" @if ($validated_data['search_seats'] == 9) selected @endif>9 {{ trans_choice('nadil.booking.guest', 9) }}</option>
                                 <option value="10" @if ($validated_data['search_seats'] == 10) selected @endif>10 {{ trans_choice('nadil.booking.guest', 10) }}</option>
-                                <option value="10+" @if ($validated_data['search_seats'] == 1) selected @endif>10+ {{ trans_choice('nadil.booking.guest', 11) }}</option>
+                                <option value="10+" @if ($validated_data['search_seats'] == 11) selected @endif>10+ {{ trans_choice('nadil.booking.guest', 11) }}</option>
                             </select>
                         </div>
 
