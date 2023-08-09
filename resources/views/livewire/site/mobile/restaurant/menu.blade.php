@@ -87,7 +87,7 @@ console.log(offsetBottom('#menu-bg'));
         jQuery(document).scroll(function () {
                 var y = jQuery(this).scrollTop();
                 console.log(y);
-                if (y > (offsetBottom('#menu-bg') )) {
+                if (y > (jQuery('#menu-bg').offset().top + jQuery('#menu-bg').height() )) {
                     jQuery('#btn-booking-wrapper').removeClass('fixed');
                 } else {
                     jQuery('#btn-booking-wrapper').addClass('fixed');
