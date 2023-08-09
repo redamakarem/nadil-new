@@ -83,7 +83,7 @@
 
 // Returns right offset value
 function offsetRight(el, i) { i = i || 0; return $(el)[i].getBoundingClientRect().right }
-console.log(offsetBottom('#menu-bg'));
+console.log(jQuery('#menu-bg').offset().top + jQuery('#menu-bg').height());
         jQuery(document).scroll(function () {
                 var y = jQuery(this).scrollTop();
                 console.log(y);
