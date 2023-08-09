@@ -114,7 +114,7 @@
                             <div class="slider-container">
                                 @foreach ($featured as $item)
                                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
-                                            style="background-image:url('{{ $item->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
+                                            style="background-image:url('{{ $item->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                                             <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
                                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                                 <h4
@@ -197,7 +197,7 @@
                             <div class="slider-container">
                                 @foreach ($meal_type->restaurants as $meal_restaurant)
                                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
-                                            style="background-image:url('{{ $meal_restaurant->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
+                                            style="background-image:url('{{ $meal_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                                             <a href="{{ route('site.restaurants.view', ['id' => $meal_restaurant->id]) }}"
                                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                                 <h4
