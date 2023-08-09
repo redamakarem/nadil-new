@@ -71,7 +71,7 @@
                     <div class="slider-container">
                         @foreach ($restaurants as $restaurant)
                                 <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
-                                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
+                                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                                     <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
                                         class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
                                         <h4
