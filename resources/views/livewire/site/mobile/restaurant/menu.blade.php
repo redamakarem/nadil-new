@@ -1,7 +1,7 @@
 <div id="menu-container">
 
     <div class="px-4">
-        <div class="mx-2 bg-[#F5F5F5] shadow-md rounded-[16px] py-6 px-5 ">
+        <div id="menu-bg" class="mx-2 bg-[#F5F5F5] shadow-md rounded-[16px] py-6 px-5 ">
             @forelse ($categories as $category )
                 @if ($category->dishes->count()>0)
                 <h2 class="text-center uppercase font-bold font-lato rtl:font-ahlan rtl:tracking-normal tracking-[4px] mb-4">
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="bottom-0 fixed flex justify-center my-2 w-full z-10 px-4">
+    <div id="btn-booking-wrapper" class="bottom-0 fixed flex justify-center my-2 w-full z-10 px-4">
         <a
         class=" bg-nadilBtn-100 font-lato px-6 py-4 rounded-xl rtl:font-ahlan rtl:tracking-normal shadow-lg text-center uppercase w-full border-2" 
         href="{{route('site.restaurants.book',$restaurant->id)}}">{{__('nadil.booking.book_now')}}</a>
@@ -79,10 +79,24 @@
 
 @push('scripts')
     <script>
+        function offsetBottom(el, i) { i = i || 0; return $(el)[i].getBoundingClientRect().bottom }
+
+// Returns right offset value
+function offsetRight(el, i) { i = i || 0; return $(el)[i].getBoundingClientRect().right }
+console.log(offsetBottom('#menu-bg'));
+        jQuery(document).scroll(function () {
+                var y = jQuery(this).scrollTop();
+                console.log(y);
+                if (y > (offsetBottom('#menu-bg') - 420)) {
+                    jQuery('#btn-booking-wrapper').removeClass('fixed');
+                } else {
+                    jQuery('#btn-booking-wrapper').addClass('fixed');
+                }
+            });
         // jQuery('#inlinePicker').datepicker();
         document.addEventListener('load', function () {
             initMap();
-
+            
         })
         function initMap() {
             var coordsStr = "{{$restaurant->coordinates}}";

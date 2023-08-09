@@ -32,7 +32,12 @@
 
 
     </div>
-    <div
+
+
+
+
+    <div class="bg-[#f5f5f5] rounded-[60px] p-8 mb-8">
+        <div
         class="uppercase font-lato rtl:font-ahlan rtl:tracking-normal text-center mt-12 mb-4 px-8 py-6 bg-nadilBtn-100 tracking-[4px] rounded-[19px]">
         {{ __('nadil.booking.select_date_time') }}</div>
     <div wire:ignore class="flex justify-center">
@@ -102,6 +107,7 @@
     <div class="flex justify-center mb-6">
         <button class="uppercase font-lato font-bold bg-[#F8F8F8] shadow-md rounded-lg py-4 w-2/3" wire:click="submit"
             type="button">{{ __('nadil.booking.book_now') }}</button>
+    </div>
     </div>
 </div>
 

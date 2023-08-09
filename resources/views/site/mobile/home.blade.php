@@ -35,7 +35,7 @@
                     </select>
                 </div>
                 <input
-                    class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:text-xs placeholder:normal-case placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:uppercase w-full mb-4"
+                    class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:text-xs placeholder:normal-case placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal w-full mb-4"
                     type="text" name="search_name" id="search_name" placeholder="{{ __('nadil.general.search_placeholder') }}">
         </div>
         <div class="flex justify-center mb-6">
@@ -299,55 +299,57 @@ select {
             minDate: 'today',
             defaultDate: 'today',
         });
-        var res_carousel = $('.restaurant-carousel');
-        res_carousel.owlCarousel({
-            loop: true,
-            rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        });
-        $('.next').click(function() {
-            res_carousel.trigger('next.owl.carousel');
-        })
-        $('.prev').click(function() {
-            res_carousel.trigger('prev.owl.carousel');
-        })
 
-        $('.meals-carousel').each(function(index) {
-            var meal_slider = $(this).owlCarousel({
-                loop: true,
-                rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-                margin: 10,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    }
-                }
-            });
-            $(this).closest('.carousel-container').find('.meals-prev').click(function() {
-                console.log('PREV');
-                meal_slider.trigger('prev.owl.carousel');
-            })
-            $(this).closest('.carousel-container').find('.meals-next').click(function() {
-                console.log('MEXT');
-                meal_slider.trigger('next.owl.carousel');
-            })
-        });
+        
+        // var res_carousel = $('.restaurant-carousel');
+        // res_carousel.owlCarousel({
+        //     loop: true,
+        //     rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
+        //     margin: 10,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 3
+        //         },
+        //         1000: {
+        //             items: 4
+        //         }
+        //     }
+        // });
+        // $('.next').click(function() {
+        //     res_carousel.trigger('next.owl.carousel');
+        // })
+        // $('.prev').click(function() {
+        //     res_carousel.trigger('prev.owl.carousel');
+        // })
+
+        // $('.meals-carousel').each(function(index) {
+        //     var meal_slider = $(this).owlCarousel({
+        //         loop: true,
+        //         rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
+        //         margin: 10,
+        //         responsive: {
+        //             0: {
+        //                 items: 1
+        //             },
+        //             600: {
+        //                 items: 3
+        //             },
+        //             1000: {
+        //                 items: 4
+        //             }
+        //         }
+        //     });
+        //     $(this).closest('.carousel-container').find('.meals-prev').click(function() {
+        //         console.log('PREV');
+        //         meal_slider.trigger('prev.owl.carousel');
+        //     })
+        //     $(this).closest('.carousel-container').find('.meals-next').click(function() {
+        //         console.log('MEXT');
+        //         meal_slider.trigger('next.owl.carousel');
+        //     })
+        // });
     </script>
 @endpush
