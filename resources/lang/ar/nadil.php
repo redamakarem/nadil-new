@@ -62,6 +62,10 @@ return array (
     'seats' => 'العدد',
     'area' => 'المنطقة',
     'reservation_history' => 'تاريخ الحجوزات',
+    'upcoming' => 'القادم',
+    'past' => 'السابق',
+    'cancelled' => 'الملغي',
+    'filter_by_status' => 'تصفية حسب الحالة',
 
 ],
 'dishes' =>[

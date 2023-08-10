@@ -1,6 +1,14 @@
 <div class="container">
-    <div class="flex items-center flex-col space-y-8 my-8 mx-6">
-        @foreach ($bookings as $booking)
+    <div class="flex items-center flex-col space-y-8 my-8 mx-6 py-8">
+        <div class="flex flex-col w-full items-center space-y-6">
+            <h2 class="text-lg font-bold">{{__('nadil.booking.filter_by_status')}}</h2>
+            <select class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12" wire:model='selected_filter'>
+                <option value="upcoming">{{ __('nadil.booking.upcoming') }}</option>
+                <option value="past">{{ __('nadil.booking.past') }}</option>
+                <option value="cancelled">{{ __('nadil.booking.cancelled') }}</option>
+            </select>
+        </div>
+        @foreach ($filtered_bookings as $booking)
             <div class="shadow-md bg-red rounded-md mx-6 w-full mt-8 cursor-pointer"
                 style="background-image:url('{{ $booking->restaurant->getFirstMediaUrl('restaurant_bgs') }}'); background-size: cover">
                 <div class="py-8 rounded-md w-full h-full bg-black/40">
@@ -11,7 +19,7 @@
                     </div>
                     @if ($booking->booking_date > \Carbon\Carbon::now() && $booking->booking_status_id == 1)
                         <div class="flex justify-center">
-                            <a class="bg-nadilBtn-100 px-8 py-2 rounded-lg font-lato uppercase" href="#"
+                            <a class="bg-nadilBtn-100 my-4 px-8 py-2 rounded-lg font-lato uppercase" href="#"
                                 wire:click.prevent="confirmBookingDeletion({{ $booking->id }})"
                                 class="text-black">{{ __('nadil.booking.cancel_booking') }}</a>
                         </div>

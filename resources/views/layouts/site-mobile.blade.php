@@ -20,6 +20,83 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <style>
         [x-cloak] { display: none !important; }
+
+        * {
+  margin: 0;
+  padding: 0; 
+}
+
+/* Icon 1 */
+
+#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 50px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: #fff;
+  border-radius: 3px;
+  opacity: 1;
+  left: 8px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 10px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 20px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 30px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+
     </style>
     @stack('styles')
     <title>Nadil</title>
@@ -42,7 +119,7 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
 </head>
 
 <body class="">
-    <main>
+    <main class="bg-black">
         <div id="mobile-wrapper" class="relative min-h-screen bg-black" x-data="{ isOpen: false }">
             <div class="sidebar flex-col fixed z-50 bg-white dark:bg-black inset-y-0 {{ app()->getLocale() == 'en' ? 'left-0' : 'right-0' }} z-10 w-2/3 max-w-md transform transition duration-200"
                 :class="isOpen ? '' : document.getElementsByTagName('html')[0].getAttribute('lang') == 'en' ?
@@ -117,11 +194,11 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
                 </div> --}}
                 <div class="avatar bg-black text-white dark:bg-nadilBg-100 dark:text-black h-12 w-12 rounded-full flex justify-center items-center cursor-pointer"
                     @click="isOpen = !isOpen">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                    <div id="nav-icon1">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
                 </div>
             </div>
         </div>
@@ -129,8 +206,8 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
             @yield('content')
             
         </div>
-        <div class="bg-black h-24 text-white flex justify-between px-12">
-            <div class="grid grid-cols-2 gap-x-3 mt-4">
+        <div class="bg-black text-white flex justify-between px-12 py-8">
+            <div class="flex flex-col space-y-4 items-center w-full">
                 <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.terms')}}</a></div>
             <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.cancellation')}}</a></div>
             <div class="uppercase text-xs font-lato rtl:font-ahlan"><a href="">{{__('nadil.footer.faq')}}</a></div>
@@ -146,6 +223,11 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
     <script src="{{asset('admin-lte/plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script>
+        $(document).ready(function(){
+	$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
         $('.owl-carousel').owlCarousel({
             rtl: document.getElementsByTagName('html')[0].getAttribute('lang') == 'ar',
             loop: true,

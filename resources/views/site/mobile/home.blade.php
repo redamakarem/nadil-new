@@ -115,7 +115,7 @@
     <div class="mx-4">
         <div class="uppercase font-lato rtl:font-ahlan rtl:tracking-normal text-center mb-4 tracking-widest">
             {{ __('nadil.general.pick_spot') }}</div>
-        <div class="relative carousel-container flex rtl:flex-row-reverse items-center">
+        {{-- <div class="relative carousel-container flex rtl:flex-row-reverse items-center">
             <div
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -140,6 +140,37 @@
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 next rounded-full z-10 -right-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
+        </div> --}}
+
+        <div class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart  slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white  py-2 py-lg-4" data-slider-nav-autoplay-interval="2000">
+            <div class="slider-container">
+                @foreach ($restaurants as $restaurant)
+                        <div class="item flex flex-col justify-center rounded-xl border-2 py-4 font-lato"
+                            style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
+                            <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
+                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                <h4
+                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                    {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
+                                    <div
+                                    class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                    {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
+                            </a>
+                        </div>
+                    @endforeach
+            </div>
+        
+            <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
+                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+            </button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
+                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </button>
+        
         </div>
 
     </div>
@@ -147,7 +178,39 @@
     <div class="mx-4">
         <div class="uppercase font-lato rtl:font-ahlan rtl:tracking-normal text-center mb-4 tracking-widest">
             {{ __('nadil.general.featured') }}</div>
-        <div class="relative carousel-container flex rtl:flex-row-reverse items-center">
+
+            <div class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart  slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white  py-2 py-lg-4" data-slider-nav-autoplay-interval="2000">
+                <div class="slider-container">
+                    @foreach ($featured as $restaurant)
+                            <div class="item flex flex-col justify-center rounded-xl border-2 py-4 font-lato"
+                                style="background-image:url('{{ $restaurant->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
+                                <a href="{{ route('site.restaurants.cuisine', ['cuisine' => $restaurant->id]) }}"
+                                    class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                    <h4
+                                        class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                        {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
+                                        <div
+                                        class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                        {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
+                                </a>
+                            </div>
+                        @endforeach
+                </div>
+            
+                <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
+                    <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </button>
+                <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
+                    <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </button>
+            
+            </div>
+
+        {{-- <div class="relative carousel-container flex rtl:flex-row-reverse items-center">
             <div
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -172,7 +235,7 @@
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 next rounded-full z-10 -right-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 
@@ -180,7 +243,7 @@
     <div class="mx-4">
         <div class="uppercase font-lato rtl:font-ahlan rtl:tracking-normal text-center mb-4 tracking-widest">
             {{ __('nadil.general.recently_added') }}</div>
-        <div class="relative carousel-container flex rtl:flex-row-reverse items-center">
+        {{-- <div class="relative carousel-container flex rtl:flex-row-reverse items-center">
             <div
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 prev rounded-full z-10 -left-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -205,6 +268,37 @@
                 class="absolute bg-nadilBtn-100 carousel-nav p-4 next rounded-full z-10 -right-4 top-[23%] w-12 h-12 flex justify-center items-center shadow-md">
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
+        </div> --}}
+
+        <div class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart  slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white  py-2 py-lg-4" data-slider-nav-autoplay-interval="2000">
+            <div class="slider-container">
+                @foreach ($latest as $item)
+                        <div class="item flex flex-col justify-center rounded-xl border-2 py-4 font-lato"
+                            style="background-image:url('{{ $item->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
+                            <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
+                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                <h4
+                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                    {{ $item->{'name_' . app()->getLocale()} }}</h4>
+                                    <div
+                                    class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                    {{ $item->areaa->{'name_' . app()->getLocale()} }}</div>
+                            </a>
+                        </div>
+                    @endforeach
+            </div>
+        
+            <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
+                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+            </button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
+                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </button>
+        
         </div>
 
     </div>
@@ -266,6 +360,15 @@
         select.text-center {
     text-align: -webkit-center;
 }
+.slider-nav.slider-nav-next {
+            right: -15px;
+            left: unset;
+        }
+
+        .slider-nav.slider-nav-prev {
+            left: -15px;
+            right: unset;
+        }
 select {
    text-align-last: center;
    text-align: center;

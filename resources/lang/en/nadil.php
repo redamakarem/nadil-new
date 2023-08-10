@@ -70,6 +70,11 @@
             'seats' => 'Seats',
             'area' => 'Seats',
             'reservation_history' => 'Reservation History',
+            'upcoming' => 'Upcoming',
+            'past' => 'Past',
+            'cancelled' => 'Cancelled',
+            'filter_by_status' => 'Filter by status',
+
 
         ],
         'auth' => [

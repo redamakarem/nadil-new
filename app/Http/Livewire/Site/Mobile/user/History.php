@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Site\Mobile\User;
 
+use Carbon\Carbon;
 use App\Models\Booking;
 use Livewire\Component;
 use App\Models\BookingsTables;
@@ -13,6 +14,8 @@ class History extends Component
     public $bookings;
     public $idToRemove;
     public $profile;
+    public $selected_filter;
+    public $filtered_bookings;
 
 
     protected $listeners = ['bookingDeleteConfirmed' => 'deleteBooking'];
@@ -36,6 +39,28 @@ class History extends Component
             $booking_to_delete->save();
         }
     }
+
+    public function updatedSelectedFilter($value)
+    {
+            if($value == 'upcoming'){
+            $this->filtered_bookings =  Booking::with('restaurant')
+            ->where('user_id',Auth::id())
+            ->where('booking_date','>',Carbon::now())
+            ->orderBy('booking_date','desc')->whereIn('booking_status_id',[1])->get();
+    }
+        if($value == 'past'){
+            $this->filtered_bookings =  Booking::with('restaurant')
+            ->where('user_id',Auth::id())
+            ->where('booking_date','<',Carbon::now())
+            ->orderBy('booking_date','desc')->whereIn('booking_status_id',[1])->get();
+    }
+        if($value == 'cancelled'){
+            $this->filtered_bookings =  Booking::with('restaurant')
+            ->where('user_id',Auth::id())
+            ->orderBy('booking_date','desc')->whereIn('booking_status_id',[5])->get();
+    }
+    }
+
     public function render()
     {
         return view('livewire.site.mobile.user.history');
@@ -45,5 +70,10 @@ class History extends Component
     {
         $this->bookings =  Booking::with('restaurant')->where('user_id',Auth::id())->orderBy('booking_date','desc')->where('booking_status_id','1')->get();
         $this->profile = $profile;
+        $this->selected_filter = 'upcoming';
+        $this->filtered_bookings =  Booking::with('restaurant')
+            ->where('user_id',Auth::id())
+            ->where('booking_date','>',Carbon::now())
+            ->orderBy('booking_date','desc')->whereIn('booking_status_id',[1])->get();
     }
 }
