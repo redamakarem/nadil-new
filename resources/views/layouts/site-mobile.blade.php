@@ -87,6 +87,10 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
   opacity: 0;
   left: -60px;
 }
+html[dir=rtl] #nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  right: -60px;
+}
 
 #nav-icon1.open span:nth-child(3) {
   top: 18px;
