@@ -183,7 +183,7 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                 <div class="header h-60 bg-black flex-col justify-center bg-cover"
                     style="background-image:url('{{ $current_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                 @else
-                    <div class="header h-80 bg-black flex-col justify-center bg-cover items-stretch"
+                    <div class="header h-80 bg-black flex-col justify-center bg-contain items-stretch"
                         style="background-image:url('{{ asset('images/nadil@2x.png') }}'); background-size: cover">
             @endif
             <div
