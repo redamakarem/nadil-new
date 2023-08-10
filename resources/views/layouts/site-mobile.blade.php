@@ -83,7 +83,7 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
   transform: rotate(135deg);
 }
 
-#nav-icon1.open span:nth-child(2) {
+html[dir=ltr] #nav-icon1.open span:nth-child(2) {
   opacity: 0;
   left: -60px;
 }
