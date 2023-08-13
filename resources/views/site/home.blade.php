@@ -66,7 +66,7 @@
 
             {{-- Test --}}
 
-            <div>
+            {{-- <div>
                 <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
                     <div class="slider-container">
                         @foreach ($restaurants as $restaurant)
@@ -98,6 +98,24 @@
                     </button>
                 
                 </div>
+            </div> --}}
+
+            <div class="nadil-carousel">
+                @foreach ($restaurants as $restaurant)
+                                <div class="item flex flex-col justify-center rounded-xl border-2  font-lato"
+                                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
+                                    <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
+                                        class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
+                                        <h4
+                                            class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                            {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
+                                            <div
+                                    class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                    {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
+                                        
+                                    </a>
+                                </div>
+                            @endforeach
             </div>
 
             {{-- End Test --}}
@@ -110,13 +128,13 @@
                 <h2 class="mt-6 uppercase ltr:font-lato rtl:font-ahlan text-[#454545]">
                     Featured</h2>
                     <div>
-                        <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
-                            <div class="slider-container">
+                        
+                            <div class="nadil-carousel">
                                 @foreach ($featured as $item)
                                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                                             style="background-image:url('{{ $item->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                                             <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
-                                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                                 <h4
                                                     class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                     {{ $item->{'name_' . app()->getLocale()} }}</h4>
@@ -129,18 +147,7 @@
                                     @endforeach
                             </div>
                         
-                            <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
-                                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </div>
-                            </button>
-                            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
-                                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </button>
-                        
-                        </div>
+                            
                     </div>
             </div>
 
@@ -150,13 +157,13 @@
                 <h2 class="mt-6 uppercase ltr:font-lato rtl:font-ahlan text-[#454545]">
                     Most recent</h2>
                     <div>
-                        <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
-                            <div class="slider-container">
+                        
+                            <div class="nadil-carousel">
                                 @foreach ($latest as $item)
                                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                                             style="background-image:url('{{ $item->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
                                             <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
-                                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                                 <h4
                                                     class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                     {{ $item->{'name_' . app()->getLocale()} }}</h4>
@@ -169,18 +176,7 @@
                                     @endforeach
                             </div>
                         
-                            <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
-                                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </div>
-                            </button>
-                            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
-                                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </button>
-                        
-                        </div>
+                            
                     </div>
             </div>
 
@@ -193,13 +189,13 @@
                         {{ $meal_type->{'name_' . app()->getLocale()} }}</h2>
                     
                     <div>
-                        <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
-                            <div class="slider-container">
+                        
+                            <div class="nadil-carousel">
                                 @foreach ($meal_type->restaurants as $meal_restaurant)
                                         <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                                             style="background-image:url('{{ $meal_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                                             <a href="{{ route('site.restaurants.view', ['id' => $meal_restaurant->id]) }}"
-                                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                                class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                                 <h4
                                                     class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                     {{ $meal_restaurant->{'name_' . app()->getLocale()} }}</h4>
@@ -212,31 +208,20 @@
                                     @endforeach
                             </div>
                         
-                            <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
-                                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </div>
-                            </button>
-                            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
-                                <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </button>
-                        
-                        </div>
+                            
                     </div>
                 @endif
             @endforeach
             <div class="greeting uppercase font-lato rtl:font-ahlan rtl:tracking-normal text-[#454545]">
                 {{ __('nadil.general.pick_cuisine') }}</div>
                 <div>
-                    <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
-                        <div class="slider-container">
+                    
+                        <div class="nadil-carousel">
                             @foreach ($cuisines as $cuisine)
                                     <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
                                         style="background-image:url('{{ $cuisine->getFirstMediaUrl('cuisine_images') }}'); background-size: cover">
                                         <a href="{{ route('site.restaurants.view', ['id' => $cuisine->id]) }}"
-                                            class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
+                                            class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-6">
                                             <h4
                                                 class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                 {{ $cuisine->{'name_' . app()->getLocale()} }}</h4>
@@ -247,18 +232,7 @@
                                 @endforeach
                         </div>
                     
-                        <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
-                            <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </div>
-                        </button>
-                        <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
-                            <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </button>
-                    
-                    </div>
+                       
                 </div>
         </div>
     </div>
@@ -292,6 +266,22 @@
             left: -30px;
             right: unset;
         }
+        .slick-arrow {
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.slick-next:focus, .slick-next:hover, .slick-prev:focus, .slick-prev:hover{
+    color: #000;
+}
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
     </style>
 @endpush
 @push('scripts')
@@ -321,114 +311,7 @@
             defaultDate: 'today',
         });
 
-        // var res_carousel = $('.restaurant-carousel');
-        // res_carousel.owlCarousel({
-        //     loop: true,
-        //     rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-        //     margin: 10,
-        //     responsive: {
-        //         0: {
-        //             items: 1
-        //         },
-        //         600: {
-        //             items: 3
-        //         },
-        //         1000: {
-        //             items: 4
-        //         }
-        //     }
-        // });
-        // $('.restaurant-carousel .next').click(function() {
-        //     res_carousel.trigger('next.owl.carousel');
-        // })
-        // $('.restaurant-carousel .prev').click(function() {
-        //     res_carousel.trigger('prev.owl.carousel');
-        // })
-
-        // Featured
-
-        // var featured_carousel = $('.featured-carousel');
-        // featured_carousel.owlCarousel({
-        //     loop: true,
-        //     rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-        //     margin: 10,
-        //     responsive: {
-        //         0: {
-        //             items: 1
-        //         },
-        //         600: {
-        //             items: 3
-        //         },
-        //         1000: {
-        //             items: 4
-        //         }
-        //     }
-        // });
-        // $('.featured-carousel .next').click(function() {
-        //     featured_carousel.trigger('next.owl.carousel');
-        // })
-        // $('.featured-carousel .prev').click(function() {
-        //     featured_carousel.trigger('prev.owl.carousel');
-        // })
-
-        // $('.meals-carousel').each(function(index) {
-        //     var meal_slider = $(this).owlCarousel({
-        //         loop: true,
-        //         rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-        //         margin: 10,
-        //         responsive: {
-        //             0: {
-        //                 items: 1
-        //             },
-        //             600: {
-        //                 items: 3
-        //             },
-        //             1000: {
-        //                 items: 4
-        //             }
-        //         }
-        //     });
-        //     $(this).closest('.carousel-container').find('.meals-prev').click(function() {
-        //         console.log('PREV');
-        //         meal_slider.trigger('prev.owl.carousel');
-        //     })
-        //     $(this).closest('.carousel-container').find('.meals-next').click(function() {
-        //         console.log('MEXT');
-        //         meal_slider.trigger('next.owl.carousel');
-        //     })
-        // });
-
-
-
-        // var cuisines_carousel = $('.cuisines-carousel');
-        // cuisines_carousel.owlCarousel({
-        //     loop: true,
-        //     rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
-        //     margin: 10,
-        //     responsive: {
-        //         0: {
-        //             items: 1
-        //         },
-        //         600: {
-        //             items: 3
-        //         },
-        //         1000: {
-        //             items: 4
-        //         }
-        //     }
-        // });
-        // $('.cuisines-next').click(function() {
-        //     cuisines_carousel.trigger('next.owl.carousel');
-        // })
-        // $('.cuisines-prev').click(function() {
-        //     cuisines_carousel.trigger('prev.owl.carousel');
-        // })
-
-        // $('.owl-carousel-mobile').owlCarousel({
-        //     loop: true,
-        //     margin: 10,
-        //     items: 1
-        // })
+        
 
         $(".owl-carousel").each(function() {
             $(this).owlCarousel({
@@ -457,5 +340,18 @@
             $(this).closest('.carousel-container').find('.owl-carousel').trigger('prev.owl.carousel');
             console.log('PREV??');
         })
+
+
+        $(document).ready(function(){
+        $('.nadil-carousel').slick({
+            autoplay:true,
+            slidesToShow: 3,
+            rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
+  slidesToScroll: 1,
+            arrows: true,
+            prevArrow:"<button type='button' class=' z-20 slick-prev pull-left bg-nadilBtn-100 w-10 h-10 flex justify-center items-center rounded-full'><i class='fa-solid fa-chevron-left'></i></button>",
+            nextArrow:"<button type='button' class=' z-20 slick-next pull-left bg-nadilBtn-100 w-10 h-10 flex justify-center items-center rounded-full'><i class='fa-solid fa-chevron-right'></i></button>",
+        });
+    });
     </script>
 @endpush
