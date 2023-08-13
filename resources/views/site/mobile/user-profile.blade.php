@@ -1,9 +1,9 @@
 @extends('layouts.site-mobile')
 @section('content')
-    <div id="profile">
+    <div id="profile" class="mt-8">
         <h1 class="text-xl font-bold uppercase text-center mb-8 mt-4">{{__('Account Details')}}</h1>
     </div>
-    <div class="flex flex-col space-y-8 items-center">
+    <div class="flex flex-col space-y-8 items-center py-8">
         <div class="text-lg uppercase font-lato font-bold">{{__('Name')}}</div>
         <div>{{$profile->name}}</div>
         <div class="text-lg uppercase font-lato font-bold">{{__('Address')}}</div>

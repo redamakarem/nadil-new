@@ -344,7 +344,7 @@
 
         $(document).ready(function(){
         $('.nadil-carousel').slick({
-            autoplay:true,
+            // autoplay:true,
             infinite: true,
             slidesToShow: 3,
             rtl: {{ app()->getLocale() == 'ar' ? 'true' : 'false' }},
