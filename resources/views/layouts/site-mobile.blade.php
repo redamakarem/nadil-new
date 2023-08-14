@@ -36,10 +36,10 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   cursor: pointer;
 }
 
@@ -183,7 +183,7 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                     style="background-image:url('{{ $current_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                 @else
                     <div class="header h-80 bg-black flex-col justify-center bg-contain items-stretch"
-                        style="background-image:url('{{ asset('images/nadil@2x.png') }}'); background-size: cover">
+                        style="background-image:url('{{ asset('images/nadil@2x.png') }}'); background-size: contain">
             @endif
             <div
                 class="flex justify-end px-8 pt-24 h-20">

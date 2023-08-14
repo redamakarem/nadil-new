@@ -2,7 +2,7 @@
 @section('content')
 
 <div id="page-wrapper" ">
-    <div class="banner h-auto min-h-[200px] bg-red-400">
+    {{-- <div class="banner h-auto min-h-[200px] bg-red-400">
         <div class="flex flex-col gap-y-4">
             <div>
                 <h2 class="font-lato text-3xl mx-6 my-8 text-center text-white uppercase">All your booking needs in one place</h2>
@@ -11,7 +11,7 @@
                 <img src="{{asset('/images/about.png')}}" alt="" class="h-full w-full object-cover" />
             </div>
         </div>
-    </div>
+    </div> --}}
     <div id="page-content" class="flex flex-grow flex-col w-[85%] max-w-12xl mx-auto py-[80px] ">
         <div class="flex flex-col">
             <div class="flex flex-col-reverse gap-y-4">
