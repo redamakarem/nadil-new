@@ -166,7 +166,7 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                 @guest
                     <a href="{{ route('register') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.register')}}</a>
                 @endguest
-                <a href="{{ route('register') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.businesses')}}</a>
+                <a href="{{ route('site.about') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.businesses')}}</a>
                 <div>
                     @foreach (config('app.available_locales') as $locale)
                         @if (app()->getLocale() != $locale)
