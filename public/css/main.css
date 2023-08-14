@@ -1411,6 +1411,9 @@ select {
 .bg-contain {
     background-size: contain;
 }
+.bg-no-repeat {
+    background-repeat: no-repeat;
+}
 .fill-current {
     fill: currentColor;
 }
