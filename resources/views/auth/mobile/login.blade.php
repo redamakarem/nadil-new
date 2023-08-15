@@ -27,19 +27,27 @@
                     <input type="password" placeholder="{{__('nadil.auth.password')}}" name="password"
                            class="flex items-center w-full ltr:font-lato rtl:font-ahlan ltr:placeholder:font-bold text-[19px] rtl:placeholder:font-normal ltr:tracking-[2px] rtl:tracking-normal  border-[#707070] border-2 p-2 rounded-[19px]">
                 </div>
+                <div>
+                    <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[2px] rtl:tracking-normal uppercase block w-full text-center underline"
+                        href="{{ route('password.email') }}">{{__('nadil.auth.forgot_password')}}</a>
+                </div>
                 <div class="justify-center flex w-full lg:justify-end">
                     <button type="submit"
                             class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">{{__('nadil.auth.login')}}
                     </button>
                 </div>
+                <div class="pb-8">
+                    <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[2px] rtl:tracking-normal uppercase block w-full text-center underline"
+                    href="{{ route('site.user-register') }}">{{__('nadil.auth.register')}}</a>
+                </div>
             </form>
-            <div class="flex justify-center space-x-8 p-4">
+            {{-- <div class="flex justify-center space-x-8 p-4">
                 <a href="{{route('site.auth.google')}}"><i class="fa-brands fa-google text-3xl"></i></a>
                 <a href="{{route('site.auth.facebook')}}"><i class="fa-brands fa-facebook text-3xl"></i></a>
-            </div>
+            </div> --}}
         </div>
-        <div class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">OR</div>
-        <a href="{{route('site.user-register')}}" class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 text-center bg-white shadow-md rounded-[12px] ltr:tracking-[4px] rtl:tracking-normal ltr:font-bold rtl:font-normal">Create a new account</a href="{{route('register')}}">
+        
+       
     </div>
 
 @endsection

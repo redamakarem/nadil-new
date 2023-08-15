@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="flex items-center flex-col space-y-8 my-8 mx-6 py-8">
+<div class="container  h-full py-6" >
+    <div class="flex items-center flex-col space-y-8 my-8 mx-6 py-8 bg-[#e0e0e0] rounded-[60px] px-6">
         <div class="flex flex-col w-full items-center space-y-6">
             <h2 class="text-lg font-bold">{{__('nadil.booking.filter_by_status')}}</h2>
             <select class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12" wire:model='selected_filter'>

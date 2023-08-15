@@ -56,10 +56,10 @@ dir="{{ app()->getLocale()=='en'?'ltr':'rtl' }}"
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 #nav-icon1 span:nth-child(1) {
@@ -99,6 +99,11 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
   transform: rotate(-135deg);
 }
 
+.menu-active{
+    background-color: #000;
+    color: #fff;
+}
+
 
     </style>
     @stack('styles')
@@ -124,12 +129,12 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
 <body class="">
     <main class="bg-black">
         <div id="mobile-wrapper" class="relative min-h-screen bg-black" x-data="{ isOpen: false }">
-            <div class="sidebar flex-col fixed z-50 bg-white dark:bg-black inset-y-0 {{ app()->getLocale() == 'en' ? 'left-0' : 'right-0' }} z-10 w-2/3 max-w-md transform transition duration-200"
+            <div class="sidebar flex-col fixed z-50 bg-white dark:bg-black inset-y-0 {{ app()->getLocale() == 'en' ? 'left-0' : 'right-0' }} z-10 w-2/3 max-w-md transform transition duration-600"
                 :class="isOpen ? '' : document.getElementsByTagName('html')[0].getAttribute('lang') == 'en' ?
                     '-translate-x-full' : 'translate-x-full'">
 
                 <div class="flex justify-center">
-                    <div class="w-24 h-24 mt-14 rounded-full bg-nadilBg-100 flex justify-center items-center">
+                    <div class="w-24 h-24 mt-14 rounded-full bg-black text-white flex justify-center items-center ">
                         @guest
                             <i class="fa fa-user"></i>
                         @endguest
@@ -147,11 +152,11 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                     @endrole
                 </div>
 
-                <a href="{{route('site.home')}}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.discover')}}</a>
+                <a href="{{route('site.home')}}" class=" block uppercase text-black dark:text-white py-3 px-8 {{ (request()->is('/')) ? 'menu-active' : '' }}">{{__('nadil.menu.discover')}}</a>
 
                 @role('user')
-                    <a href="{{route('user.profile.show')}}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.profile')}}</a>
-                    <a href="{{route('user.history.show')}}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('Reservations')}}</a>
+                    <a href="{{route('user.profile.show')}}" class=" block uppercase text-black dark:text-white py-3 px-8 {{ (request()->is('profile*')) ? 'menu-active' : '' }}">{{__('nadil.menu.profile')}}</a>
+                    <a href="{{route('user.history.show')}}" class=" block uppercase text-black dark:text-white py-3 px-8 {{ (request()->is('history')) ? 'menu-active' : '' }}">{{__('Reservations')}}</a>
                     
                     <form action="{{ route('logout') }}" method="POST"
                         onclick="event.preventDefault();
@@ -161,12 +166,12 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                     </form>
                 @endrole
                 @guest
-                    <a href="{{ route('login') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.login')}}</a>
+                    <a href="{{ route('login') }}" class=" block uppercase text-black dark:text-white py-3 px-8 {{ (request()->is('login*')) ? 'menu-active' : '' }}">{{__('nadil.menu.login')}}</a>
                 @endguest
                 @guest
-                    <a href="{{ route('register') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.register')}}</a>
+                    <a href="{{ route('register') }}" class=" block uppercase text-black dark:text-white py-3 px-8 {{ (request()->is('register*')) ? 'menu-active' : '' }}">{{__('nadil.menu.register')}}</a>
                 @endguest
-                <a href="{{ route('site.about') }}" class=" block uppercase text-black dark:text-white py-3 px-8">{{__('nadil.menu.businesses')}}</a>
+                <a href="{{ route('site.about') }}" class=" block uppercase text-black dark:text-white py-3 px-8 {{ (request()->is('about*')) ? 'menu-active' : '' }}">{{__('nadil.menu.businesses')}}</a>
                 <div>
                     @foreach (config('app.available_locales') as $locale)
                         @if (app()->getLocale() != $locale)
@@ -183,7 +188,9 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                     style="background-image:url('{{ $current_restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                 @else
                     <div class="header h-80 bg-black flex-col justify-center bg-contain items-stretch bg-no-repeat"
-                        style="background-image:url('{{ asset('images/nadil@2x.png') }}'); background-size: contain;">
+                        style="background-image:url('{{ asset('/images/logo@2x.png') }}'); background-size: 86% 65%;
+                        background-position: center 20%;
+                    ">
             @endif
             <div
                 class="flex justify-end px-8 pt-24 h-20">
@@ -205,7 +212,7 @@ html[dir=rtl] #nav-icon1.open span:nth-child(2) {
                 </div>
             </div>
         </div>
-        <div class="content flex-col items-center bg-nadilBg-100 rounded-[60px] shadow-lg relative -top-16">
+        <div class="content flex-col items-center bg-nadilBg-100 rounded-[60px] min-h-[70vh] shadow-lg relative -top-16">
             @yield('content')
             
         </div>

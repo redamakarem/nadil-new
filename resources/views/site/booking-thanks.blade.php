@@ -42,7 +42,7 @@
                     <table>
                         <tr>
                             <td class="w-36">Booking Code</td>
-                            <td>{{ $booking->booking_code }}</td>
+                            <td>NDL-{{ $booking->booking_code }}</td>
                         </tr>
                         <tr>
                             <td>Restaurant</td>

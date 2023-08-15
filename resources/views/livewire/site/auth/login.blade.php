@@ -38,9 +38,9 @@
                             class="fa fa-{{ $showPassword ? 'eye' : 'eye-slash' }}"></i></button>
                 </div>
                 <div class="pt-4 flex justify-between p-8 underline">
-                    <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[4px] rtl:tracking-normal uppercase "
+                    <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[2px] rtl:tracking-normal uppercase "
                         href="{{ route('site.user-register') }}">{{__('nadil.user_registration.title')}}</a>
-                    <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[4px] rtl:tracking-normal uppercase "
+                    <a class="ltr:font-lato rtl:font-ahlan text-[19px] ltr:tracking-[2px] rtl:tracking-normal uppercase "
                         href="{{ route('password.email') }}">{{__('nadil.auth.forgot_password')}}</a>
                     
                 </div>
