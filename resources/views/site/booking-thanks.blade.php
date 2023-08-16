@@ -41,7 +41,7 @@
                 <div>
                     <table>
                         <tr>
-                            <td class="w-36">Booking Code</td>
+                            <td class="w-36">Booking ID</td>
                             <td>NDL-{{ $booking->booking_code }}</td>
                         </tr>
                         <tr>

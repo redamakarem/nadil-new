@@ -282,6 +282,10 @@
 .slick-next {
     right: -25px;
 }
+.slick-track{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
     </style>
 @endpush
 @push('scripts')
