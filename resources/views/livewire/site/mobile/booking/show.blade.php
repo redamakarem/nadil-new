@@ -1,4 +1,13 @@
+<div wire:loading class="absolute">
+
+    <div class="h-screen w-screen flex justify-center items-center fixed bg-gray-500/20  top-0 left-0 z-30">
+        <lottie-player src="https://lottie.host/07048e2a-58bc-4111-ac06-10c47c955114/MTwZhf7FYy.json"
+            background="transparent" speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
+
+    </div>
+</div>
 <div id="booking-container" class="flex flex-col px-4 pt-8">
+    
 
     @if ($errors->any())
         <div id="validation-errors"
@@ -128,6 +137,7 @@
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ar.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 
     <script>

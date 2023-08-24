@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Password;
 
 class PasswordResetLinkController extends Controller
@@ -15,7 +16,13 @@ class PasswordResetLinkController extends Controller
      */
     public function create()
     {
+        $agent = new Agent();
+        if ($agent->isDesktop()){
         return view('auth.forgot-password');
+        }
+        else{
+            return view('auth.mobile.forgot-password');
+        }
     }
 
     /**

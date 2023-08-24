@@ -64,41 +64,7 @@
                 </form>
             </div>
 
-            {{-- Test --}}
-
-            {{-- <div>
-                <div class="swiffy-slider slider-item-show4 slider-nav-dark slider-nav-sm slider-nav-visible slider-item-snapstart .slider-nav-round slider-nav-autopause h-32  bg-white py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
-                    <div class="slider-container">
-                        @foreach ($restaurants as $restaurant)
-                                <div class="item flex flex-col justify-center rounded-xl border-2 h-32 font-lato"
-                                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
-                                    <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
-                                        class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl">
-                                        <h4
-                                            class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
-                                            {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
-                                            <div
-                                    class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
-                                    {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
-                                        
-                                    </a>
-                                </div>
-                            @endforeach
-                    </div>
-                
-                    <button type="button" class="slider-nav slider-nav-prev" aria-label="Go left">
-                        <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </div>
-                    </button>
-                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left">
-                        <div class="bg-nadilBtn-100 w-12 h-12 flex justify-center items-center rounded-full">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </div>
-                    </button>
-                
-                </div>
-            </div> --}}
+            
 
             <div class="nadil-carousel">
                 @foreach ($restaurants as $restaurant)
@@ -107,10 +73,10 @@
                                     <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
                                         class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                         <h4
-                                            class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                            class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[22px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                             {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
                                             <div
-                                    class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                    class="address text-center text-white uppercase text-[16px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                     {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
                                         
                                     </a>
@@ -136,10 +102,10 @@
                                             <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
                                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                                 <h4
-                                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[22px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                     {{ $item->{'name_' . app()->getLocale()} }}</h4>
                                                     <div
-                                            class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                            class="address text-center text-white uppercase text-[16px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                             {{ $item->areaa->{'name_' . app()->getLocale()} }}</div>
                                                 
                                             </a>
@@ -165,10 +131,10 @@
                                             <a href="{{ route('site.restaurants.view', ['id' => $item->id]) }}"
                                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                                 <h4
-                                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[22px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                     {{ $item->{'name_' . app()->getLocale()} }}</h4>
                                                     <div
-                                            class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                            class="address text-center text-white uppercase text-[16px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                             {{ $item->areaa->{'name_' . app()->getLocale()} }}</div>
                                                 
                                             </a>
@@ -197,10 +163,10 @@
                                             <a href="{{ route('site.restaurants.view', ['id' => $meal_restaurant->id]) }}"
                                                 class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-4">
                                                 <h4
-                                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                                    class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[22px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                     {{ $meal_restaurant->{'name_' . app()->getLocale()} }}</h4>
                                                     <div
-                                            class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                            class="address text-center text-white  uppercase text-[16px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                             {{ $meal_restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
                                                 
                                             </a>
@@ -223,7 +189,7 @@
                                         <a href="{{ route('site.restaurants.view', ['id' => $cuisine->id]) }}"
                                             class="flex flex-col justify-center w-full h-full bg-black/70 rounded-xl py-6">
                                             <h4
-                                                class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                                class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[22px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                                 {{ $cuisine->{'name_' . app()->getLocale()} }}</h4>
                                                 
                                             

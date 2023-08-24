@@ -1,8 +1,8 @@
-@extends('layouts.site-tw')
+@extends('layouts.site-mobile')
 @section('content')
 
 <div class="flex flex-col w-full h-full justify-center">
-    <div class="w-1/3 rounded-[64px] flex flex-col border-2 bg-[#EFEFEF] my-12 px-16 py-12 mx-auto ">
+    <div class=" rounded-[64px] flex flex-col border-2 bg-[#EFEFEF] my-12 px-6 py-12 mx-8 ">
         <div class="flex justify-center">
             <img src="{{asset('/images/nadil-black.png')}}" alt="" class="h-32 w-auto"/>
         </div>
@@ -30,7 +30,7 @@
             </div>
             
             
-            <div class="flex w-full justify-end">
+            <div class="flex w-full justify-center">
                 <button type="submit"
                         class="ltr:font-lato rtl:font-ahlan uppercase px-12 py-4 bg-white shadow-md rounded-[12px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-bold rtl:font-normal">{{__('nadil.auth.reset_password')}}
                 </button>
