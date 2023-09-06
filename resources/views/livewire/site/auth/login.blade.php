@@ -12,10 +12,10 @@
                     </ul>
                 </div>
             @endif
-            @if (Session::has('status'))
+            @if (\Session::has('status'))
                 <div
-                    class="bg-green-600 px-8 py-12 text-white font-lato uppercase text-md tracking-[6px] rounded-[19px]"">
-                    {{ Session::get('status') }}
+                    class="bg-green-600 px-8 py-2 text-center text-white font-lato uppercase text-md tracking-[2px]">
+                    {{ \Session::get('status') }}
                 </div>
             @endif
         </div>

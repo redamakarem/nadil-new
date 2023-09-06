@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
+use Jenssegers\Agent\Agent;
 
 class NewPasswordController extends Controller
 {
@@ -20,7 +21,11 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request)
     {
+        $agent = new Agent();
+        if ($agent->isDesktop()) {
         return view('auth.reset-password', ['request' => $request]);
+        }
+        return view('auth.mobile.reset-password', ['request' => $request]);
     }
 
     /**

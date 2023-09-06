@@ -124,7 +124,7 @@
             'terms' =>'Terms of Use',
             'privacy' =>'Privacy Policy',
             'faq' =>'FAQ',
-            'cancellation' =>'Cancellation Policy',
+            'cancellation' =>'Privacy Policy',
             'all_rights' =>'All Rights Reserved',
             'contact' =>'Contact Us',
         ],
