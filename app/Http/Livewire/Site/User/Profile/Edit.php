@@ -28,6 +28,7 @@ class Edit extends Component
         $this->profile = Auth::user()->profile?? new Profile();
         $this->profile->user_id = Auth::user()->id;
         $this->governates = Governate::all();
+        $this->area = Auth::user()->area_id;
     }
 
     public function submit()

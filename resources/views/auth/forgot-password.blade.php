@@ -59,6 +59,14 @@
                 </div>
             @endif
         </div>
+        <div>
+            @if (session('status'))
+                <div class="bg-green-400 p4">
+                    <p>{{ session('status') }}</p>
+                </div>
+            @endif
+
+        </div>
 
         <form action="{{ route('password.request') }}" method="POST" class="space-y-8">
             @csrf

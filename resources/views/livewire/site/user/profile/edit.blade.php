@@ -49,7 +49,10 @@
                             @foreach ($governates as $governate)
                                 <optgroup label="{{ $governate->name_en }}">
                                     @foreach ($governate->areas as $area)
-                                        <option value="{{ $area->id }}">{{ $area->name_en }}</option>
+                                        <option value="{{ $area->id }}" @if ($area->id == $profile->user->area_id)
+                                            selected
+                                            
+                                        @endif>{{ $area->name_en }}</option>
                                     @endforeach
                                 </optgroup>
                             @endforeach
