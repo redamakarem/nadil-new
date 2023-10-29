@@ -75,8 +75,12 @@
                             <div
                                 class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                 {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
-                                <div class="text-white px-4 py2">{{ __('nadil.general.weekdays') }}:{{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
-                                <div class="text-white px-4 py2">{{ __('nadil.general.weekends') }}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
+                                <hr class="my-2">
+                                <div class="text-white px-4 py2">{{ __('nadil.general.weekdays') }} : {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
+                                @if ($restaurant->{'weekend_opening_hours_' . app()->getLocale()} != null)
+                                <div class="text-white px-4 py2">{{ __('nadil.general.weekends') }} : {{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
+                                @endif
+                                
                         </a>
                     </div>
                 @endforeach

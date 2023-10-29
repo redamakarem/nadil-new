@@ -47,6 +47,8 @@ Route::get('update-bookings',function (){
     return "Done";
 });
 
+Route::get('home-resp',[\App\Http\Controllers\SiteController::class,'homeResp'])->name('site.home-resp');
+
 Route::get('/',[\App\Http\Controllers\SiteController::class,'index'])->name('site.home');
 Route::get('/restaurants',[\App\Http\Controllers\SiteController::class,'restaurants']);
 Route::get('/restaurants/cuisine/{cuisine}',[\App\Http\Controllers\SiteController::class,'restaurants_by_cuisine'])

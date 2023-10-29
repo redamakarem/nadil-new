@@ -48,6 +48,22 @@ class SiteController extends Controller
         ]);
     }
 
+    public function homeResp()
+    {
+        $restaurants = Restaurant::where('is_active',true)->get();
+        $cuisines = Cuisine::all();
+        $meal_types = MealType::with('restaurants')->get();
+        $featured = Restaurant::where('is_active',true)->where('is_featured',true)->get();
+        $latest = Restaurant::where('is_active',true)->orderBy('created_at','desc')->take(12)->get();
+        return view('site.home-resp', [
+            'restaurants' => $restaurants,
+            'cuisines' => $cuisines,
+            'meal_types' => $meal_types,
+            'featured' => $featured,
+            'latest' => $latest,
+        ]);
+    }
+
     public function show_restaurant($restaurant_id)
     {
 
