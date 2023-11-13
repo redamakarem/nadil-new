@@ -118,6 +118,31 @@ class SiteController extends Controller
         return view('site.search',compact(['result','validated_data']));
     }
 
+
+    public function check_booking_resp(Request $request)
+    {
+        $validated_data = $request->validate(
+            [
+                'search_date' => ['required'],
+                'search_time' => ['required'],
+                'search_seats' => ['required'],
+                'search_name' => ['sometimes','nullable']
+             ]
+        );
+        // dd($validated_data);
+        $result = Restaurant::whereHas('menus')
+        ->where('name_'. app()->getLocale(),'LIKE','%'. $validated_data['search_name'].'%')
+        ->orWhereRelation('areaa','name_'. app()->getLocale(),$validated_data['search_name'])
+        ->orWhereRelation('cuisines','name_'. app()->getLocale(),$validated_data['search_name'])
+        ->where('is_active',true)
+        ->get()->filter(function ($value, $key) use($validated_data) {
+            return $value->getAvailableSeats($validated_data['search_date'],$validated_data['search_time']) > $validated_data['search_seats'];
+        });
+       
+
+        return view('site.user.search-resp',compact(['result','validated_data']));
+    }
+
     public function getTimeSlots($start_time, $end_time, $slot_length)
     {
         $period = CarbonPeriod::create($start_time, $slot_length, $end_time);

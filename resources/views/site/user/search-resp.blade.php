@@ -1,4 +1,4 @@
-@extends('layouts.site-tw')
+@extends('layouts.site-resp')
 @section('content')
     <div id="main-content" class="h-full">
         <div class="flex flex-col px-24 py-[80px]">
@@ -78,28 +78,28 @@
                         <div class="item flex flex-col justify-center rounded-xl border-2 h-36 font-lato"
                             style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
                             <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
-                                class="flex justify-center w-full h-full bg-black rounded-xl bg-opacity-50">
+                                class="flex justify-center w-full h-full bg-black/50 rounded-xl">
                                 <div class="flex w-full">
                                     <h4
                                         class="flex w-1/2 items-center justify-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[26px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                         {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
                                     <div class="flex w-1/2 flex-col justify-center items-center">
-                                        <div class="flex">
-                                            
+                                        <div class="flex gap-1">
+
                                             <div
                                                 class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
                                                 {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
-                                                <div class="text-white">
-                                                    {{ $restaurant->cuisines[0]->{'name_' . app()->getLocale()} }}</div>
+                                            <div class="text-white">
+                                                {{ $restaurant->cuisines[0]->{'name_' . app()->getLocale()} }}</div>
                                         </div>
                                         <div class="text-white px-4 py2">{{ __('nadil.general.weekdays') }} :
                                             {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
-                                            @if ($restaurant->{'weekend_opening_hours_' . app()->getLocale()} != null)
-                                                <div class="text-white px-4 py2">{{ __('nadil.general.weekends') }} :
-                                                    {{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
-                                            @endif
+                                        @if ($restaurant->{'weekend_opening_hours_' . app()->getLocale()} != null)
+                                            <div class="text-white px-4 py2">{{ __('nadil.general.weekends') }} :
+                                                {{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
+                                        @endif
                                     </div>
-                                    
+
                                 </div>
 
                             </a>
@@ -116,6 +116,107 @@
     </div>
 @endsection
 
+@section('content-mob')
+    <div class="lg:hidden container mx-auto px-8">
+        <p class="uppercase font-lato tracking-[4px] rtl:font-ahlan rtl:tracking-normal text-center py-6">
+            {{ __('nadil.general.whats_the_plan') }}</p>
+        <div class="flex flex-col items-center">
+            <form action="{{ route('site.restaurants.search') }}" method="POST">
+                @csrf
+
+                <div class="my-4">
+                    <input
+                        class="text-center rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase w-full"
+                        type="text" name="search_date" id="search_date" placeholder="{{ __('Date') }}">
+                </div>
+                <div class="my-4">
+                    <input
+                        class="text-center rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase w-full"
+                        type="text" name="search_time" id="search_time" placeholder="{{ __('Time') }}">
+                </div>
+                <div class="my-4">
+                    <select
+                        class="text-center rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase w-full"
+                        name="search_seats" id="search_seats">
+                        <option value="1">1 {{ trans_choice('nadil.booking.guest', 1) }}</option>
+                        <option value="2">2 {{ trans_choice('nadil.booking.guest', 2) }}</option>
+                        <option value="3">3 {{ trans_choice('nadil.booking.guest', 3) }}</option>
+                        <option value="4">4 {{ trans_choice('nadil.booking.guest', 4) }}</option>
+                        <option value="5">5 {{ trans_choice('nadil.booking.guest', 5) }}</option>
+                        <option value="6">6 {{ trans_choice('nadil.booking.guest', 6) }}</option>
+                        <option value="7">7 {{ trans_choice('nadil.booking.guest', 7) }}</option>
+                        <option value="8">8 {{ trans_choice('nadil.booking.guest', 8) }}</option>
+                        <option value="9">9 {{ trans_choice('nadil.booking.guest', 9) }}</option>
+                        <option value="10">10 {{ trans_choice('nadil.booking.guest', 10) }}</option>
+                        <option value="10+">10+ {{ trans_choice('nadil.booking.guest', 11) }}</option>
+                    </select>
+                </div>
+                <input
+                    class="rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:rtl:font-ahlan placeholder:rtl:tracking-normal placeholder:uppercase w-full mb-4"
+                    type="text" name="search_name" id="search_name" placeholder="{{ __('nadil.general.search') }}">
+        </div>
+        <div class="flex justify-center mb-6">
+            <button
+                class="uppercase font-lato rtl:font-ahlan rtl:tracking-normal font-bold bg-[#E0E0E0] shadow-md w-full rounded-lg py-4"
+                type="submit">{{ __('nadil.booking.book_now') }}</button>
+        </div>
+        <div class="">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <p><strong>Opps Something went wrong</strong></p>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+        </form>
+    </div>
+    <div class="px-6 mx-auto">
+        @if ($result->count() > 0)
+        <div class="restaurant-search-results mb-8 grid grid-cols-1 gap-4">
+            @foreach ($result as $restaurant)
+                <div class="item flex flex-col justify-center rounded-xl border-2 h-36 font-lato"
+                    style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
+                    <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
+                        class="flex justify-center w-full h-full bg-black rounded-xl bg-opacity-50 px-4">
+                        <div class="flex w-full">
+                            <h4
+                                class="flex w-1/2 items-center justify-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                                {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
+                            <div class="flex w-1/2 flex-col justify-center items-center">
+                                <div class="flex">
+
+                                    <div
+                                        class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                        {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
+                                    <div class="text-white">
+                                        {{ $restaurant->cuisines[0]->{'name_' . app()->getLocale()} }}</div>
+                                </div>
+                                <div class="text-white px-4 py2">{{ __('nadil.general.weekdays') }} :
+                                    {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
+                                @if ($restaurant->{'weekend_opening_hours_' . app()->getLocale()} != null)
+                                    <div class="text-white px-4 py2">{{ __('nadil.general.weekends') }} :
+                                        {{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
+                                @endif
+                            </div>
+
+                        </div>
+
+                    </a>
+                </div>
+            @endforeach
+        </div>
+        @else
+            <div class="flex flex-col justify-center">
+                <div class="uppercase font-lato text-center my-4">{{ __('nadil.general.no_results') }}</div>
+            </div>
+        @endif
+
+    </div>
+@endsection
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">

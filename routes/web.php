@@ -59,6 +59,9 @@ Route::get('/restaurant/{id}',[\App\Http\Controllers\SiteController::class,'show
     Route::post('/restaurants/search',[\App\Http\Controllers\SiteController::class,'check_booking'])
     ->name('site.restaurants.search');
 
+    Route::post('/restaurants/search-resp',[\App\Http\Controllers\SiteController::class,'check_booking_resp'])
+    ->name('site.restaurants.search-resp');
+
 
 Route::get('/contact',[\App\Http\Controllers\SiteController::class,'contact'])
     ->name('site.contact');

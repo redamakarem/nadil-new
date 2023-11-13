@@ -19,7 +19,7 @@
 
             <div class="">
                 <div class="text-xl greeting uppercase">{{ __('nadil.general.whats_the_plan') }}</div>
-                <form action="{{ route('site.restaurants.search') }}" method="POST" class="mb-6">
+                <form action="{{ route('site.restaurants.search-resp') }}" method="POST" class="mb-6">
                     @csrf
                     <div class="flex my-4 items-center">
                         <div class="w-1/2 flex">
@@ -209,7 +209,7 @@
         <p class="uppercase font-lato tracking-[4px] rtl:font-ahlan rtl:tracking-normal text-center py-6">
             {{ __('nadil.general.whats_the_plan') }}</p>
         <div class="flex flex-col items-center">
-            <form action="{{ route('site.restaurants.search') }}" method="POST">
+            <form action="{{ route('site.restaurants.search-resp') }}" method="POST">
                 @csrf
 
                 <div class="my-4">
