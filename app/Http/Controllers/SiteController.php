@@ -79,6 +79,18 @@ class SiteController extends Controller
             return view('site.restaurant-menu', compact('restaurant'));
         }
     }
+    public function show_restaurant_resp($restaurant_id)
+    {
+
+        $current_time = Carbon::now();
+        $time_str = $current_time->toTimeString();
+
+
+       $restaurant = Restaurant::with('menus')->findOrFail($restaurant_id);
+        
+            return view('site.restaurant-menu-resp', compact('restaurant'));
+        
+    }
 
     public function book_restaurant($restaurant_id)
     {
