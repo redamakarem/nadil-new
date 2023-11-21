@@ -1,4 +1,4 @@
-<div id="menu-container">
+<div id="menu-container" class="flex flex-col items-center">
 
     <div class="px-4">
         <div id="menu-bg" class="mx-2 bg-[#F5F5F5] shadow-md rounded-[16px] py-6 px-5 ">
