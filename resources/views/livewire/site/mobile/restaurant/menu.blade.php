@@ -52,9 +52,9 @@
             href="{{ route('site.restaurants.book', $restaurant->id) }}">{{ __('nadil.booking.book_now') }}</a>
     </div>
 
-    <div class="flex justify-center my-12">
+    <div class="flex justify-center my-12 w-full">
         <div class="flex flex-col items-center w-full">
-            <div id="googleMap" class="min-h-[300px] w-[100%]"></div>
+            <div id="googleMap-m" class="min-h-[300px] w-[100%]"></div>
         </div>
     </div>
 
@@ -106,7 +106,7 @@
 
         jQuery(document).ready(function() {
             window.addEventListener('scroll', function(e) {
-                if (isOnScreen(jQuery('#googleMap'))) {
+                if (isOnScreen(jQuery('#googleMap-m'))) {
                     /* Pass element id/class you want to check */
                     jQuery('#btn-booking-wrapper').removeClass('fixed');
                 } else {
@@ -114,10 +114,10 @@
                 }
             });
         });
-        document.addEventListener('load', function() {
-            initMap();
+        // document.addEventListener('load', function() {
+        //     initMap();
 
-        })
+        // })
 
         function initMap() {
             var coordsStr = "{{ $restaurant->coordinates }}";
@@ -130,7 +130,7 @@
                 lat: parseFloat(lat),
                 lng: parseFloat(lng)
             };
-            const map = new google.maps.Map(document.getElementById("googleMap"), {
+            const map = new google.maps.Map(document.getElementById("googleMap-m"), {
                 zoom: 17,
                 center: myLatlng,
             });
@@ -144,6 +144,5 @@
         }
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfJsNn93pyzgF-9ICzEI1q-N9UN3c0SxE&callback=initMap">
-    </script>
+    
 @endpush

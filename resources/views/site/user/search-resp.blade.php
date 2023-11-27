@@ -77,7 +77,7 @@
                     @foreach ($result as $restaurant)
                         <div class="item flex flex-col justify-center rounded-xl border-2 h-36 font-lato"
                             style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
-                            <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
+                            <a href="{{ route('site.restaurants.view-resp', ['id' => $restaurant->id]) }}"
                                 class="flex justify-center w-full h-full bg-black/50 rounded-xl">
                                 <div class="flex w-full">
                                     <h4
@@ -174,33 +174,31 @@
         </div>
         </form>
     </div>
-    <div class="px-6 mx-auto">
+    <div class="px-6 mx-auto p-4">
         @if ($result->count() > 0)
         <div class="restaurant-search-results mb-8 grid grid-cols-1 gap-4">
             @foreach ($result as $restaurant)
                 <div class="item flex flex-col justify-center rounded-xl border-2 h-36 font-lato"
                     style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover">
-                    <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
-                        class="flex justify-center w-full h-full bg-black rounded-xl bg-opacity-50 px-4">
+                    <a href="{{ route('site.restaurants.view-resp', ['id' => $restaurant->id]) }}"
+                        class="flex justify-center w-full h-full bg-black/50 rounded-xl  px-4">
                         <div class="flex w-full">
-                            <h4
-                                class="flex w-1/2 items-center justify-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
+                            <div class="flex flex-col justify-center w-1/2 ">
+                                <h4
+                                class="flex items-center justify-center text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
                                 {{ $restaurant->{'name_' . app()->getLocale()} }}</h4>
+                                <div
+                                        class="address text-center text-white uppercase text-[14px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
+                                        {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
+                            </div>
                             <div class="flex w-1/2 flex-col justify-center items-center">
                                 <div class="flex">
 
-                                    <div
-                                        class="address text-center text-white uppercase text-[18px] ltr:tracking-[2px] rtl:tracking-normal ltr:font-lato rtl:font-ahlan text-opacity-100">
-                                        {{ $restaurant->areaa->{'name_' . app()->getLocale()} }}</div>
+                                    
                                     <div class="text-white">
                                         {{ $restaurant->cuisines[0]->{'name_' . app()->getLocale()} }}</div>
                                 </div>
-                                <div class="text-white px-4 py2">{{ __('nadil.general.weekdays') }} :
-                                    {{ $restaurant->{'opening_hours_' . app()->getLocale()} }}</div>
-                                @if ($restaurant->{'weekend_opening_hours_' . app()->getLocale()} != null)
-                                    <div class="text-white px-4 py2">{{ __('nadil.general.weekends') }} :
-                                        {{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}</div>
-                                @endif
+                                
                             </div>
 
                         </div>

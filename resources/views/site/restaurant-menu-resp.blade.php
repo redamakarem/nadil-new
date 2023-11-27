@@ -21,7 +21,7 @@
                         {{ __('nadil.general.weekends') }}:{{ $restaurant->{'weekend_opening_hours_' . app()->getLocale()} }}
                     </div>
                     <div class="px-8 flex w-full">
-                        <div id="googleMap" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
+                        <div id="googleMap-d" class="flex mt-6 flex-grow rounded-[64px] h-[183px] shadow-md"></div>
                     </div>
                     <div>
                         <div class="grid grid-cols-2 gap-x-3 mt-4">
@@ -149,7 +149,7 @@
                 lat: parseFloat(lat),
                 lng: parseFloat(lng)
             };
-            const map = new google.maps.Map(document.getElementById("googleMap"), {
+            const map = new google.maps.Map(document.getElementById("googleMap-d"), {
                 zoom: 17,
                 center: myLatlng,
             });
@@ -157,6 +157,15 @@
             const marker = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
+            });
+            const mapmob = new google.maps.Map(document.getElementById("googleMap-m"), {
+                zoom: 17,
+                center: myLatlng,
+            });
+
+            const markermob = new google.maps.Marker({
+                position: myLatlng,
+                map: mapmob,
             });
 
 
@@ -200,35 +209,16 @@
                 }
             });
         });
-        document.addEventListener('load', function() {
-            initMap();
-
-        })
-
-        function initMap() {
-            var coordsStr = "{{ $restaurant->coordinates }}";
-            const myArray = coordsStr.split(",");
-            const lat = myArray[0];
-            const lng = myArray[1];
-
-            console.log(coordsStr.toString());
-            const myLatlng = {
-                lat: parseFloat(lat),
-                lng: parseFloat(lng)
-            };
-            const map = new google.maps.Map(document.getElementById("googleMap"), {
-                zoom: 17,
-                center: myLatlng,
-            });
-
-            const marker = new google.maps.Marker({
-                position: myLatlng,
-                map: map,
-            });
-
-
-        }
+        
     </script>
 
     
+@endpush
+
+@push('styles')
+<style>
+    #googleMap-m{
+        width: 100%;
+    }
+</style>
 @endpush

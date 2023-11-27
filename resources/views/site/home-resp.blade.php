@@ -301,7 +301,7 @@
             @foreach ($restaurants as $restaurant)
                 <div class="item flex flex-col justify-center rounded-xl border-2 h-[130px] font-lato"
                     style="background-image:url('{{ $restaurant->getFirstMediaUrl('restaurant_images') }}'); background-size: cover; ">
-                    <a href="{{ route('site.restaurants.view', ['id' => $restaurant->id]) }}"
+                    <a href="{{ route('site.restaurants.view-resp', ['id' => $restaurant->id]) }}"
                         class="flex flex-col justify-center w-full bg-black/70 rounded-xl" style="min-height: 130px;">
                         <h4
                             class="text-center font-bold ltr:font-lato rtl:font-ahlan text-white uppercase text-[22px] ltr:tracking-[2px] rtl:tracking-normal text-opacity-100">
