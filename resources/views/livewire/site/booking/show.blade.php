@@ -155,7 +155,6 @@
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ar.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 
 
@@ -172,19 +171,5 @@
         });
     </script>
 
-    {{--    <script> --}}
-    {{--        jQuery('#inlinePicker').datepicker({ --}}
-    {{--            format: 'yyyy-mm-dd' --}}
-    {{--        }) --}}
-    {{--            .on('changeDate', function(e) { --}}
-    {{--             @this.selected_date = e.format(); --}}
-
-    {{--            }); --}}
-    {{--        jQuery('.datepicker-inline').addClass('px-3 py-4'); --}}
-    {{--        jQuery('#inlinePicker').datepicker('setDate',new Date()); --}}
-    {{--        jQuery('#inlinePicker').datepicker('update',new Date()); --}}
-    {{--        @this.selected_date = moment().format('YYYY-MM-DD'); --}}
-    {{--        console.log(moment().format('YYYY-MM-DD')) --}}
-
-    {{--    </script> --}}
+    
 @endpush

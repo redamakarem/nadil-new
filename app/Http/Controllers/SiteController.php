@@ -102,6 +102,13 @@ class SiteController extends Controller
             return view('site.restaurant-booking', compact('restaurant'));
         }
     }
+    public function book_restaurant_resp($restaurant_id)
+    {
+        $restaurant = Restaurant::with('schedules')->findOrFail($restaurant_id);
+        
+            return view('site.restaurant-booking-resp', compact('restaurant'));
+        
+    }
 
     public function check_booking(Request $request)
     {
