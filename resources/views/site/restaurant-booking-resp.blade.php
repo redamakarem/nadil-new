@@ -119,7 +119,7 @@
                 center: myLatlng,
             });
 
-            const marker = new google.maps.Marker({
+            const markermob = new google.maps.Marker({
                 position: myLatlng,
                 map: mapmob,
             });

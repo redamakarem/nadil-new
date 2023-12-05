@@ -86,6 +86,14 @@ class UserController extends Controller
             return view('site.mobile.user-history',compact(['bookings','profile']));
         }
     }
+    public function history_resp()
+    {
+        $profile = Auth::user()->profile->firstOrFail();
+        $bookings = Booking::with('restaurant')->where('user_id',Auth::id())
+        ->orderBy('booking_date','desc')->where('booking_status_id','1')->get();
+        return view('site.user.history-resp',compact(['bookings','profile']));
+        
+    }
 
    
 

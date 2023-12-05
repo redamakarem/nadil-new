@@ -380,6 +380,7 @@ Route::group(['prefix' => 'user', 'middleware'=>['auth','role:user','ensure_pass
     Route::get('/profile',[\App\Http\Controllers\Site\UserController::class,'profile'])->name('user.profile.show');
     Route::get('/profile/edit',[\App\Http\Controllers\Site\UserController::class,'profile_edit'])->name('user.profile.edit');
     Route::get('/history',[\App\Http\Controllers\Site\UserController::class,'history'])->name('user.history.show');
+    Route::get('/history-resp',[\App\Http\Controllers\Site\UserController::class,'history_resp'])->name('user.history.show-resp');
     Route::post('/cancel-booking',[\App\Http\Controllers\Site\UserController::class,'cancel_booking'])->name('user.cancel-booking');
 
     Route::get('/restaurant/{id}/book',[\App\Http\Controllers\SiteController::class,'book_restaurant'])
@@ -390,6 +391,8 @@ Route::group(['prefix' => 'user', 'middleware'=>['auth','role:user','ensure_pass
 
     Route::get('/booking/{id}/thanks',[\App\Http\Controllers\SiteController::class,'show_booking_confirmation'])
     ->name('site.bookings.confirmation');    
+    Route::get('/booking/{id}/thanks-resp',[\App\Http\Controllers\SiteController::class,'show_booking_confirmation_resp'])
+    ->name('site.bookings.confirmation-resp');    
     
 });
 

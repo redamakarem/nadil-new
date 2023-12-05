@@ -273,6 +273,13 @@ class SiteController extends Controller
         }
         
     }
+    public function show_booking_confirmation_resp($booking_id)
+    {
+        $booking = Booking::findOrFail($booking_id);
+            return view('site.booking-thanks-resp', compact('booking'));
+        
+        
+    }
 
     public function password_reset_success()
     {
