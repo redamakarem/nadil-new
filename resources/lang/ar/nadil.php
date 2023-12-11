@@ -129,4 +129,16 @@ return array (
     'all_rights' =>'جميع الحقوق محفوظة',
     'contact' =>'تواصل معنا',
 ],
+'profile' => [
+  'title' =>'ملفك الشخصي',
+  'name' =>'الاسم',
+  'email' =>'البريد الالكتروني',
+  'address' =>'العنوان',
+  'phone' => 'رقم الهاتف',
+  'edit_profile' =>'تعديل المعلومات',
+  'account_details' =>'التفاصيل',
+  'your_profile' =>'ملفك الشخصي',
+  
+  'history' =>'تواريخ الحجوزات',
+]
 );

@@ -129,5 +129,17 @@
             'contact' =>'Contact Us',
         ],
 
+        'profile' => [
+            'title' =>'Profile',
+            'name' =>'Name',
+            'email' =>'Email',
+            'address' =>'Address',
+            'phone' => 'Phone',
+            'edit_profile' =>'Edit Profile',
+            'account_details' =>'Account Details',
+            'your_profile' =>'Your Profile',
+            'history' =>'History',
+        ]
+
 
     ];

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use App\Http\Requests\Auth\LoginRequest;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -37,15 +38,18 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request)
     {
         $request->authenticate();
+        dd('here');
 
         $request->session()->regenerate();
         if(auth()->user()->hasRole('admin')){
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
         }
-        if(auth()->user()->hasRole(['restaurant-admin','restaurant-super-admin','restaurant-host','restaurant-manager'])){
+        if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-super-admin','restaurant-host','restaurant-manager'])){
             return redirect()->intended(RouteServiceProvider::RESTAURANT_HOME);
         }
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if(auth()->user()->hasRole('user')){
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
 
 
     }
