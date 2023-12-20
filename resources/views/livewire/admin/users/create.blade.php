@@ -56,23 +56,15 @@
                     </div>
 
                     <div class="form-group">
-{{--                        <label>Cuisines</label>--}}
-{{--                        <select class="select2" style="width: 100%;"--}}
-{{--                                id="cuisines" multiple="multiple"--}}
-{{--                                wire:model="cuisine_options">--}}
-{{--                            @foreach($cuisines as $cuisine)--}}
-{{--                                <option value="{{$cuisine->id}}">{{$cuisine->name}}</option>--}}
-{{--                            @endforeach--}}
-{{--                        </select>--}}
-                        <h3>Roles</h3>
-                        @foreach($roles as $role)
-                            <div class="mt-1">
-                                <label class="inline-flex items-center">
-                                    <input type="checkbox" value="{{ $role->id }}" wire:model="form_data.roles"  class="form-checkbox h-6 w-6 text-green-500">
-                                    <span class="ml-3 text-sm">{{ $role->name }}</span>
-                                </label>
-                            </div>
-                        @endforeach
+                        <label>Role</label>
+                        <select class="select2 form-control" style="width: 100%;"
+                                id="roles"
+                                wire:model="form_data.roles">
+                            @foreach($roles as $role)
+                                <option value="{{$role->id}}">{{$role->name}}</option>
+                            @endforeach
+                        </select>
+                        
                     </div>
 
                 </div>

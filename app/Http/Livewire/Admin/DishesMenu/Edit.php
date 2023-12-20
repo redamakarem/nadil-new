@@ -21,6 +21,7 @@ class Edit extends Component
         'end_date' => 'required',
         'start_time' => 'required',
         'end_time' => 'required',
+        'menu.is_active' => 'sometimes',
     ];
 
 

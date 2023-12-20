@@ -44,6 +44,14 @@
                 <input wire:model="end_time"
                        type="text" class="form-control ptime" id="end_time" placeholder="Choose end time">
             </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" wire:model=menu.is_active id="is_active">
+                    <label class="form-check-label" for="is_active">
+                      Active
+                    </label>
+                  </div>
+            </div>
 
         </div>
 

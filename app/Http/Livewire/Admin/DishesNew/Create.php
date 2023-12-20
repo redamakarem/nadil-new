@@ -40,6 +40,7 @@ class Create extends Component
     public function mount()
     {
         $this->dish = new Dish();
+        $this->dish->is_featured = false;
         $this->restaurants = Restaurant::all();
         $this->cuisines = Cuisine::all();
         $this->selected_restaurant = null;

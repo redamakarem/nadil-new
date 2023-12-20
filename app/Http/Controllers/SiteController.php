@@ -26,9 +26,10 @@ class SiteController extends Controller
         if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-super-admin','restaurant-host','restaurant-manager'])){
             return redirect()->intended(RouteServiceProvider::RESTAURANT_HOME);
         }
-        if(auth()->user()->hasRole('user')){
-            return redirect()->intended(RouteServiceProvider::HOME);
-        }}
+        // if(auth()->user()->hasRole('user')){
+        //     return redirect()->intended(RouteServiceProvider::HOME);
+        // }
+    }
         if(session('target_route','') != ''){
             return redirect(route(session('target_route',''),session('booking_restaurant')));
         }
