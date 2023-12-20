@@ -136,7 +136,7 @@ class Create extends Component
                 'opening_hours_ar' => $this->form_data['opening_hours_ar'],
                 'weekend_opening_hours_en' => $this->form_data['weekend_opening_hours_en'],
                 'weekend_opening_hours_ar' => $this->form_data['weekend_opening_hours_ar'],
-                'dress_code' => $this->form_data['dress_code_id'],
+                'dress_code_id' => $this->form_data['dress_code_id'],
             ]
         );
         $new_restaurant->cuisines()->attach($this->form_data['cuisines']);

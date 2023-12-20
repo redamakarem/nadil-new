@@ -6,7 +6,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="{{route('restaurant-admin.restaurant.schedules.create',['restaurant' => $restaurant])}}" class="btn btn-primary">Add</a>
+                        <a href="#" class="btn btn-primary">Add</a>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="#">View</a>
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.schedules.edit',['schedule' => $schedule,'restaurant' =>$restaurant])}}">Edit</a>
+                                        <a class="dropdown-item" href="#">Edit</a>
                                         <a class="dropdown-item" href="#">Delete</a>
                                     </div>
                                 </div>

@@ -9,7 +9,6 @@ use Livewire\Component;
 
 class Create extends Component
 {
-
     public $restaurant_list;
     public $selected_restaurant;
     public $restaurant;

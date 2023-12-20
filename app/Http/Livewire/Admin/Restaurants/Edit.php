@@ -131,7 +131,7 @@ class Edit extends Component
         if ($this->restaurant->menus->where('is_active', true)->count() > 0) {
             $has_menu = true;
         } else {
-            $this->addError('no_menu', 'Restaurant has no menu');
+            $this->addError('no_menu', 'Restaurant has no active menu');
         }
         if ($this->restaurant->dishes->count() > 0) {
             $has_dishes = true;

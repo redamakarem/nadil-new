@@ -18,7 +18,7 @@ class TableController extends Controller
     {
         $restaurant = Restaurant::findOrFail($restaurant);
         
-        return view('restaurant-admin.dining-tables.create',compact('restaurant'));
+        return view('admin.dining-tables.create',compact('restaurant'));
     }
 
     public function edit(Restaurant $restaurant, DiningTable $diningTable)

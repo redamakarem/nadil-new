@@ -144,6 +144,10 @@
                                id="instagram" placeholder="Eg: www.instagram.com" wire:model.defer="restaurant.instagram">
                         @error('restaurant.facebook')<p class="error">{{$message}}</p>@enderror
                     </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="accessible" wire:model="restaurant.is_active">
+                        <label class="form-check-label" for="accessible">{{ __('Active') }}</label>
+                    </div>
                     <div class="form-group">
                         @if($errors->any())
                             <div class="alert alert-danger">

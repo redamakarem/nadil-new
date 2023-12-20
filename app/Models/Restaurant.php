@@ -45,7 +45,7 @@ class Restaurant extends Model implements HasMedia
         'opening_hours_ar',
         'weekend_opening_hours_en',
         'weekend_opening_hours_ar',
-        'dress_code'
+        'dress_code_id'
     ];
 
     public function owner()

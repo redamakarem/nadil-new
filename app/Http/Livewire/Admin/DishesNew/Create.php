@@ -34,7 +34,7 @@ class Create extends Component
         'dish.cuisine_id' => ['required'],
         'selected_menu' => ['required'],
         'dish.is_featured' => ['sometimes'],
-        'dish.is_active' => ['sometimes']
+        'dish.isActive' => ['sometimes']
     ];
 
     public function mount()
@@ -50,6 +50,7 @@ class Create extends Component
     {
         if($this->selected_restaurant){
             $this->menus = Restaurant::findOrFail($value)->menus;
+            $this->dish->restaurant_id = $value;
             
         }
     }
@@ -57,6 +58,12 @@ class Create extends Component
     public function updatedSelectedMenu($value)
     {
         $this->categories = DishesMenu::findOrFail($value)->categories;
+        $this->dish->menu_id = $value;
+        
+    }
+    public function updatedSelectedCuisine($value)
+    {
+        $this->dish->cuisine_id = $value;
         
     }
     public function submit()

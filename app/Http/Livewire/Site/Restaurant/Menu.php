@@ -18,7 +18,10 @@ class Menu extends Component
     public function mount($restaurant)
     {
         $this->restaurant = $restaurant;
-        $this->active_menu = $this->restaurant->menus->where('is_active',true)->first();
+        $this->active_menu = $this->restaurant->menus
+        ->where('from_date','<=',now())
+        ->where('to_date','>=',now())
+        ->where('is_active',true)->first();
 
     }
 }

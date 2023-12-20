@@ -33,11 +33,11 @@
                             <td>{{$menu->from_time}}</td>
                             <td>{{$menu->to_time}}</td>
                             <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
+                                <div class="dropdown">
+                                    <a class="btn btn-light dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </a>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="#">View</a>
                                         <a class="dropdown-item" href="{{route('admin.restaurants.menus.edit',['restaurant' =>$restaurant,'id' =>$menu->id])}}">Edit</a>
