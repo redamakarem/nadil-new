@@ -54,7 +54,7 @@ class Create extends Component
             'to_date' => $this->end_date,
             'from_time' => $this->start_time,
             'to_time' => $this->end_time,
-            'slot_length' => 0
+            'slot_length' => $this->slot_length,
         ]);
         $this->reset_form();
         $this->dispatchBrowserEvent('alert', [

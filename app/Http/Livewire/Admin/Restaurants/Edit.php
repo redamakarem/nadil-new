@@ -48,7 +48,7 @@ class Edit extends Component
             'restaurant.building' => 'required|numeric',
             'restaurant.floor' => 'required|numeric',
             'restaurant.phone' => 'required',
-            'restaurant.address' => 'required',
+            'restaurant.address' => 'sometimes',
             'restaurant.max_party_size' => 'required|numeric',
             'restaurant.accessible' => 'sometimes',
             'restaurant.private_rooms' => 'sometimes',
