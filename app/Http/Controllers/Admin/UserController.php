@@ -16,7 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        if(auth()->user()->hasRole('super-admin')){
+            return view('admin.users.index');
+        }
+        else{
+            abort(403);
+        }
+        
     }
 
 
@@ -104,7 +110,7 @@ class UserController extends Controller
         }
         else
         {
-            return redirect()->back();
+            return redirect()->route('admin.index');
         }
 
 

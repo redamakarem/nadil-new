@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\RestaurantAdmin\Restaurant;
 
-use App\Http\Controllers\Controller;
-use App\Models\Restaurant;
 use App\Models\User;
+use App\Models\Cuisine;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
@@ -27,7 +28,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        $cuisines = Cuisine::all();
+        $users = User::role('restaurant-super-admin')->get();
+        return view('restaurant-admin.restaurant.create',compact('cuisines','users'));
     }
 
     /**

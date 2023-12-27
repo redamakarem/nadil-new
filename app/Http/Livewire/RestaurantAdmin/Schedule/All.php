@@ -19,7 +19,7 @@ class All extends Component
         $restaurants = auth()->user()->restaurants->pluck('id');
         $this->schedules = Schedule::whereIn('restaurant_id',$restaurants)->get();
         }else{
-            $this->schedules = Schedule::where('restaurant_id',auth()->user()->restaurant->id)->get();
+            $this->schedules = Schedule::where('restaurant_id',auth()->user()->workplace->id)->get();
         }
     }
     public function render()

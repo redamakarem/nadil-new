@@ -89,6 +89,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $ra_bookings
+ * @property-read int|null $ra_bookings_count
  * @method static \Database\Factories\BookingStatusFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|BookingStatus newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BookingStatus newQuery()

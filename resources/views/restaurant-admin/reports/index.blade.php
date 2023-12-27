@@ -45,12 +45,12 @@
 </div>
     <div class="row">
         <div class="col-md-12">
-            @livewire('admin.reports.charts.users-by-gender')
+            @livewire('restaurant-admin.reports.charts-users-by-gender')
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            @livewire('admin.reports.charts.all-bookings')
+            @livewire('restaurant-admin.reports.charts.all-bookings')
         </div>
     </div>
     <div class="row">
@@ -66,7 +66,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            @livewire('admin.booking.calendar')
+            @livewire('restaurant-admin.booking.calendar')
         </div>
     </div>
 

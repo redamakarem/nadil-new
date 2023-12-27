@@ -20,7 +20,7 @@ class SiteController extends Controller
 {
     public function index()
     {
-        if(auth()->user() ){if(auth()->user()->hasRole('admin')){
+        if(auth()->user() ){if(auth()->user()->hasAnyRole(['super-admin','nadil-admin','nadil-support'])){
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
         }
         if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-super-admin','restaurant-host','restaurant-manager'])){

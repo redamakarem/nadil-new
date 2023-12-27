@@ -18,5 +18,9 @@ class BookingStatus extends Model
     {
         return $this->hasMany(Booking::class);
     }
+    public function ra_bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 
 }

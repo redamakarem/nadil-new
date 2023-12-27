@@ -294,6 +294,8 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     // Restaurants
     Route::get('/restaurants',[\App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController::class,'index'])
         ->name('restaurant-admin.restaurants.index');
+    Route::get('/restaurants/create',[\App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController::class,'create'])
+        ->name('restaurant-admin.restaurants.create');
     Route::get('/restaurant/{id}/edit',[\App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController::class,'edit'])
         ->name('restaurant-admin.restaurants.edit');
     Route::get('/restaurant/{id}/',[\App\Http\Controllers\RestaurantAdmin\Restaurant\RestaurantController::class,'show'])
@@ -367,6 +369,7 @@ Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restau
     Route::get('bookings/create',[RABookingController::class,'create'])->name('restaurant-admin.bookings.create');
 
     // Users
+    Route::get('/users/create',[RestaurantAdminUserController::class,'create'])->name('restaurant-admin.users.create');
     Route::get('/users/{role}',[RestaurantAdminUserController::class,'byRole'])->name('restaurant-admin.users.roles');
 
     // Reports

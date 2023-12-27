@@ -21,13 +21,20 @@ class TodaysBookingsTable extends Component
         $this->status_id = $status_id;
         if(auth()->user()->hasRole('restaurant-super-admin')){
             $ids= auth()->user()->restaurants->pluck('id');
+            $this->bookings = Booking::with(['user'])->where('booking_status_id',$this->status_id)
+        ->whereIn('restaurant_id',$ids)->get();
+            
         }else{
-            $ids= auth()->user()->workplace->pluck('id');
+            $ids= auth()->user()->workplace->id;
+            // dd($ids);
+            // $ids = array($ids);
+            $this->bookings = Booking::with(['user'])->where('booking_status_id',$this->status_id)
+        ->where('restaurant_id',$ids)->get();
+
             }
         
-        $this->bookings = Booking::with(['user'])->where('booking_status_id',$this->status_id)
-        ->whereIn('restaurant_id',$ids)->get();
-        $this->bookingStatuses = BookingStatus::all();
+        
+        $this->bookingStatuses = BookingStatus::whereIn('id',[1,3,4,5])->get();
         // dd($this->bookings);
     }
 

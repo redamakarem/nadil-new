@@ -32,7 +32,7 @@ class ReportsController extends Controller
         }
         else
         {
-            $restaurant_ids = array_push(auth()->user()->workplace->id);
+            $restaurant_ids = array(auth()->user()->workplace->id);
         }
         $top_time= DB::table('bookings')
         ->select('booking_time', DB::raw('count(*) as count'))

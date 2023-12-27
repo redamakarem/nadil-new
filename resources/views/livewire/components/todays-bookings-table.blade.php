@@ -6,6 +6,7 @@
             <th>Date</th>
             <th>Time</th>
             <th>Party Size</th>
+            <th>Restaurant</th>
             <th>Status</th>
         </tr>
         </thead>
@@ -16,6 +17,7 @@
                 <td>{{$booking->booking_date}}</td>
                 <td>{{$booking->booking_time}}</td>
                 <td>{{$booking->seats}}</td>
+                <td>{{$booking->restaurant->name_en}}</td>
                 <td>
                     <select class="form-control" wire:change='updateBookingStatus({{$booking}},$event.target.value)'>
                         <option value="">Select Status</option>

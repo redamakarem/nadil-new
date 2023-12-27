@@ -7,7 +7,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="{{route('admin.restaurants.create')}}" class="btn btn-primary">Add</a>
+                        <a href="{{route('restaurant-admin.restaurants.create')}}" class="btn btn-primary">Add</a>
 
 
                     </div>
@@ -38,9 +38,9 @@
                             <td>{{$restaurant->max_party_size}}</td>
                             <td>{{$restaurant->is_active ? "Active" : "Inactive"}}</td>
                             <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
-                                        <span class="sr-only">Toggle Dropdown</span>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownSubMenu1" class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Actions<span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurants.show',['id' => $restaurant->id])}}">View</a>
@@ -88,10 +88,9 @@
                             <td>{{$restaurants->max_party_size}}</td>
                             <td>{{$restaurants->is_active ? "Active" : "Inactive"}}</td>
                             <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Action</button>
-                                    <button type="button" id="dropdownSubMenu1" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                        <span class="sr-only">Toggle Dropdown</span>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownSubMenu1" class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Actions<span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurants.show',['id' => $restaurants->id])}}">View</a>

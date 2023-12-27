@@ -11,7 +11,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm">
-                        <a href="{{ route('admin.users.create') }}" class="btn btn-primary">Add</a>
+                        <a href="{{ route('restaurant-admin.users.create') }}" class="btn btn-primary">Add</a>
 
 
                     </div>
