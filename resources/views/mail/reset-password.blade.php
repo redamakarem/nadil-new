@@ -206,8 +206,7 @@
                                         <td align="center"
                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                             <div
-                                                style="font-family:lato;font-size:13px;font-weight:bold;line-height:1;text-align:center;color:#000000;">
-                                                Your generated password is {{$password}}</div>
+                                                style="font-family:lato;font-size:13px;font-weight:bold;line-height:1;text-align:center;color:#000000;"></div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -451,8 +450,7 @@
                                         <td align="center"
                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                             <div
-                                                style="font-family:cairo;font-size:13px;font-weight:bold;line-height:1;text-align:center;color:#000000;">
-                                                كلمة السر الواجب تغييرها: {{ $password }}</div>
+                                                style="font-family:cairo;font-size:13px;font-weight:bold;line-height:1;text-align:center;color:#000000;"></div>
                                         </td>
                                     </tr>
                                     <tr>

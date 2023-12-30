@@ -38,9 +38,17 @@ class RestaurantsController extends Controller
      */
     public function create()
     {
-        $cuisines = Cuisine::all();
-        $users = User::role('restaurant-super-admin')->get();
-        return view('admin.restaurants.create',compact('cuisines','users'));
+        if(auth()->user()->hasAnyPermission(['Everything','Create Restaurant'])){
+            $cuisines = Cuisine::all();
+            $users = User::role('restaurant-super-admin')->get();
+            return view('admin.restaurants.create',compact('cuisines','users'));
+        }
+        else{
+            abort(403);
+        }
+        // $cuisines = Cuisine::all();
+        // $users = User::role('restaurant-super-admin')->get();
+        // return view('admin.restaurants.create',compact('cuisines','users'));
 
     }
 
