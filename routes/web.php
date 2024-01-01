@@ -280,6 +280,9 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
     Route::get('legal/create',[App\Http\Controllers\Admin\LegalController::class,'create'])->name('admin.legal.create');
     Route::get('legal/{legal}/edit',[App\Http\Controllers\Admin\LegalController::class,'edit'])->name('admin.legal.edit');
     Route::get('legal/privacy',[App\Http\Controllers\Admin\LegalController::class,'privacy'])->name('admin.legal.privacy');
+
+    // Logs
+    Route::get('logs',[App\Http\Controllers\Admin\AdminController::class,'logs'])->name('admin.logs');
 });
 
 

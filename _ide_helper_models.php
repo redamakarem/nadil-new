@@ -472,6 +472,8 @@ namespace App\Models{
  * @property string|null $weekend_opening_hours_en
  * @property string|null $weekend_opening_hours_ar
  * @property int $dress_code_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Activitylog\Models\Activity[] $activities
+ * @property-read int|null $activities_count
  * @property-read \App\Models\Area|null $areaa
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count

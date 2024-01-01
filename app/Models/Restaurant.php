@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\Traits\LogsActivity;
+
 use Str;
 
 class Restaurant extends Model implements HasMedia
@@ -18,6 +20,7 @@ class Restaurant extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
     use SoftDeletes;
+    use LogsActivity;
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'name_en',

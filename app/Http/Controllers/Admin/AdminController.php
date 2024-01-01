@@ -91,4 +91,8 @@ class AdminController extends Controller
     {
         //
     }
+    public function logs()
+    {
+        return view('admin.logs');
+    }
 }
