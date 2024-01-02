@@ -588,12 +588,15 @@ namespace App\Models{
  * @property int $restaurant_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \App\Models\Restaurant $restaurant
  * @method static \Database\Factories\ScheduleFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule newQuery()
+ * @method static \Illuminate\Database\Query\Builder|Schedule onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule query()
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereFromDate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereFromTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereId($value)
@@ -603,6 +606,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereToDate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereToTime($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Schedule withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Schedule withoutTrashed()
  */
 	class Schedule extends \Eloquent {}
 }
@@ -652,6 +657,7 @@ namespace App\Models{
  * @property string|null $social_type
  * @property int|null $restaurant_id
  * @property int $is_dark_mode
+ * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \App\Models\Area|null $area
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count
@@ -671,11 +677,13 @@ namespace App\Models{
  * @method static \Database\Factories\UserFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
+ * @method static \Illuminate\Database\Query\Builder|User onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|User permission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder|User query()
  * @method static \Illuminate\Database\Eloquent\Builder|User role($roles, $guard = null)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereAreaId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereEmailVerifiedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
@@ -689,6 +697,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereSocialId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereSocialType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|User withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|User withoutTrashed()
  */
 	class User extends \Eloquent {}
 }
