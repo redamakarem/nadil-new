@@ -147,6 +147,7 @@
             <!-- END Menu Submenu -->
         </div>
         @endrole
+        
         <div class="menu-item">
             <a href="{{ route('admin.contact-messages.index') }}" data-menu-path="/index.html" class="menu-item-link">
                 <div class="menu-item-icon">
@@ -163,6 +164,16 @@
                 <span class="menu-item-text">Legal</span>
             </a>
         </div>
+        @role('super-admin')
+        <div class="menu-item">
+            <a href="{{ route('admin.logs') }}" data-menu-path="/index.html" class="menu-item-link">
+                <div class="menu-item-icon">
+                    <i class="fa fa-list"></i>
+                </div>
+                <span class="menu-item-text">Logs</span>
+            </a>
+        </div>
+        @endrole
         @if (session('impersonated_by'))
             <div class="menu-item">
                 <a href="{{ route('users.leave-impersonate') }}" data-menu-path="/index.html" class="menu-item-link">
