@@ -65,8 +65,18 @@ class RestaurantController extends Controller
     public function edit($id)
     {
         $restaurant = Restaurant::findOrFail($id);
-        $this->authorize('edit',$restaurant);
-        return view('restaurant-admin.restaurant.edit',compact('restaurant'));
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            if(!auth()->user()->restaurants->pluck('id')->contains($restaurant->id)){
+                abort(403, 'You are not authorized to edit this restaurant!!');
+            }
+            return view('restaurant-admin.restaurant.edit',compact('restaurant'));
+        }
+        if(auth()->user()->hasRole('restaurant-admin')){
+            if(!auth()->user()->workplace->id==$restaurant->id){
+                abort(403, 'You are not authorized to edit this restaurant');
+            }
+            return view('restaurant-admin.restaurant.edit',compact('restaurant'));
+        }
     }
 
     /**
