@@ -43,7 +43,7 @@
                                             <a class="dropdown-item" href="#">View</a>
                                             <a class="dropdown-item" href="{{route('admin.dishes-new.edit',['id' => $dish->id])}}">Edit</a>
                                             <a class="dropdown-item" href="#"
-                                            >Delete</a>
+                                                    wire:click.prevent="confirmDishDeletion({{ $dish->id }})">Delete</a>
                                             
                                         </div>
                                     </div>

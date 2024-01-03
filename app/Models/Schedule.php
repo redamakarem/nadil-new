@@ -10,6 +10,7 @@ class Schedule extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    use \Spatie\Activitylog\Traits\LogsActivity;
 
     protected $fillable = [
         'name',

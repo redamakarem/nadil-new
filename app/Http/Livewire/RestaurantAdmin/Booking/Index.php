@@ -21,8 +21,14 @@ class Index extends Component
 
     public function mount()
     {
-        $restaurant_ids = Auth::user()->restaurants->pluck('id');
+        if(Auth::user()->hasRole('restaurant-admin|restaurant-host')){
+            $this->bookings = Auth::user()->workplace->bookings;
+        }
+        else{
+            $restaurant_ids = Auth::user()->restaurants->pluck('id');
         $this->bookings =Booking::whereIn('restaurant_id',$restaurant_ids)->get();
+        }
+        
         
 
     }

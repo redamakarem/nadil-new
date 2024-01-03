@@ -11,8 +11,10 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Dish extends Model implements HasMedia
 {
     use InteractsWithMedia;
+    use \Illuminate\Database\Eloquent\SoftDeletes;
 
     use HasFactory;
+    use \Spatie\Activitylog\Traits\LogsActivity;
 
     protected $fillable = [
         'name_en',

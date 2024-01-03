@@ -210,6 +210,8 @@ namespace App\Models{
  * @property string|null $name_ar
  * @property int $isActive
  * @property string $description_ar
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Activitylog\Models\Activity[] $activities
+ * @property-read int|null $activities_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DishesCategory[] $categories
  * @property-read int|null $categories_count
  * @property-read \App\Models\Cuisine|null $cuisine
@@ -220,6 +222,7 @@ namespace App\Models{
  * @method static \Database\Factories\DishFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Dish newQuery()
+ * @method static \Illuminate\Database\Query\Builder|Dish onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Dish query()
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereCuisineId($value)
@@ -235,6 +238,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Dish wherePrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereRestaurantId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Dish withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Dish withoutTrashed()
  */
 	class Dish extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
@@ -589,6 +594,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Activitylog\Models\Activity[] $activities
+ * @property-read int|null $activities_count
  * @property-read \App\Models\Restaurant $restaurant
  * @method static \Database\Factories\ScheduleFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule newModelQuery()
@@ -658,6 +665,8 @@ namespace App\Models{
  * @property int|null $restaurant_id
  * @property int $is_dark_mode
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Activitylog\Models\Activity[] $activities
+ * @property-read int|null $activities_count
  * @property-read \App\Models\Area|null $area
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
  * @property-read int|null $bookings_count

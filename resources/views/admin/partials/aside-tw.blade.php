@@ -66,6 +66,12 @@
                             <span class="menu-item-text">User</span>
                         </a>
                     </div>
+                    <div class="menu-item">
+                        <a href="{{route('admin.users.deleted')}}" data-menu-path="/elements/base/card.html" class="menu-item-link">
+                            <i class="menu-item-bullet"></i>
+                            <span class="menu-item-text">Deleted</span>
+                        </a>
+                    </div>
                     
                 </div>
                 <!-- END Menu Submenu -->

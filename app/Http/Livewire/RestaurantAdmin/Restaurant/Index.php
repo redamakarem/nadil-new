@@ -14,6 +14,7 @@ class Index extends Component
     {
         if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host','restaurant-manager'])){
             $this->restaurants = auth()->user()->workplace;
+            // dd($this->restaurants);
         }
         else{
             $this->restaurants = auth()->user()->restaurants;

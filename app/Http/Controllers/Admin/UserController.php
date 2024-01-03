@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->hasRole('super-admin')){
+        if(auth()->user()->hasAnyRole(['super-admin','nadil-admin'])){
             return view('admin.users.index');
         }
         else{
@@ -40,7 +40,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        if(auth()->user()->hasAnyRole(['super-admin','nadil-admin'])){
+            return view('admin.users.create');
+        }
+        else{
+            abort(403);
+        }
+        
     }
 
     /**
@@ -73,8 +79,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        if(auth()->user()->hasAnyRole(['super-admin','nadil-admin'])){
+            $user = User::findOrFail($id);
         return view('admin.users.edit',compact(['user']));
+        }
+        else{
+            abort(403);
+        }
     }
 
     /**
@@ -87,6 +98,12 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+
+    public function deleted()
+    {
+        return view('admin.users.deleted');
     }
 
     /**

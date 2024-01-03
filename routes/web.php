@@ -144,6 +144,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
     //Users
     Route::get('/users/',[UserController::class,'index'])
         ->name('admin.users.index');
+    Route::get('/users/deleted',[UserController::class,'deleted'])
+        ->name('admin.users.deleted');
     Route::get('/users/create/',[UserController::class,'create'])
         ->name('admin.users.create');
     Route::get('/users/edit/{id}',[UserController::class,'edit'])

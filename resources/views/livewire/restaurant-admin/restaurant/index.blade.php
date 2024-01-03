@@ -7,7 +7,7 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
-                        <a href="{{route('restaurant-admin.restaurants.create')}}" class="btn btn-primary">Add</a>
+                        {{-- <a href="{{route('restaurant-admin.restaurants.create')}}" class="btn btn-primary">Add</a> --}}
 
 
                     </div>
@@ -102,6 +102,36 @@
                                     </div>
                                 </div>
                             </td>
+
+                        </tr>
+                    
+
+                    </tbody>
+                </table>
+                @endrole
+
+                @role('restaurant-host')
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Max Party Size</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr>
+                            <td>{{$restaurants->name_en}}</td>
+                            <td>{{$restaurants->email}}</td>
+                            <td>{{$restaurants->address}}</td>
+                            <td>{{$restaurants->phone}}</td>
+                            <td>{{$restaurants->max_party_size}}</td>
+                            <td>{{$restaurants->is_active ? "Active" : "Inactive"}}</td>
+                            
 
                         </tr>
                     
