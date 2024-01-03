@@ -66,8 +66,10 @@ class ScheduleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Schedule $schedule)
-    {      
-        $this->authorize('edit',$schedule);
+    {
+        if($schedule->restaurant_id != auth()->user()->workplace->id){
+            abort(403);
+        }      
         return view('restaurant-admin.schedule.edit',compact(['schedule']));
     }
 
