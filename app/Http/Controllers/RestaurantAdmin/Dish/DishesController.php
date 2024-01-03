@@ -82,14 +82,20 @@ class DishesController extends Controller
      */
     public function edit(Restaurant $restaurant,DishesMenu $menu,DishesCategory $category, Dish $dish)
     {
-        if ($restaurant->owner->id==auth()->id())
-        {
-            return view('restaurant-admin.dish.edit',
-                ['restaurant' => $restaurant, 'catalogue' => $menu, 'category' => $category, 'dish' => $dish]);
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            if(!auth()->user()->restaurants->pluck('id')->contains($restaurant->id)){
+                abort(403, 'You are not authorized to edit this dish!!');
+            }
+            return view('restaurant-admin.dish.edit',['restaurant' => $restaurant, 'catalogue' => $menu, 'category' =>$category, 'dish' => $dish]);
         }
-        else{
-            abort(403);
+        if(auth()->user()->hasRole('restaurant-admin')){
+            if(!auth()->user()->workplace->id==$restaurant->id){
+                abort(403, 'You are not authorized to edit this dish');
+            }
+            return view('restaurant-admin.dish.edit',['restaurant' => $restaurant, 'catalogue' => $menu, 'category' =>$category, 'dish' => $dish]);
         }
+
+        
     }
     
 
@@ -129,7 +135,21 @@ class DishesController extends Controller
     }
     public function new_edit(Dish $dish)
     {
-        $this->authorize('edit',$dish);
+
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            if(!auth()->user()->restaurants->pluck('id')->contains($dish->restaurant->id)){
+                abort(403, 'You are not authorized to edit this dish!!');
+            }
+            return view('restaurant-admin.dish.edit-new',compact('dish'));
+        }
+        if(auth()->user()->hasRole('restaurant-admin')){
+            if(!auth()->user()->workplace->id==$dish->restaurant->id){
+                abort(403, 'You are not authorized to edit this dish');
+            }
+            return view('restaurant-admin.dish.edit-new',compact('dish'));
+        }
+
+        // $this->authorize('edit',$dish);
         return view('restaurant-admin.dish.edit-new',compact('dish'));
     }
 }

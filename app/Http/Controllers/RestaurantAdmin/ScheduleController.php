@@ -67,10 +67,20 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        if($schedule->restaurant_id != auth()->user()->workplace->id){
-            abort(403);
-        }      
-        return view('restaurant-admin.schedule.edit',compact(['schedule']));
+        if(auth()->user()->hasRole('restaurant-super-admin')){
+            if(!auth()->user()->restaurants->pluck('id')->contains($schedule->restaurant_id)){
+                abort(403);
+            }
+            return view('restaurant-admin.schedule.edit',compact(['schedule']));
+        }
+        if(auth()->user()->hasRole('restaurant-admin')){
+            if(!auth()->user()->workplace->id==$schedule->restaurant_id){
+                abort(403);
+            }
+            return view('restaurant-admin.schedule.edit',compact(['schedule']));
+        }
+        abort(403);
+        
     }
 
     /**
