@@ -39,7 +39,12 @@ class Create extends Component
         $this->booking = new Booking();
         $this->initListsForFields();
     }
+    protected $listeners = ['bookingAdded' => 'goToBookings'];
 
+    public function goToBookings()
+    {
+        $this->redirect(route('restaurant-admin.bookings.create'));
+    }
 
     protected $rules = [
         'selected_restaurant' => 'required|exists:restaurants,id',
@@ -102,7 +107,10 @@ class Create extends Component
                     'booking_end_time' => Carbon::parse($this->selected_time)->addMinutes($this->restaurant->estimated_dining_time)->format('H:i:s'),
                 ]);
             }
-//            $this->booking->reserved_tables()->sync($available_tables->first(),['booking_date' =>])
+            $this->dispatchBrowserEvent('alert', [
+                'type' => 'success',
+                'message' => "Booking created Successfully!!"
+            ]);
         }
         else{
             $this->addError('booking_seats','Not enough seats for selected date and time');
