@@ -11,7 +11,7 @@
             </a>
         </div>
         
-       @role('super-admin')
+       @role('super-admin|nadil-admin')
             <div class="menu-item">
                 <button class="menu-item-link menu-item-toggle">
                     <div class="menu-item-icon">

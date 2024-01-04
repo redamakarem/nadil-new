@@ -10,10 +10,10 @@ use Spatie\Permission\Models\Role;
 
 class Create extends Component
 {
-    public $form_data =[];
+    public $form_data = [];
     public $users;
     public $restaurants;
-    public $cuisine_options='';
+    public $cuisine_options = '';
     protected $rules = [
         'form_data.name' => 'required',
         'form_data.email' => 'required|email',
@@ -34,7 +34,6 @@ class Create extends Component
         $this->form_data['roles'] = [];
         $this->form_data['cuisines'] = [];
         $this->restaurants = Restaurant::all();
-
     }
 
 
@@ -59,9 +58,15 @@ class Create extends Component
     public function render()
     {
         $roles = Role::all();
+        if (auth()->user()->hasRole('super-admin')) {
+            $roles = Role::all();
+        } else {
+            $roles = Role::where('name', '!=', 'super-admin')->get();
+        }
+
         $users = User::role('restaurant-admin')->get();
 
 
-        return view('livewire.admin.users.create',compact('roles','users'));
+        return view('livewire.admin.users.create', compact('roles', 'users'));
     }
 }

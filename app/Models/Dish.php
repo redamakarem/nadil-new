@@ -15,7 +15,8 @@ class Dish extends Model implements HasMedia
 
     use HasFactory;
     use \Spatie\Activitylog\Traits\LogsActivity;
-
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
     protected $fillable = [
         'name_en',
         'name_ar',

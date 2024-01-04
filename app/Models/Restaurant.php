@@ -21,6 +21,8 @@ class Restaurant extends Model implements HasMedia
     use InteractsWithMedia;
     use SoftDeletes;
     use LogsActivity;
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'name_en',

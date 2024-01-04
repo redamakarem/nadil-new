@@ -210,6 +210,7 @@ namespace App\Models{
  * @property string|null $name_ar
  * @property int $isActive
  * @property string $description_ar
+ * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Activitylog\Models\Activity[] $activities
  * @property-read int|null $activities_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DishesCategory[] $categories
@@ -226,6 +227,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Dish query()
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereCuisineId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Dish whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereDescriptionAr($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereDescriptionEn($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish whereId($value)

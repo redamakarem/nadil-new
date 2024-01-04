@@ -21,6 +21,8 @@ class Schedule extends Model
         'to_time',
         'restaurant_id',
     ];
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
     protected $dates = ['deleted_at','updated_at','created_at'];
 
 

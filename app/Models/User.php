@@ -31,6 +31,7 @@ class User extends Authenticatable
         'social_id',
         'social_type'
     ];
+    protected static $logAttributes = ['*'];
 
     /**
      * The attributes that should be hidden for arrays.
