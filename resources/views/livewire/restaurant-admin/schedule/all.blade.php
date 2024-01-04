@@ -40,10 +40,12 @@
                                     <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
+                                    @hasanyrole('restaurant-super-admin|restaurant-admin')
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="{{route('restaurant-admin.schedules.edit', $schedule)}}">Edit</a>
                                         <a class="dropdown-item" href="#">Delete</a>
                                     </div>
+                                    @endhasanyrole
                                 </div>
                             </td>
 

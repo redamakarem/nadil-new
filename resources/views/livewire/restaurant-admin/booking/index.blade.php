@@ -44,12 +44,14 @@
                                     <button type="button" class="btn btn-light dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">Action</button>
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
+                                    @hasanyrole('restaurant-super-admin|restaurant-admin')
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="#">View</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.bookings.edit',['id' => $booking->id])}}">Edit</a>
                                         <a class="dropdown-item" href="#"
                                            wire:click.prevent="confirmBookingDeletion({{$booking->id}})">Delete</a>
                                     </div>
+                                    @endhasanyrole
                                 </div>
                             </td>
 

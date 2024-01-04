@@ -10,7 +10,7 @@
 
             </a>
         </div>
-        
+        @hasanyrole('restaurant-super-admin|restaurant-admin')
         <div class="menu-item">
             <a href="{{ route('restaurant-admin.reports.index') }}" data-menu-path="/index.html" class="menu-item-link">
                 <div class="menu-item-icon">
@@ -20,6 +20,7 @@
 
             </a>
         </div>
+        @endhasanyrole
         @hasanyrole('restaurant-super-admin')
         <div class="menu-item">
             <button class="menu-item-link menu-item-toggle">
@@ -79,6 +80,7 @@
             </a>
         </div>
         @endhasanyrole
+        @hasanyrole('restaurant-super-admin|restaurant-admin')
         <div class="menu-item">
             <button class="menu-item-link menu-item-toggle">
                 <div class="menu-item-icon">
@@ -140,6 +142,7 @@
             </div>
             <!-- END Menu Submenu -->
         </div>
+        @endhasanyrole
         
         @if (session('impersonated_by'))
             <div class="menu-item">
