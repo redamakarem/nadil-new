@@ -158,6 +158,10 @@ class Show extends Component
         }
 
         $this->validate();
+        if(auth()->user()->profile->phone==null){
+            $this->addError('booking_phone', 'Please complete your profile first');
+            return;
+        }
         if(Carbon::parse($this->selected_date)->isToday() && Carbon::parse($this->selected_time)->isPast()){
             $this->addError('booking_time', 'Selected time is in the past');
             return;}
