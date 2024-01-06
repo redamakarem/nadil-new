@@ -12,7 +12,7 @@
     
         @if ($errors->any())
             <div id="validation-errors"
-                class="bg-red-600 mb-4 px-8 py-12 text-white font-lato uppercase text-md rounded-[19px]">
+                class="bg-red-100 text-center text-red-700">
                 @foreach ($errors->all() as $error)
                     <div>{{ $error }}</div>
                 @endforeach
@@ -67,6 +67,7 @@
                 <option value="">{{ __('nadil.booking.num_guest') }}</option>
                 @for ($i = 1; $i <= $restaurant->max_party_size; $i++)
                     <option value="{{ $i }}">{{ $i }} {{ trans_choice('nadil.booking.guest', $i) }}
+                       
                     </option>
                 @endfor
             </select>
@@ -101,7 +102,9 @@
             @if ($slots)
             <select wire:model='selected_time' class="my-8 rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12">
                 @foreach ($slots as $slot)
-                    <option {{$this->slot_bookable($slot) ? '' : 'disabled'}} value="{{ $slot }}">{{ \Carbon\Carbon::parse($slot)->translatedFormat('h:i A') }}</option>
+                    <option {{$this->slot_bookable($slot) ? '' : 'disabled'}} value="{{ $slot }}">{{ \Carbon\Carbon::parse($slot)->translatedFormat('h:i A') }}
+                        {{ $this->slot_bookable($slot) ? '' : 'disabled' }}
+                    </option>
     
                 @endforeach
             </select>

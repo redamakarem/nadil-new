@@ -47,7 +47,7 @@
                         @error('date_of_birth') <span class="danger">{{$message}}</span> @enderror
                         <input  id="dob"
                                type="text" class="w-full ltr:font-lato rtl:font-ahlan py-4 rounded-[19px] text-lg ltr:tracking-[2px] rtl:tracking-normal"
-                               placeholder="DOB">
+                               placeholder="{{__('nadil.user_registration.dob')}}">
                     </div>
                     <div class="mb-3">
                         @error('profile.phone') <span class="danger">{{$message}}</span> @enderror
