@@ -12,7 +12,7 @@
     
         @if ($errors->any())
             <div id="validation-errors"
-                class="bg-red-100 text-center text-red-700">
+                class="bg-red-100 text-center text-red-700 mb-4">
                 @foreach ($errors->all() as $error)
                     <div>{{ $error }}</div>
                 @endforeach
@@ -103,7 +103,7 @@
             <select wire:model='selected_time' class="my-8 rounded-[64px] bg-[#E0E0E0] outline-none border-none placeholder:text-center placeholder:font-lato placeholder:uppercase text-center w-full h-12">
                 @foreach ($slots as $slot)
                     <option {{$this->slot_bookable($slot) ? '' : 'disabled'}} value="{{ $slot }}">{{ \Carbon\Carbon::parse($slot)->translatedFormat('h:i A') }}
-                        {{ $this->slot_bookable($slot) ? '' : 'disabled' }}
+                        
                     </option>
     
                 @endforeach

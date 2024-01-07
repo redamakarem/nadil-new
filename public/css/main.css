@@ -1609,9 +1609,6 @@ select {
 .text-\[18px\] {
     font-size: 18px;
 }
-.text-\[14px\] {
-    font-size: 14px;
-}
 .text-\[19px\] {
     font-size: 19px;
 }
@@ -2333,12 +2330,6 @@ select {
     }
 }
 @media (min-width: 768px) {
-    .md\:flex {
-        display: flex;
-    }
-    .md\:hidden {
-        display: none;
-    }
     .md\:w-1\/2 {
         width: 50%;
     }
