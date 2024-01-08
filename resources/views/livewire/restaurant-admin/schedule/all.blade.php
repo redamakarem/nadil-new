@@ -43,7 +43,7 @@
                                     @hasanyrole('restaurant-super-admin|restaurant-admin')
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="{{route('restaurant-admin.schedules.edit', $schedule)}}">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <a class="dropdown-item {{$schedules->count()==1? 'hidden':''}}" href="#">Delete</a>
                                     </div>
                                     @endhasanyrole
                                 </div>

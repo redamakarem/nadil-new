@@ -285,6 +285,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
 
     // Logs
     Route::get('logs',[App\Http\Controllers\Admin\AdminController::class,'logs'])->name('admin.logs');
+    Route::get('logs/view/{activity}',[App\Http\Controllers\Admin\AdminController::class,'view_log'])->name('admin.logs.view');
 });
 
 

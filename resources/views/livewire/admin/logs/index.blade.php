@@ -21,6 +21,7 @@
                             <th>Done By</th>
                             <th>Done on</th>
                             <th>Done at</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,7 +78,13 @@
                                         <td>Unknown</td>
                                 @endswitch
                                 <td>{{ $log->updated_at }}</td>
+                                <td>
+                                    @if ($log->description == 'updated')
+                                    <a class="btn btn-primary" href="{{ route('admin.logs.view', $log) }}">Details</a>
+                                    @endif
+                                </td>
                             </tr>
+                            
                             @empty
                                 <tr>
                                     <td colspan="6">No results found</td>

@@ -29,7 +29,8 @@ class User extends Authenticatable
         'mobile',
         'landline',
         'social_id',
-        'social_type'
+        'social_type',
+        'restaurant_id',
     ];
     protected static $logAttributes = ['*'];
 

@@ -41,7 +41,7 @@
                                     <div aria-labelledby="dropdownSubMenu1" class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" href="#">View</a>
                                         <a class="dropdown-item" href="{{route('admin.restaurant.schedules.edit',['sched' => $schedule->id])}}">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <a class="dropdown-item {{$restaurant->schedules->count()==1? 'hidden':''}}"  href="#" wire:click.prevent="confirmScheduletDeletion({{ $schedule->id }})">Delete</a>
                                     </div>
                                 </div>
                             </td>
@@ -61,6 +61,15 @@
         <!-- /.card -->
     </div>
 </div>
+
+@push('styles')
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+    
+@endpush
 
 @push('scripts')
     <script>

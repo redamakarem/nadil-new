@@ -7,6 +7,7 @@ use App\Models\Profile;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Spatie\Activitylog\Models\Activity;
 
 class AdminController extends Controller
 {
@@ -93,6 +94,10 @@ class AdminController extends Controller
     }
     public function logs()
     {
-        return view('admin.logs');
+        return view('admin.logs.index');
+    }
+    public function view_log(Activity $activity)
+    {
+        return view('admin.logs.view',compact('activity'));
     }
 }
