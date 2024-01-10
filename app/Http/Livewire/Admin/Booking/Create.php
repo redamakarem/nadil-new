@@ -51,7 +51,7 @@ class Create extends Component
         'booking.seats' => ['required','numeric','min:1'],
         'selected_date' => ['required', 'date'],
         'selected_time' => ['required'],
-        'selected_user' => ['required'],
+        'selected_user' => ['sometimes'],
         'restaurant' => ['required'],
     ];
 
