@@ -17,7 +17,7 @@
                     @forelse ($bookings as $booking)
                         <tr>
                             <td>{{$booking->booking_code}}</td>
-                            <td>{{$booking->user->name}}</td>
+                            <td>{{$booking->user->name??'Manual Booking'}}</td>
                             <td>{{$booking->booking_date}} / {{$booking->booking_time}}</td>
                             <td>{{$booking->seats}}</td>
                             <td>{{$booking->restaurant->name_en}}</td>
