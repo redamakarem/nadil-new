@@ -49,7 +49,7 @@
                                         <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.schedules.index',['restaurant' => $restaurant->id])}}">Schedules</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.menus.index',['restaurant' => $restaurant->id])}}">Menus</a>
                                         <a class="dropdown-item" href="{{route('restaurant-admin.tables.index')}}">Tables</a>
-                                        <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.staff',['restaurant' => $restaurant->id])}}">Staff</a>
+                                        {{-- <a class="dropdown-item" href="{{route('restaurant-admin.restaurant.staff',['restaurant' => $restaurant->id])}}">Staff</a> --}}
                                     </div>
                                 </div>
                             </td>

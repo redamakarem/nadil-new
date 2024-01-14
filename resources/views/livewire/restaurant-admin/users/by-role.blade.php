@@ -9,12 +9,12 @@
             <div class="card-header">
                 <h3 class="card-title">Users</h3>
 
-                <div class="card-tools">
+                {{-- <div class="card-tools">
                     <div class="input-group input-group-sm">
                         <a href="{{ route('restaurant-admin.users.create') }}" class="btn btn-primary">Add</a>
 
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <!-- /.card-header -->
