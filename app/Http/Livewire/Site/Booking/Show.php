@@ -176,6 +176,7 @@ class Show extends Component
             } else {
                 $this->booking->phone = 'aaaaaaa';
             }
+            $this->booking->full_name = auth()->user()->profile->name;
             $this->booking->booking_date = Carbon::parse($this->selected_date)->format('Y-m-d');
             $this->booking->booking_time = Carbon::parse($this->selected_time)->format('H:i:s');
             $this->booking->seats = $this->seats;

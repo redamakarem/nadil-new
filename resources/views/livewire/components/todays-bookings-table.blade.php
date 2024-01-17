@@ -13,7 +13,7 @@
         <tbody>
         @forelse($bookings as $booking)
             <tr>
-                <td>{{$booking->user->name??'Manual Booking'}}</td>
+                <td>{{$booking->user->name??$booking->full_name}}</td>
                 <td>{{$booking->booking_date}}</td>
                 <td>{{$booking->booking_time}}</td>
                 <td>{{$booking->seats}}</td>

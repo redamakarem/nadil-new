@@ -38,6 +38,13 @@ class Create extends Component
         $this->users = User::role('user')->get();
         $this->booking = new Booking();
         $this->initListsForFields();
+        if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host'])){
+            $this->restaurants = collect([auth()->user()->workplace]);
+        }
+        else{
+            $this->restaurants = auth()->user()->restaurants;
+        }
+        // dd($this->restaurants);
     }
     protected $listeners = ['bookingAdded' => 'goToBookings'];
 
@@ -185,11 +192,23 @@ class Create extends Component
             $this->getSlotsForSchedules();
         }
         $this->slot_options = $this->mapSlots();
+        if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host'])){
+            $this->restaurants = collect([auth()->user()->workplace]);
+        }
+        else{
+            $this->restaurants = auth()->user()->restaurants;
+        }
     }
 
     public function updatedSelectedRestaurant($value)
     {
         $this->restaurant = Restaurant::find($value);
+        if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host'])){
+            $this->restaurants = collect([auth()->user()->workplace]);
+        }
+        else{
+            $this->restaurants = auth()->user()->restaurants;
+        }
         
     }
 

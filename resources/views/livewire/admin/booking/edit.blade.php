@@ -44,6 +44,12 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="booking_date">Name</label>
+                        <div wire:ignore>
+                            <input wire:model="booking.full_name" type="text" id="booking.full_name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="booking_date">Booking Date</label>
                         <div wire:ignore>
                             <input type="text" id="booking_date" class="form-control" wire:model='selected_date'>

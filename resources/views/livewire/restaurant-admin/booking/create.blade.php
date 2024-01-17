@@ -27,8 +27,8 @@
                                 id="restaurant" wire:model="selected_restaurant"
                                 data-placeholder="Select owner" style="width: 100%">
                             <option value="">{{__('Select Restaurant')}}</option>
-                            @foreach($restaurants as $restaurant)
-                                <option value="{{$restaurant->id}}">{{$restaurant->name_en}}</option>
+                            @foreach($restaurants as $restaurantx)
+                                <option value="{{$restaurantx->id}}">{{$restaurantx->name_en}}</option>
                             @endforeach
                         </select>
                     </div>

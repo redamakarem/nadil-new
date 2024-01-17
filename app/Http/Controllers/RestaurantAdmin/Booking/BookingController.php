@@ -25,8 +25,13 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $this->authorize('create',Booking::class);
+        // $this->authorize('create',Booking::class);
+        if(auth()->user()->hasAnyRole(['restaurant-admin','restaurant-host'])){
         return view('restaurant-admin.booking.create');
+        }
+        else{
+            abort(403);
+        }
     }
 
     /**

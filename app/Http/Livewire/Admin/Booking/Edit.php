@@ -53,14 +53,15 @@ class Edit extends Component
 
     protected $rules = [
         'selected_restaurant' => 'required|exists:restaurants,id',
-        'booking.user_id' => 'required',
+        'booking.user_id' => 'sometimes|unique:users,id',
         'booking.phone' => 'required',
        'booking.booking_date' => 'required',
        'booking.booking_time' => 'required',
+       'booking.full_name' => 'sometimes',
         'booking.seats' => ['required','numeric','min:1'],
         'selected_date' => ['required', 'date'],
         'selected_time' => ['required'],
-        'selected_user' => ['required'],
+        'selected_user' => ['sometimes'],
         'booking_tables' => ['sometimes'],
     ];
 
@@ -94,12 +95,7 @@ class Edit extends Component
             $seat_num = $this->booking->seats;
             $tables_to_book = array();
 
-            // foreach ($this->available_tables as $available_table){
-            //     array_push($tables_to_book,$available_table->id);
-            //     $seat_num -=$available_table->capacity;
-            //     if ($seat_num<=0)
-            //         break;
-            // }
+           
             $this->booking->reserved_tables()->detach();
             if($this->booking->seats<=$this->selected_capacity){
                 foreach ($this->booking_tables as $item) {

@@ -6,8 +6,9 @@
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" >
+                        @hasanyrole('restaurant-host|restaurant-admin')
                         <a href="{{route('restaurant-admin.bookings.create')}}" class="btn btn-primary">Add</a>
-
+                        @endhasanyrole
 
                     </div>
                 </div>

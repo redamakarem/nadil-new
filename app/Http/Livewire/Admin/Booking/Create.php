@@ -46,6 +46,7 @@ class Create extends Component
         'selected_restaurant' => 'required|exists:restaurants,id',
         'booking.user_id' => 'unique:users,id',
         'booking.phone' => 'required',
+        'booking.full_name' => 'sometimes',
 //        'booking.booking_date' => 'required',
 //        'booking.booking_time' => 'required',
         'booking.seats' => ['required','numeric','min:1'],
