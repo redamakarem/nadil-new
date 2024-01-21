@@ -67,6 +67,12 @@
             @livewire('admin.reports.charts.users-by-age')
         </div>
     </div>
+    <div class="row">
+        
+        <div class="col-md-6">
+            @livewire('admin.reports.charts.bookings-by-type')
+        </div>
+    </div>
     
 
     
