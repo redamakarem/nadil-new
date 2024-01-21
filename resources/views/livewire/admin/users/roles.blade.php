@@ -22,8 +22,13 @@
                 <table class="table table-hover text-nowrap">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>Name
+                                <input wire:model="filters.name" type="text" class="form-control form-control-sm">
+                            </th>
+                            
+                            <th>Email
+                                <input wire:model="filters.email" type="text" class="form-control form-control-sm">
+                            </th>
                             <th>Roles</th>
                             <th>Actions</th>
                         </tr>

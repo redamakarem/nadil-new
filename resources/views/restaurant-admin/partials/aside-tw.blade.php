@@ -10,7 +10,7 @@
 
             </a>
         </div>
-        @hasanyrole('restaurant-super-admin')
+        @hasanyrole('nadil-admin')
         <div class="menu-item">
             <a href="{{ route('restaurant-admin.reports.index') }}" data-menu-path="/index.html" class="menu-item-link">
                 <div class="menu-item-icon">

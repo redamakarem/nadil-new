@@ -10,6 +10,18 @@
                 
             </a>
         </div>
+
+        @hasanyrole('nadil-admin')
+        <div class="menu-item">
+            <a href="{{ route('admin.reports.index') }}" data-menu-path="/index.html" class="menu-item-link">
+                <div class="menu-item-icon">
+                    <i class="fa fa-chart-pie"></i>
+                </div>
+                <span class="menu-item-text">Reports</span>
+
+            </a>
+        </div>
+        @endhasanyrole
         
        @role('super-admin|nadil-admin')
             <div class="menu-item">

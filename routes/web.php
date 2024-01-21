@@ -293,7 +293,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','role:super-admin|nadil
 
 
 
-Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restaurant-super-admin|restaurant-admin|restaurant-host|restaurant-manager']],function(){
+Route::group(['prefix' => 'restaurant-admin', 'middleware'=>['auth','role:restaurant-super-admin|restaurant-admin|restaurant-host|restaurant-manager|nadil-admin']],function(){
     Route::get('/',[App\Http\Controllers\RestaurantAdmin\RestaurantAdminController::class,'index'])
     ->name('restaurant-admin.index');
 

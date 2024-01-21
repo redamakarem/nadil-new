@@ -30,7 +30,7 @@ class UserController extends Controller
     {
 
         $users = Role::with('users')->findOrFail($role_id)->users;
-        return view('admin.users.roles',compact(['users']));
+        return view('admin.users.roles',compact(['users','role_id']));
     }
 
     /**
