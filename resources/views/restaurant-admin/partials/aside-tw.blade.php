@@ -69,7 +69,7 @@
             <!-- END Menu Submenu -->
         </div>
         @endhasanyrole
-        @hasanyrole('restaurant-super-admin|restaurant-manager|restaurant-host')
+        @hasanyrole('restaurant-super-admin|restaurant-manager|restaurant-host|restaurant-admin')
         <div class="menu-item">
             <a href="{{ route('restaurant-admin.bookings') }}" data-menu-path="/index.html" class="menu-item-link">
                 <div class="menu-item-icon">
